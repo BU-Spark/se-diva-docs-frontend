@@ -1,15 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Nav from './components/NavBar/Nav';
 
-import Navbar from './components/Navbar';
-
-function App() {
-  return (
-    <div className="App">
-      <Navbar />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <>
+        <Nav />
+        <h1>Hello world</h1>
+      </>
+    );
+  }
 }
 
 export default App;
