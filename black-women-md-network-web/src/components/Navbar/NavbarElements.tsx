@@ -7,7 +7,6 @@ export const Nav = styled.nav`
   height: 85px;
   display: flex;
   justify-content: space-between;
-  padding: 0.2rem calc((100vw - 1000px) / 2);
   z-index: 12;
   /* Third Nav */
   /* justify-content: flex-start; */
@@ -15,7 +14,6 @@ export const Nav = styled.nav`
 
 export const NavLogo = styled(Link)`
   color: #000000;
-  bold: true;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -26,9 +24,9 @@ export const NavLogo = styled(Link)`
   
 export const NavLink = styled(Link)`
   color: #000000;
-  bold: true;
   display: flex;
   align-items: center;
+  place-items: center stretch;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
@@ -40,7 +38,7 @@ export const NavLink = styled(Link)`
   
 export const Bars = styled(FaBars)`
   display: none;
-  color: #808080;
+  color: #000000;
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
@@ -79,11 +77,13 @@ export const NavBtn = styled.nav`
 `;
   
 export const SignInBtnLink = styled(Link)`
+  display: flex;
   border-radius: none;
   background: #FFFFFF;
   padding: 25% 50px;
   color: #000000;
   align-items: center;
+  place-items: center end;
   outline: none;
   border: none;
   cursor: pointer;
@@ -97,11 +97,13 @@ export const SignInBtnLink = styled(Link)`
   }
 `;
 export const JoinBtnLink = styled(Link)`
+  display: flex;
   border-radius: none;
   background: #000000;
   padding: 25% 50px;
   color: #FFFFFF;
   align-items: center;
+  place-items: center end;
   outline: none;
   border: none;
   cursor: pointer;

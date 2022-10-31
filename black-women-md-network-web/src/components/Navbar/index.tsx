@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <>
       <Nav>  
-        <NavLogo to="/">Black Women MD Netowork</NavLogo>
+        <NavLogo to="/">Black Women MD Network</NavLogo>
         <Bars />
         <NavMenu>
           <NavLink to="/membership">Membership</NavLink>
