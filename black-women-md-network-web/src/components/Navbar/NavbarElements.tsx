@@ -20,17 +20,20 @@ export const NavLogo = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+  font: 1.2em "Fira Sans", sans-serif;
+
 `;
   
 export const NavLink = styled(Link)`
   color: #000000;
   display: flex;
   align-items: center;
-  place-items: center stretch;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+  font: 1.2em "Fira Sans", sans-serif;
+  font-weight: bold;
   &.active {
     color: #000000;
   }
@@ -83,13 +86,14 @@ export const SignInBtnLink = styled(Link)`
   padding: 25% 50px;
   color: #000000;
   align-items: center;
-  place-items: center end;
   outline: none;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  margin-left: none;
+  .push-right {
+    margin-left: auto;
+  }
   &:hover {
     transition: all 0.2s ease-in-out;
     background: #000;
@@ -103,13 +107,14 @@ export const JoinBtnLink = styled(Link)`
   padding: 25% 50px;
   color: #FFFFFF;
   align-items: center;
-  place-items: center end;
   outline: none;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  margin-left: none;
+  .push-right {
+    margin-left: auto;
+  }
   &:hover {
     transition: all 0.2s ease-in-out;
     background: #fff;
