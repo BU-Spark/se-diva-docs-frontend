@@ -5,12 +5,24 @@ import styled from 'styled-components';
 export const Nav = styled.nav`
   background: #FFFFFF;
   height: 85px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0.2rem calc((100vw - 1000px) / 2);
   z-index: 12;
   /* Third Nav */
   /* justify-content: flex-start; */
+`;
+
+export const NavLogo = styled(Link)`
+  color: #000000;
+  bold: true;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
 `;
   
 export const NavLink = styled(Link)`
@@ -72,7 +84,7 @@ export const SignInBtnLink = styled(Link)`
   background: #FFFFFF;
   padding: 25% 50px;
   color: #000000;
-  align-items: end;
+  align-items: center;
   outline: none;
   border: none;
   cursor: pointer;
@@ -90,7 +102,7 @@ export const JoinBtnLink = styled(Link)`
   background: #000000;
   padding: 25% 50px;
   color: #FFFFFF;
-  align-items: end;
+  align-items: center;
   outline: none;
   border: none;
   cursor: pointer;
