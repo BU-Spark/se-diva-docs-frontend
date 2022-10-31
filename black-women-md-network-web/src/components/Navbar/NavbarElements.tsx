@@ -14,7 +14,8 @@ export const Nav = styled.nav`
 `;
   
 export const NavLink = styled(Link)`
-  color: #808080;
+  color: #000000;
+  bold: true;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -66,21 +67,39 @@ export const NavBtn = styled.nav`
   }
 `;
   
-export const NavBtnLink = styled(Link)`
-  border-radius: 4px;
-  background: #000000;
-  padding: 10px 22px;
-  color: #FFFFFF;
+export const SignInBtnLink = styled(Link)`
+  border-radius: none;
+  background: #FFFFFF;
+  padding: 25% 50px;
+  color: #000000;
+  align-items: end;
   outline: none;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  /* Second Nav */
-  margin-left: 24px;
+  margin-left: none;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #000;
+    color: #FFFFFF;
+  }
+`;
+export const JoinBtnLink = styled(Link)`
+  border-radius: none;
+  background: #000000;
+  padding: 25% 50px;
+  color: #FFFFFF;
+  align-items: end;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  margin-left: none;
   &:hover {
     transition: all 0.2s ease-in-out;
     background: #fff;
-    color: #808080;
+    color: #000000;
   }
 `;
