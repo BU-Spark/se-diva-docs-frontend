@@ -22,7 +22,7 @@ const Navbar = () => {
           <NavLink to="/community">Community</NavLink>
         </NavMenu>
         <NavBtn>
-          <SignInBtnLink to='/signin'>Sign In</SignInBtnLink>
+          <SignInBtnLink to='/signup'>Sign Up</SignInBtnLink>
         </NavBtn>
         <NavBtn>
           <JoinBtnLink to='/join'>Join</JoinBtnLink>
