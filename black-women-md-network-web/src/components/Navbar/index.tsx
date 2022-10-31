@@ -5,7 +5,8 @@ import {
   Bars,
   NavMenu,
   NavBtn,
-  NavBtnLink,
+  SignInBtnLink,
+  JoinBtnLink
 } from './NavbarElements';
   
 const Navbar = () => {
@@ -19,10 +20,10 @@ const Navbar = () => {
           <NavLink to="/community">Community</NavLink>
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to='/signin'>Sign In</NavBtnLink>
+          <SignInBtnLink to='/signin'>Sign In</SignInBtnLink>
         </NavBtn>
         <NavBtn>
-          <NavBtnLink to='/join'>Join</NavBtnLink>
+          <JoinBtnLink to='/join'>Join</JoinBtnLink>
         </NavBtn>
       </Nav>
     </>
