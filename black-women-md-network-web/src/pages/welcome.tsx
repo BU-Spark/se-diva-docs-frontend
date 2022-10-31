@@ -1,20 +1,12 @@
 import React from 'react';
-import companyLogo from './path/to/logo.jpg';
+import buddies from '../images/test.jpg';
+import './welcome.css';
+import styled from 'styled-components';
 
 const Welcome = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'Right',
-        alignItems: 'Right',
-        height: '100vh'
-      }}
-    >
-      <img src={companyLogo} alt="BigCo Inc. logo"/>
-      <h1>Welcome to Black Women MD Network</h1>
-    </div>
-  );
-};
+    <img src = {buddies} alt = "Freedom Blog" />
+  )
+}
   
 export default Welcome;
