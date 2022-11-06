@@ -13,16 +13,16 @@ import {
 const Navbar = () => {
   return (
     <>
-      <Nav>  
-        <NavLogo to="/">Black Women MD Network</NavLogo>
+      <Nav> 
         <Bars />
         <NavMenu>
           <NavLink to="/membership">Membership</NavLink>
           <NavLink to="/resources">Resources</NavLink>
+          <NavLink to="/events">Events</NavLink>
           <NavLink to="/community">Community</NavLink>
         </NavMenu>
         <NavBtn>
-          <SignInBtnLink to='/signup'>Sign Up</SignInBtnLink>
+          <SignInBtnLink to='/signin'>Sign In</SignInBtnLink>
         </NavBtn>
         <NavBtn>
           <JoinBtnLink to='/join'>Join</JoinBtnLink>

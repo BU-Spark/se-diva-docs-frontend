@@ -37,13 +37,18 @@ export const NavLink = styled(Link)`
   &.active {
     color: #000000;
   }
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #000;
+    color: #FFFFFF;
+  }
 `;
   
 export const Bars = styled(FaBars)`
   display: none;
   color: #000000;
   @media screen and (max-width: 768px) {
-    display: block;
+    display: flex;
     position: absolute;
     top: 0;
     right: 0;
