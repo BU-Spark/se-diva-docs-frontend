@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
+import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Welcome from './pages/welcome';
 import Membership from './pages/membership';
@@ -12,6 +13,7 @@ import Join from './pages/join';
 
 
 function App() {
+  useEffect(() => {document.title = "Black Women M.D. Network"}, [])
   return (
     <Router>
       <Navbar />
