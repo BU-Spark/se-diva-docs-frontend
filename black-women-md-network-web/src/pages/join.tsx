@@ -10,7 +10,7 @@ const Join = () => {
         height: '100vh'
       }}
     >
-      <h1>Membership</h1>
+      <h1>Join</h1>
     </div>
   );
 };

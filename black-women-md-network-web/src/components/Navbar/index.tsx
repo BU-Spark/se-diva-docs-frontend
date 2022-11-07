@@ -12,18 +12,23 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
+            <NavDropdown title="Membership" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/joinus">Join Us!</NavDropdown.Item>
+              <NavDropdown.Item href="/directory">Directory</NavDropdown.Item>
+              <NavDropdown.Item href="/resumebank">Resume Bank</NavDropdown.Item>
+              <NavDropdown.Item href="/findanexpert">Find An Expert</NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Resources" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/resumereview">Resume Review</NavDropdown.Item>
+              <NavDropdown.Item href="/headshot">Headshot</NavDropdown.Item>
+              <NavDropdown.Item href="/findanexpert">Find An Expert</NavDropdown.Item>
+              <NavDropdown.Item href="/coaching">Coaching</NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Events" id="collasible-nav-dropdown">
+            </NavDropdown>
+            <NavDropdown title="Community" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="https://www.divadocsboston.com/">Diva Docs</NavDropdown.Item>
+              <NavDropdown.Item href="/events">Events</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
