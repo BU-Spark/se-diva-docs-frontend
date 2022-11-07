@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
+import NavBar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Welcome from './pages/welcome';
 import Membership from './pages/membership';
@@ -13,7 +13,7 @@ import Join from './pages/join';
 function App() {
   return (
     <Router>
-      <Navbar />
+      <NavBar />
       <Routes>
         <Route path='/' element={<Welcome />} />
         <Route path='/membership' element={<Membership />} />
