@@ -1,3 +1,7 @@
+.body 
+{
+  background-image: linear-gradient(90deg, #FFC0CB 50%, #00FFFF 50%);
+}
 .img-buddies{
   position: absolute;
   width: 1441px;
@@ -26,7 +30,7 @@
   left: 422px;
   top: 739px;
   
-  background-color: #F1E2AD;
+  background-color: #F1E2AD!important;
   border-radius: 18px;
 }
 
@@ -56,7 +60,7 @@
   left: 0px;
   top: 1271px;
 
-  background: #F1E2AD;
+  background: #F1E2AD!important;
   border-radius: 0px 18px 18px 0px;
 
   pointer-events: none;
@@ -113,18 +117,18 @@
 .btn-search
 {
   display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 10px 45px;
-gap: 10px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 45px;
+  gap: 10px;
 
-position: absolute;
-width: 608px;
-height: 91px;
-left: 412px;
-top: 2120px;
+  position: absolute;
+  width: 608px;
+  height: 91px;
+  left: 412px;
+  top: 2120px;
 
-background-color: #E0D7C7;
-border-radius: 18px;
+  background-color: #E0D7C7!important;
+  border-radius: 18px;
 }

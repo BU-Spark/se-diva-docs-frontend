@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 const Welcome = () => {
   return (
-    <>
+    <div className="body">
       <img className="img-buddies" src = {buddies} alt = "Black Woman Buddies" />
       <a href="/join" className="btn btn-join btn-lg active" role="button" aria-pressed="true">Join Our Community</a>
       <p className="p-welcome">Diva Docs Boston is an organization composed of over 250 Black women physicians and 
@@ -24,7 +24,7 @@ const Welcome = () => {
       <br/>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper fermentum dolor, mi quam amet, donec...</p>
       <a href="/directory" className="btn btn-search btn-lg active" role="button" aria-pressed="true">Search Our Members</a>
-    </>
+    </div>
   );
 }
   
