@@ -1,6 +1,6 @@
 import React from 'react';
   
-const Join = () => {
+const Directory = () => {
   return (
     <div
       style={{
@@ -10,9 +10,9 @@ const Join = () => {
         height: '100vh'
       }}
     >
-      <h1>Join</h1>
+      <h1>DivaDocs Directory</h1>
     </div>
   );
 };
   
-export default Join;
+export default Directory;

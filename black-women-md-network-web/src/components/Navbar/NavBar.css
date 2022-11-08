@@ -1,0 +1,11 @@
+.navbar{
+  color:#FFFFFF;
+  background-color: #212121;
+}
+
+.navbar .nav .navdropdown:hover{
+  text-align: center;
+  height: 100%;
+  margin: auto;
+  background-color:bisque;
+}

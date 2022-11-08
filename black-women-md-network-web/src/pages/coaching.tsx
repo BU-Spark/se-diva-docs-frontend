@@ -1,6 +1,6 @@
 import React from 'react';
   
-const Join = () => {
+const Coaching= () => {
   return (
     <div
       style={{
@@ -10,9 +10,9 @@ const Join = () => {
         height: '100vh'
       }}
     >
-      <h1>Join</h1>
+      <h1>Coaching</h1>
     </div>
   );
 };
   
-export default Join;
+export default Coaching;
