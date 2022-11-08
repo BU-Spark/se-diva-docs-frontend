@@ -1,6 +1,6 @@
 import React from 'react';
   
-const Events= () => {
+const Events = () => {
   return (
     <div
       style={{
@@ -10,7 +10,7 @@ const Events= () => {
         height: '100vh'
       }}
     >
-      <h1>Events</h1>
+      <h1>DivaDocs Events</h1>
     </div>
   );
 };
