@@ -92,6 +92,24 @@
 
 }
 
+.p-member
+{
+  position: absolute;
+  width: 412px;
+  height: 618px;
+  left: 206px;
+  top: 1442px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 158.02%;
+  /* or 57px */
+
+
+  color: #000;
+}
 .btn-search
 {
   display: flex;

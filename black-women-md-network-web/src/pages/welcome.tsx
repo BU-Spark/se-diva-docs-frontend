@@ -16,6 +16,13 @@ const Welcome = () => {
       are represented in every medical speciality and work in a variety of health and non-health care settings.</p>
       <a href="" className="btn btn-members btn-lg active" role="button" aria-pressed="true">Featured Members</a>
       <img className="img-explain" src = {explain} alt = "Black Woman Explains" />
+      <p className="p-member">First Name, Last Name<br/>
+      Profession<br/>
+      Years Experience<br/>
+      <br/>
+      Bio:<br/>
+      <br/>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper fermentum dolor, mi quam amet, donec...</p>
       <a href="/directory" className="btn btn-search btn-lg active" role="button" aria-pressed="true">Search Our Members</a>
     </>
   );
