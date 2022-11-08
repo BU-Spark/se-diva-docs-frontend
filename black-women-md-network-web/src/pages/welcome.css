@@ -91,3 +91,22 @@
   color: #FFFFFF;
 
 }
+
+.btn-search
+{
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px 45px;
+gap: 10px;
+
+position: absolute;
+width: 608px;
+height: 91px;
+left: 412px;
+top: 2120px;
+
+background-color: #E0D7C7;
+border-radius: 18px;
+}
