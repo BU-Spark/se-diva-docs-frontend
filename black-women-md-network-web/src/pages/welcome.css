@@ -1,6 +1,163 @@
-img {
-    width: 100%;
-    height: 575px;
-    object-fit: cover;
-    object-position: 100% 0;
+.body 
+{
+  /*background-image: linear-gradient(90deg, #FFC0CB 50%, #00FFFF 50%);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center left;*/
+  background-color: #000;
+}
+
+.btn{
+  text-align: center;
+}
+
+.img-buddies{
+  position: absolute;
+  width: 1441px;
+  height: 583px;
+  left: -1px;
+  top: 130px;
+}
+
+.p-buddies{
+  position: absolute;
+  width: 599px;
+  height: 180px;
+  left: 19px;
+  top: 206px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 90px;
+  /* or 120% */
+
+
+  color: #56453E;
+
+
+}
+.btn.btn-join{
+  /* padding: 14px 24px;
+  border: 0 none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase; */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 33px 128px;
+  gap: 10px;
+
+  position: absolute;
+  width: 608px;
+  height: 110px;
+  left: 422px;
+  top: 739px;
+  
+  background-color: #F1E2AD!important;
+  border-radius: 18px;
+}
+
+.p-welcome
+{
+  position: absolute;
+  width: 618px;
+  height: 268px;
+  left: 412px;
+  top: 909px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+
+  color: #000;
+
+}
+
+.btn.btn-members
+{
+  position: absolute;
+  width: 517px;
+  height: 123px;
+  left: 0px;
+  top: 1271px;
+
+  background: #F1E2AD!important;
+  border-radius: 0px 18px 18px 0px;
+
+  pointer-events: none;
+}
+
+.img-explain
+{
+  position: absolute;
+  width: 412px;
+  height: 618px;
+  left: 829px;
+  top: 1435px;
+  object-fit: cover;
+}
+
+.p-member
+{
+  position: absolute;
+  width: 412px;
+  height: 618px;
+  left: 206px;
+  top: 1442px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 158.02%;
+  /* or 57px */
+
+
+  color: #FFFFFF;
+
+}
+
+.p-member
+{
+  position: absolute;
+  width: 412px;
+  height: 618px;
+  left: 206px;
+  top: 1442px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 158.02%;
+  /* or 57px */
+
+
+  color: #000;
+}
+.btn.btn-search
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 45px;
+  gap: 10px;
+
+  position: absolute;
+  width: 608px;
+  height: 91px;
+  left: 412px;
+  top: 2120px;
+
+  background-color: #F1E2AD!important;
+  border-radius: 18px;
 }
