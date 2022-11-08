@@ -8,8 +8,9 @@ import styled from 'styled-components';
 
 const Welcome = () => {
   return (
-    <div className="body">
+    <div >
       <img className="img-buddies" src = {buddies} alt = "Black Woman Buddies" />
+      <p className="p-buddies">Black Women<br/>M.D. Network</p>
       <a href="/join" className="btn btn-join btn-lg active" role="button" aria-pressed="true">Join Our Community</a>
       <p className="p-welcome">Diva Docs Boston is an organization composed of over 250 Black women physicians and 
       trainees (medical students, residents, and fellows) working, studying or living in Greater Boston. Our members 
