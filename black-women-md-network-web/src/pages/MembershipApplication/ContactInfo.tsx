@@ -1,13 +1,11 @@
-import React from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 
-const ContactInfo = (
-  name: any,
-  setName: React.Dispatch<React.SetStateAction<string>>
-) => {
+const ContactInfo = (name: any, setName: Dispatch<SetStateAction<string>>) => {
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     alert(`The name you entered was: ${name}`);
   };
+
   return (
     <div>
       <h1> Contact / General Information </h1>
