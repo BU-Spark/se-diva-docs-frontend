@@ -2,15 +2,14 @@ import React from "react";
 
 const MembershipType = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "Right",
-        alignItems: "Right",
-        height: "100vh",
-      }}
-    >
-      <h1>MembershipType</h1>
+    <div>
+      <h1> Please Select your Membership Type </h1>
+
+      <label>Membership Type</label>
+      <input autoFocus required type="text" />
+
+      <label>Medical Speciality</label>
+      <input autoFocus required type="text" />
     </div>
   );
 };

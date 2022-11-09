@@ -21,7 +21,7 @@ export const useMultiStepForm = (steps: ReactElement[]) => {
       if (index <= 0) {
         return index;
       }
-      return index + 1;
+      return index - 1;
     });
   };
 
@@ -29,5 +29,14 @@ export const useMultiStepForm = (steps: ReactElement[]) => {
     setStepIndex(index);
   };
 
-  return { stepIndex, step: steps[stepIndex], goTo, next, back };
+  return {
+    stepIndex,
+    step: steps[stepIndex],
+    goTo,
+    next,
+    back,
+    steps,
+    isFirstStep: stepIndex === 0,
+    isLastStep: stepIndex === steps.length - 1,
+  };
 };

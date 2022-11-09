@@ -2,15 +2,14 @@ import React from "react";
 
 const FinalQuestions = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "Right",
-        alignItems: "Right",
-        height: "100vh",
-      }}
-    >
-      <h1>FinalQuestions</h1>
+    <div>
+      <h1> Final Questions </h1>
+
+      <label>
+        Can we share your name, degrees, current work institution affiliation
+        with other membrs in a resource directory?
+      </label>
+      <input autoFocus required type="text" />
     </div>
   );
 };
