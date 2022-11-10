@@ -1,11 +1,15 @@
-.body 
+.welcome-body 
 {
   /*background-image: linear-gradient(90deg, #FFC0CB 50%, #00FFFF 50%);
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center left;*/
-  background-color: #000;
+  height: 300vh;
+  width: auto;
+  background: linear-gradient(155deg, #56453E 60%, #E0D7C7 60%);
+  /*background-image: linear-gradient(90deg, #FFC0CB 50%, #00FFFF 50%);*/
+  /*background: #000!important;*/
 }
 
 .btn{

@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 const Welcome = () => {
   return (
-    <div >
+    <div className="welcome-body">
       <img className="img-buddies" src = {buddies} alt = "Black Woman Buddies" />
       <p className="p-buddies">Black Women<br/>M.D. Network</p>
       <a href="/join" className="btn btn-join btn-lg active" role="button" aria-pressed="true">Join Our Community</a>
