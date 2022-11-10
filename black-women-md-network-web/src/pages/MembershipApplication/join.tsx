@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { Button } from "react-bootstrap";
 import ContactInfo from "./ContactInfo";
 import FinalQuestions from "./FinalQuestions";
@@ -6,7 +6,32 @@ import MembershipType from "./MembershipType";
 import Success from "./Success";
 import { useMultiStepForm } from "./useMultiStepForm";
 
+type FormData = {
+  firstName: string;
+  lastName: string;
+  age: string;
+  memType: string;
+  medSpecialty: string;
+  shareDataInDirectory: string;
+};
+const INITIAL_DATA: FormData = {
+  firstName: "",
+  lastName: "",
+  age: "",
+  memType: "",
+  medSpecialty: "",
+  shareDataInDirectory: "",
+};
 const Join = () => {
+  const [data, setData] = useState(INITIAL_DATA);
+
+  // Create a function that updates the data fields
+  // Using partial so can use only some of the fields
+  const updateFields = (fields: Partial<FormData>) => {
+    setData((prev) => {
+      return { ...prev, ...fields };
+    });
+  };
   const {
     steps,
     stepIndex,
@@ -16,11 +41,19 @@ const Join = () => {
     back,
     next,
   } = useMultiStepForm([
-    <ContactInfo></ContactInfo>,
-    <MembershipType></MembershipType>,
-    <FinalQuestions></FinalQuestions>,
-    <Success></Success>,
+    <ContactInfo {...data} updateFields={updateFields}></ContactInfo>,
+    <MembershipType {...data} updateFields={updateFields}></MembershipType>,
+    <FinalQuestions {...data} updateFields={updateFields}></FinalQuestions>,
   ]);
+
+  // Submits data before moving to next step!
+  const onSubmit = (e: FormEvent) => {
+    // Prevent page from refreshing
+    e.preventDefault();
+    if (!isLastStep) return next();
+    // Fetch request to post to API would go here!
+    alert("Form is submitted!");
+  };
   return (
     <div
       style={{
@@ -31,9 +64,10 @@ const Join = () => {
         margin: "1rem",
         borderRadius: ".5rem",
         fontFamily: "Arial",
+        maxWidth: "max-content",
       }}
     >
-      <form>
+      <form onSubmit={onSubmit}>
         <div
           style={{
             position: "absolute",
@@ -57,9 +91,7 @@ const Join = () => {
               Back
             </Button>
           )}
-          <Button type="button" onClick={next}>
-            {isLastStep ? "Submit" : "Next"}
-          </Button>
+          <Button type="submit">{isLastStep ? "Submit" : "Next"}</Button>
         </div>
         {step}
       </form>
