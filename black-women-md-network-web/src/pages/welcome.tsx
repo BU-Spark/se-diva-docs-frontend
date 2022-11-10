@@ -1,10 +1,7 @@
-import React from 'react';
-import buddies from '../images/test.jpg';
-import explain from '../images/blackwomanexplains.jpg';
-import './welcome.css';
-import styled from 'styled-components';
-
-
+import React from "react";
+import buddies from "../images/test.jpg";
+import explain from "../images/blackwomanexplains.jpg";
+import "./welcome.css";
 
 const Welcome = () => {
   return (
@@ -27,6 +24,6 @@ const Welcome = () => {
       <a href="/directory" className="btn btn-search btn-lg active" role="button" aria-pressed="true">Search Our Members</a>
     </div>
   );
-}
-  
+};
+
 export default Welcome;
