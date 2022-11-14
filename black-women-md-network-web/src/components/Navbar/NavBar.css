@@ -1,6 +1,11 @@
 .navbar{
   color:#FFFFFF;
   background-color: #212121;
+  width: 1441px;
+  height: 79px;
+  left: 0px;
+  top: 51px;
+
 }
 
 .navbar .nav .navdropdown:hover{
