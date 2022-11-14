@@ -13,39 +13,29 @@ function NavBar() {
         <Navbar.Brand href="/">M.D. Network</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="nav">
-          <Col>
+          <Nav className="me-auto">
             <NavDropdown className="navdropdown" title="Membership" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/join">Join Us!</NavDropdown.Item>
               <NavDropdown.Item href="/directory">Directory</NavDropdown.Item>
               <NavDropdown.Item href="/resumebank">Resume Bank</NavDropdown.Item>
               <NavDropdown.Item href="/findanexpert">Find An Expert</NavDropdown.Item>
             </NavDropdown>
-          </Col>
-          <Col>
             <NavDropdown className="navdropdown" title="Resources" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/resumereview">Resume Review</NavDropdown.Item>
               <NavDropdown.Item href="/headshot">Headshot</NavDropdown.Item>
               <NavDropdown.Item href="/findanexpert">Find An Expert</NavDropdown.Item>
               <NavDropdown.Item href="/coaching">Coaching</NavDropdown.Item>
             </NavDropdown>
-          </Col>
-          <Col>
             <NavDropdown className="navdropdown" title="Events" id="collasible-nav-dropdown">
             </NavDropdown>
-          </Col>
-          <Col>
             <NavDropdown className="navdropdown" title="Community" id="collasible-nav-dropdown">
               <NavDropdown.Item href="https://www.divadocsboston.com/">Diva Docs</NavDropdown.Item>
               <NavDropdown.Item href="/events">Events</NavDropdown.Item>
             </NavDropdown>
-          </Col>
-          <Col>
+          </Nav>
+          <Nav>
             <Nav.Link href="/signin">Sign In</Nav.Link>
-          </Col>
-          <Col>
             <Nav.Link href="/join">Join</Nav.Link>
-          </Col>
           </Nav>
         </Navbar.Collapse>
       </Container>
