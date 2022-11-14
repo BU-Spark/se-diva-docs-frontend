@@ -8,9 +8,8 @@ import Col from 'react-bootstrap/Col'
 
 function NavBar() {
   return (
-    <Navbar className="navbar" variant="dark">
+    <Navbar className="navbar" variant="dark" fixed="top">
       <Container fluid>
-        {/*<Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>*/}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="nav">
