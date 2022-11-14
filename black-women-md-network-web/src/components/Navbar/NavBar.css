@@ -12,12 +12,17 @@
   color: #F1E2AD
 }
 /* change the text color */
-.navbar-custom .navbar-text {
+.navbar-custom .navbar-text,
+.navbar-custom .navbar-nav .nav-link 
+{
     color: #FFF;
-}
-/* change the link color */
-.navbar-custom .navbar-nav .nav-link {
-    color: #FFF;
+    /*
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    */
 }
 /*change the color of hovered brand*/
 .navbar-custom .navbar-brand:hover
