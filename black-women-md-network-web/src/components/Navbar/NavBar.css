@@ -16,6 +16,8 @@
 .navbar-custom .navbar-nav .nav-link 
 {
     color: #FFF;
+    margin-left: 10px;
+    margin-right: 10px;
     /*
     font-family: 'Inter';
     font-style: normal;
