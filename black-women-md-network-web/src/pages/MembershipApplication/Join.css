@@ -1,0 +1,23 @@
+.application {
+  position: "relative";
+  background: "white";
+  border: "1px solid black";
+  padding: "2rem";
+  margin: "1rem";
+  border-radius: ".5rem";
+  font-family: "Arial";
+  max-width: "max-content";
+}
+
+.stepIndex {
+  position: "absolute";
+  top: ".5rem";
+  right: ".5rem";
+}
+
+.sequenceButton {
+  margin-top: "1rem";
+  display: "flex";
+  gap: ".5rem";
+  justify-content: "flex-end";
+}

@@ -5,6 +5,7 @@ import FinalQuestions from "./FinalQuestions";
 import MembershipType from "./MembershipType";
 import Success from "./Success";
 import { useMultiStepForm } from "./useMultiStepForm";
+import "./Join.css";
 
 type FormData = {
   firstName: string;
@@ -55,46 +56,55 @@ const Join = () => {
     alert("Form is submitted!");
   };
   return (
-    <div
-      style={{
-        position: "relative",
-        background: "white",
-        border: "1px solid black",
-        padding: "2rem",
-        margin: "1rem",
-        borderRadius: ".5rem",
-        fontFamily: "Arial",
-        maxWidth: "max-content",
-      }}
-    >
-      <form onSubmit={onSubmit}>
-        <div
-          style={{
-            position: "absolute",
-            top: ".5rem",
-            right: ".5rem",
-          }}
-        >
-          {stepIndex + 1} / {steps.length}
-        </div>
+    <div>
+      <h1>Membership Application</h1>
+      <p>
+        Welcome to the Black Women M.D.Network! Please fill out this form to
+        complete a membership profile!
+      </p>
+      <div
+        style={{
+          position: "relative",
+          background: "white",
+          border: "1px solid black",
+          padding: "2rem",
+          margin: "1rem",
+          borderRadius: ".5rem",
+          fontFamily: "Arial",
+          maxWidth: "max-content",
+        }}
+      >
+        <div>
+          <form onSubmit={onSubmit}>
+            <div
+              style={{
+                position: "absolute",
+                top: ".5rem",
+                right: ".5rem",
+              }}
+            >
+              {stepIndex + 1} / {steps.length}
+            </div>
 
-        <div
-          style={{
-            marginTop: "1rem",
-            display: "flex",
-            gap: ".5rem",
-            justifyContent: "flex-end",
-          }}
-        >
-          {!isFirstStep && (
-            <Button type="button" onClick={back}>
-              Back
-            </Button>
-          )}
-          <Button type="submit">{isLastStep ? "Submit" : "Next"}</Button>
+            <div
+              style={{
+                marginTop: "1rem",
+                display: "flex",
+                gap: ".5rem",
+                justifyContent: "flex-end",
+              }}
+            >
+              {!isFirstStep && (
+                <Button type="button" onClick={back}>
+                  Back
+                </Button>
+              )}
+              <Button type="submit">{isLastStep ? "Submit" : "Next"}</Button>
+            </div>
+            {step}
+          </form>
         </div>
-        {step}
-      </form>
+      </div>
     </div>
   );
 };
