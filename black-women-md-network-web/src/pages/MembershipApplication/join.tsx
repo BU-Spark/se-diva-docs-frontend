@@ -6,25 +6,13 @@ import MembershipType from "./MembershipType";
 import Success from "./Success";
 import { useMultiStepForm } from "./useMultiStepForm";
 import "./Join.css";
+import { FormData } from "./Data/FormData";
+import INITIAL_DATA from "./Data/InitialData";
 
-type FormData = {
-  firstName: string;
-  lastName: string;
-  age: string;
-  memType: string;
-  medSpecialty: string;
-  shareDataInDirectory: string;
-};
-const INITIAL_DATA: FormData = {
-  firstName: "",
-  lastName: "",
-  age: "",
-  memType: "",
-  medSpecialty: "",
-  shareDataInDirectory: "",
-};
+const userData: FormData = INITIAL_DATA;
+
 const Join = () => {
-  const [data, setData] = useState(INITIAL_DATA);
+  const [data, setData] = useState(userData);
 
   // Create a function that updates the data fields
   // Using partial so can use only some of the fields

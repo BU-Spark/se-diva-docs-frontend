@@ -1,8 +1,10 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
+import Select, { SelectOption } from "./Components/Select/Select";
+import PhysicianMember from "./FieldsInformation/PhysicianMember";
 import FormWrapper from "./FormWrapper";
-import Dropdown from "react-bootstrap/Dropdown";
 
 type ContactInfoData = {
+  physMember: SelectOption;
   firstName: string;
   lastName: string;
   age: string;
@@ -12,28 +14,25 @@ type ContactInfoProps = ContactInfoData & {
   updateFields: (fields: Partial<ContactInfoData>) => void;
 };
 
-const physicianMember = ["Physician", "Fellow", "Resident"];
+const physicianMember = PhysicianMember;
 const ContactInfo = ({
+  physMember,
   firstName,
   lastName,
   age,
   updateFields,
 }: ContactInfoProps) => {
+  // const [value, setValue] = useState<typeof physicianMember[0] | undefined>(
+  //   physicianMember[0]
+  // );
   return (
     <FormWrapper title="Contact / General Information">
-      <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
-          Black Women Physician Member
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          {/* {physicianMember.map(() => {
-            let num = "#/action-1" + toString(index);
-            return <Dropdown.Item href="#/action-1">member</Dropdown.Item>;
-          })} */}
-        </Dropdown.Menu>
-      </Dropdown>
-
+      <Select
+        options={physicianMember}
+        value={physMember}
+        onChange={(e) => updateFields({ physMember: e })}
+      ></Select>
+      <br />
       <label>First Name</label>
       <input
         autoFocus
