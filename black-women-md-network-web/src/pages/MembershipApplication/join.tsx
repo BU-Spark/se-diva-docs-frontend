@@ -7,9 +7,9 @@ import Success from "./Success";
 import { useMultiStepForm } from "./useMultiStepForm";
 import "./Join.css";
 import { FormData } from "./Data/FormData";
-import INITIAL_DATA from "./Data/InitialData";
+import DEFAULT_DATA from "./Data/DefaultData";
 
-const userData: FormData = INITIAL_DATA;
+const userData: FormData = DEFAULT_DATA;
 
 const Join = () => {
   const [data, setData] = useState(userData);

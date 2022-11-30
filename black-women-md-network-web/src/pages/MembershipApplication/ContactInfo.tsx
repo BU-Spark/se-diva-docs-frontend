@@ -22,9 +22,6 @@ const ContactInfo = ({
   age,
   updateFields,
 }: ContactInfoProps) => {
-  // const [value, setValue] = useState<typeof physicianMember[0] | undefined>(
-  //   physicianMember[0]
-  // );
   return (
     <FormWrapper title="Contact / General Information">
       <Select
@@ -33,30 +30,30 @@ const ContactInfo = ({
         onChange={(e) => updateFields({ physMember: e })}
       ></Select>
       <br />
-      <label>First Name</label>
       <input
         autoFocus
         required
         type="text"
         value={firstName}
+        placeholder="First Name"
         onChange={(e) => updateFields({ firstName: e.target.value })}
       />
 
-      <label>Last Name</label>
       <input
         autoFocus
         required
         type="text"
         value={lastName}
+        placeholder="Last Name"
         onChange={(e) => updateFields({ lastName: e.target.value })}
       />
 
-      <label>Age</label>
       <input
         required
         min={1}
         type="number"
         value={age}
+        placeholder="Age"
         onChange={(e) => updateFields({ age: e.target.value })}
       />
     </FormWrapper>

@@ -9,12 +9,17 @@
   border-radius: 0.25em;
   outline: none;
 }
-/*
+
 .container:focus {
   border-color: hs1(200, 100%, 50%);
 }
 
 .value {
+  flex-grow: 1;
+}
+
+.default {
+  color: #8e8e8e;
   flex-grow: 1;
 }
 
@@ -29,7 +34,7 @@
 
 .clear-btn:focus,
 .clear-btn:hover {
-  color: #777;
+  color: #333;
 }
 
 .divider {
@@ -38,6 +43,7 @@
   width: 0.05em;
 }
 .caret {
+  translate: 0 25%;
   border: 0.25em solid transparent;
   border-top-color: #777;
 }
@@ -68,11 +74,11 @@
   cursor: pointer;
 }
 
-.option.highlighted {
-  background-color: hs1(200, 100%, 50%);
-  color: white;
+.option.selected {
+  color: rgb(96, 5, 5);
 }
 
-.option.selected {
-  background-color: hs1(200, 100%, 70%);
-} */
+.option.highlighted {
+  background-color: hs1(200, 100%, 50%);
+  color: rgb(205, 36, 36);
+}
