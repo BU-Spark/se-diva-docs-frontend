@@ -14,7 +14,7 @@ type SelectProps = {
 const Select = ({ value, onChange, options }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(0);
-
+  // make select input required!!!
   const clearOptions = () => {
     onChange({ label: "default", value: "Black Women Physician Member" });
   };
