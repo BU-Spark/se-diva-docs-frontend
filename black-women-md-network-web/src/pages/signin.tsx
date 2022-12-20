@@ -1,18 +1,11 @@
 import React from 'react';
   
-const SignIn = () => {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'Right',
-        alignItems: 'Right',
-        height: '100vh'
-      }}
-    >
-      <h1>Sign Up</h1>
-    </div>
-  );
-};
+import { Admin } from "react-admin";
+import jsonServerProvider from "ra-data-json-server";
+
+const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+
+const SignIn = () => <Admin dataProvider={dataProvider} />;
+
   
 export default SignIn;
