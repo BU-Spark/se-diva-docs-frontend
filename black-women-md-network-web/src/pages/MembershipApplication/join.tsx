@@ -44,13 +44,13 @@ const Join = () => {
     alert("Form is submitted!");
   };
   return (
-    <div>
-      <h1>Membership Application</h1>
-      <p>
+    <div className="container">
+      <h1 className="title">Membership Application</h1>
+      <p className="text">
         Welcome to the Black Women M.D.Network! Please fill out this form to
         complete a membership profile!
       </p>
-      <div
+      {/* <div
         style={{
           position: "relative",
           background: "white",
@@ -92,7 +92,7 @@ const Join = () => {
             {step}
           </form>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

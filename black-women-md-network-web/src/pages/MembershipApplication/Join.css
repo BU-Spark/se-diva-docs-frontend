@@ -1,3 +1,19 @@
+.container {
+  width: 400px;
+  margin: auto;
+  margin-top: 50px;
+  text-align: left;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.text {
+  font-size: 20px;
+}
+
 .application {
   position: "relative";
   background: "white";
