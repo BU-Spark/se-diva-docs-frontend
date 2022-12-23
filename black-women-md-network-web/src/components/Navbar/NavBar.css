@@ -1,11 +1,40 @@
-.navbar{
+.navbar-custom{
   color:#FFFFFF;
   background-color: #212121;
+  width: 1441px;
+  height: 79px;
+  left: 0px;
+  top: 51px;
 }
-
-.navbar .nav .navdropdown:hover{
-  text-align: center;
-  height: 100%;
-  margin: auto;
-  background-color:bisque;
+/* change the brand color*/
+.navbar-custom .navbar-brand
+{
+  color: #F1E2AD
+}
+/* change the text color */
+.navbar-custom .navbar-text,
+.navbar-custom .navbar-nav .nav-link 
+{
+    color: #FFF;
+    margin-left: 10px;
+    margin-right: 10px;
+    /*
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    */
+}
+/*change the color of hovered brand*/
+.navbar-custom .navbar-brand:hover
+{
+  color: #FFF;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active,
+.navbar-custom .nav-item:hover,
+.navbar-custom .nav-link.active,
+.navbar-custom .nav-link:hover{
+    color: #F1E2AD;
 }
