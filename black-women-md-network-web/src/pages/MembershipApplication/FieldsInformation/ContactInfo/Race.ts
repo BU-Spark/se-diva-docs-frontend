@@ -1,4 +1,4 @@
-const RaceAndEthnicity = [
+const Race = [
   "African American/Black/Afro-Caribbean/African",
   "American Indian / Alaska Native",
   "Native Hawaiian / Pacific Islander",
@@ -9,4 +9,4 @@ const RaceAndEthnicity = [
   "Other",
 ];
 
-export default RaceAndEthnicity;
+export default Race;

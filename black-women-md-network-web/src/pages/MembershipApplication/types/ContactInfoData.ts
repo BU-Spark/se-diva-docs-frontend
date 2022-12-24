@@ -1,6 +1,6 @@
 import { SelectOption } from "../Components/Select/Select";
 
-export type FormData = {
+type ContactInfoData = {
   currentRole: SelectOption;
   firstName: string;
   lastName: string;
@@ -18,7 +18,6 @@ export type FormData = {
   ethnicity: string;
   gender: string;
   pronouns: string;
-  memType: string;
-  medSpecialty: string;
-  shareDataInDirectory: string;
 };
+
+export default ContactInfoData;

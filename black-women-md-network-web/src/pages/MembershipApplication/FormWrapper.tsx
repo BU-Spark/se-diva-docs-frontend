@@ -13,7 +13,7 @@ const FormWrapper = ({ title, children }: FormWapperProps) => {
         style={{
           display: "grid",
           gap: "1rem .5rem",
-          gridTemplateColumns: "auto minmax(auto, 400px)",
+          gridTemplateColumns: "auto ",
         }}
       >
         {children}

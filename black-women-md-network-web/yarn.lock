@@ -11838,3 +11838,8 @@
     "which-module" "^2.0.0"
     "y18n" "^3.2.1 || ^4.0.0"
     "yargs-parser" "^10.1.0"
+
+"zod@^3.20.2":
+  "integrity" "sha512-1MzNQdAvO+54H+EaK5YpyEy0T+Ejo/7YLHS93G3RnYWh5gaotGHwGeN/ZO687qEDU2y4CdStQYXVHIgrUl5UVQ=="
+  "resolved" "https://registry.npmjs.org/zod/-/zod-3.20.2.tgz"
+  "version" "3.20.2"
