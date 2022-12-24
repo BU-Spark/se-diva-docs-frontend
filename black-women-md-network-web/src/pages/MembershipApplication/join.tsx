@@ -50,28 +50,26 @@ const Join = () => {
         Welcome to the Black Women M.D.Network! Please fill out this form to
         complete a membership profile!
       </p>
-      <div>
-        <div>
-          <form onSubmit={onSubmit}>
-            <progress
-              className="progress-bar"
-              max="1"
-              value={stepIndex + 1 / steps.length}
-            ></progress>
+      <progress
+        className="progress-bar"
+        max="1"
+        value={stepIndex + 1 / steps.length}
+      ></progress>
 
-            {step}
-            <div>
-              {!isFirstStep && (
-                <button className="button" type="button" onClick={back}>
-                  Back
-                </button>
-              )}
-              <button className="button" type="submit">
-                {isLastStep ? "Submit" : "Next"}
+      <div className="content">
+        <form onSubmit={onSubmit}>
+          {step}
+          <div>
+            {!isFirstStep && (
+              <button className="button" type="button" onClick={back}>
+                Back
               </button>
-            </div>
-          </form>
-        </div>
+            )}
+            <button className="button" type="submit">
+              {isLastStep ? "Submit" : "Next"}
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import PhysicianMember from "./FieldsInformation/ContactInfo/PhysicianMember";
 import FormWrapper from "./FormWrapper";
 import styles from "./contactinfo.module.css";
 import RaceAndEthnicity from "./FieldsInformation/ContactInfo/Race";
+import GenderIdentity from "./FieldsInformation/ContactInfo/GenderIdentity";
 
 type ContactInfoData = {
   physMember: SelectOption;
@@ -18,6 +19,7 @@ type ContactInfoProps = ContactInfoData & {
 
 const raceAndEthnicity = RaceAndEthnicity;
 const physicianMember = PhysicianMember;
+const gender = GenderIdentity;
 const ContactInfo = ({
   physMember,
   firstName,
@@ -26,25 +28,24 @@ const ContactInfo = ({
   updateFields,
 }: ContactInfoProps) => {
   return (
-    <FormWrapper title="Contact / General Information">
+    <FormWrapper title="jkjkjk">
       <Select
         options={physicianMember}
         value={physMember}
         onChange={(e) => updateFields({ physMember: e })}
       ></Select>
-
       <br />
-      <span>Name*</span>
+      <label htmlFor="name">Name*</label>
       <br />
       <input
         autoFocus
         required
         type="text"
+        id="name"
         value={firstName}
         placeholder="First Name"
         onChange={(e) => updateFields({ firstName: e.target.value })}
       />
-
       <input
         autoFocus
         required
@@ -53,7 +54,6 @@ const ContactInfo = ({
         placeholder="Last Name"
         onChange={(e) => updateFields({ lastName: e.target.value })}
       />
-
       <input
         required
         min={1}
@@ -64,20 +64,28 @@ const ContactInfo = ({
       />
 
       <br />
-      <span>Email Address (Preferred)*</span>
+      <label htmlFor="email-preferred">Email Address (Preferred)*</label>
       <br />
-      <input required placeholder="Emal Address (Preferred)" />
+      <input
+        type="email"
+        id="email-preferred"
+        required
+        placeholder="Emal Address (Preferred)"
+      />
       <br />
-      <span>Email Address (Secondary)</span>
+      <label htmlFor="email-secondary">Email Address (Secondary)</label>
       <br />
-      <input placeholder="Emal Address (Secondary)" />
-
+      <input
+        type="email"
+        id="email-secondary"
+        placeholder="Emal Address (Secondary)"
+      />
       <br />
       <span>Phone Number (Mobile)*</span>
       <br />
-      <input placeholder="Phone Number (Mobile)" />
-
+      <input type="tel" placeholder="Phone Number (Mobile)" />
       <br />
+
       <span>Mailing Address*</span>
       <br />
       <input placeholder="Street" />
@@ -86,9 +94,16 @@ const ContactInfo = ({
       <input placeholder="Zip Code" />
       <input placeholder="Country" />
       <br />
+
       <span>Is this your work or home address?</span>
       <br />
-      <input placeholder="2 buttons that say work and home.  Chose one." />
+      <label htmlFor="work">
+        <input type="radio" id="work" name="address-type" value="Work" /> Work
+      </label>
+      <br />
+      <label htmlFor="home">
+        <input type="radio" id="home" name="address-type" value="Home" /> Home
+      </label>
 
       <br />
       <span>Race and Ethnicity</span>
@@ -101,15 +116,21 @@ const ContactInfo = ({
       ))}
 
       <br />
+      <br />
       <span>Gender Identity</span>
       <br />
-      <input placeholder=" Buttons" />
-      <input placeholder="self descibe as has text input and button" />
+      {gender.map((gender) => (
+        <label>
+          <input type="radio" />
+          {gender}
+        </label>
+      ))}
 
+      <input type="text" placeholder="self descibe as..." />
       <br />
-      <span>What are your pronouns?</span>
+      <label>What are your pronouns?</label>
       <br />
-      <input />
+      <input type="text" />
     </FormWrapper>
   );
 };
