@@ -1,13 +1,12 @@
 import React, { FormEvent, useState } from "react";
-import { Button } from "react-bootstrap";
 import ContactInfo from "./ContactInfo";
 import FinalQuestions from "./FinalQuestions";
 import MembershipType from "./MembershipType";
-import Success from "./Success";
 import { useMultiStepForm } from "./useMultiStepForm";
 import "./Join.css";
 import { FormData } from "./Data/FormData";
 import DEFAULT_DATA from "./Data/DefaultData";
+import { Button } from "react-bootstrap";
 
 const userData: FormData = DEFAULT_DATA;
 
@@ -43,6 +42,7 @@ const Join = () => {
     // Fetch request to post to API would go here!
     alert("Form is submitted!");
   };
+
   return (
     <div className="container">
       <h1 className="title">Membership Application</h1>
@@ -50,49 +50,29 @@ const Join = () => {
         Welcome to the Black Women M.D.Network! Please fill out this form to
         complete a membership profile!
       </p>
-      {/* <div
-        style={{
-          position: "relative",
-          background: "white",
-          border: "1px solid black",
-          padding: "2rem",
-          margin: "1rem",
-          borderRadius: ".5rem",
-          fontFamily: "Arial",
-          maxWidth: "max-content",
-        }}
-      >
+      <div>
         <div>
           <form onSubmit={onSubmit}>
-            <div
-              style={{
-                position: "absolute",
-                top: ".5rem",
-                right: ".5rem",
-              }}
-            >
-              {stepIndex + 1} / {steps.length}
-            </div>
+            <progress
+              className="progress-bar"
+              max="1"
+              value={stepIndex + 1 / steps.length}
+            ></progress>
 
-            <div
-              style={{
-                marginTop: "1rem",
-                display: "flex",
-                gap: ".5rem",
-                justifyContent: "flex-end",
-              }}
-            >
-              {!isFirstStep && (
-                <Button type="button" onClick={back}>
-                  Back
-                </Button>
-              )}
-              <Button type="submit">{isLastStep ? "Submit" : "Next"}</Button>
-            </div>
             {step}
+            <div>
+              {!isFirstStep && (
+                <button className="button" type="button" onClick={back}>
+                  Back
+                </button>
+              )}
+              <button className="button" type="submit">
+                {isLastStep ? "Submit" : "Next"}
+              </button>
+            </div>
           </form>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
