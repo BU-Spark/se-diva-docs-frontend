@@ -14,8 +14,9 @@ export type FormData = {
   state: string;
   zipcode: string;
   country: string;
-  race: string;
-  ethnicity: string;
+  address: string;
+  race: string[];
+  ethnicity: string[];
   gender: string;
   pronouns: string;
   memType: string;

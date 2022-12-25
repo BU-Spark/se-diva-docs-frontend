@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { useRef } from "react";
 import Select, { SelectOption } from "./Components/Select/Select";
 import PhysicianMember from "./FieldsInformation/ContactInfo/PhysicianMember";
 import FormWrapper from "./FormWrapper";
@@ -16,6 +16,7 @@ const racetypes = Race;
 const ethnicityTypes = Ethnicity;
 const physicianMember = PhysicianMember;
 const gendertypes = GenderIdentity;
+const addresstypes = ["Work", "Home"];
 const ContactInfo = ({
   currentRole,
   firstName,
@@ -29,7 +30,7 @@ const ContactInfo = ({
   city,
   state,
   zipcode,
-  country,
+  address,
   race,
   ethnicity,
   gender,
@@ -126,41 +127,64 @@ const ContactInfo = ({
       />
 
       <span>Is this your work or home address?</span>
-      <label htmlFor="work">
-        <input type="radio" id="work" name="address-type" value="Work" /> Work
-      </label>
-
-      <label htmlFor="home">
-        <input type="radio" id="home" name="address-type" value="Home" /> Home
-      </label>
+      {addresstypes.map((adresstype) => (
+        <label htmlFor={adresstype}>
+          <input
+            type="radio"
+            id={adresstype}
+            name="address-type"
+            value={adresstype}
+            checked={address === adresstype}
+            onChange={(e) => updateFields({ address: e.target.value })}
+          />
+          {adresstype}
+        </label>
+      ))}
 
       <span>Race</span>
-
-      {racetypes.map((race) => (
+      {racetypes.map((racetype) => (
         <label>
-          <input type="checkbox" />
-          {race}
+          <input
+            type="checkbox"
+            onChange={(e) => {
+              if (e.target.checked) {
+                race.push(racetype);
+              }
+              updateFields({ race });
+            }}
+          />
+          {racetype}
         </label>
       ))}
 
       <span>Ethnicity</span>
-
-      {ethnicityTypes.map((ethnicity) => (
+      {ethnicityTypes.map((ethnicitytype) => (
         <label>
-          <input type="checkbox" />
-          {ethnicity}
+          <input
+            type="checkbox"
+            onChange={(e) => {
+              if (e.target.checked) {
+                ethnicity.push(ethnicitytype);
+              }
+              updateFields({ ethnicity });
+            }}
+          />
+          {ethnicitytype}
         </label>
       ))}
 
       <span>Gender Identity</span>
 
-      {gendertypes.map((gender) => (
+      {gendertypes.map((gendertype) => (
         <label>
-          <input type="radio" />
+          <input
+            type="radio"
+            checked={gender === gendertype}
+            onChange={(e) => updateFields({ gender: e.target.value })}
+          />
           {gender}
         </label>
       ))}
-
       <input type="text" placeholder="self descibe as..." />
 
       <label>What are your pronouns?</label>
