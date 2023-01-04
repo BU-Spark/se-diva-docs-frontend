@@ -7,7 +7,7 @@ const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 
 const App = () => (
   <Admin dataProvider={dataProvider}>
-    <Resource name="users" list={UserList} />
+    <Resource name="users" list={UserList} recordRepresentation="name"/>
     <Resource name="posts" list={PostList} />
   </Admin>
 );
