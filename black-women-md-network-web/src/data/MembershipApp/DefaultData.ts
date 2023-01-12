@@ -1,4 +1,3 @@
-import PhysicianMember from "../FieldsInformation/ContactInfo/PhysicianMember";
 import { FormData } from "./FormData";
 
 const DefaultData: FormData = {

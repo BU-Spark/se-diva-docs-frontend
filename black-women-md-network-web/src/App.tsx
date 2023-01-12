@@ -9,7 +9,7 @@ import Resources from "./pages/resources";
 import Events from "./pages/events";
 import Community from "./pages/community";
 import SignIn from "./pages/signin";
-import Join from "./pages/MembershipApplication/join";
+import Join from "./pages/Join/join";
 import Directory from "./pages/directory";
 import ResumeBank from "./pages/resumebank";
 import FindAnExpert from "./pages/findanexpert";

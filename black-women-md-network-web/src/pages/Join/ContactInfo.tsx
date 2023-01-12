@@ -1,12 +1,15 @@
 import React, { useRef } from "react";
-import Select, { SelectOption } from "./Components/Select/Select";
-import PhysicianMember from "./FieldsInformation/ContactInfo/PhysicianMember";
+import Select, {
+  SelectOption,
+} from "../../components/MembershipApp/Select/Select";
+import PhysicianMember from "../../data/MembershipApp/PhysicianMember";
 import FormWrapper from "./FormWrapper";
 import "./ContactInfo.css";
-import GenderIdentity from "./FieldsInformation/ContactInfo/GenderIdentity";
-import ContactInfoData from "./types/ContactInfoData";
-import Ethnicity from "./FieldsInformation/ContactInfo/Ethnicity";
-import Race from "./FieldsInformation/ContactInfo/Race";
+import GenderIdentity from "../../data/MembershipApp/GenderIdentity";
+import ContactInfoData from "../../types/ContactInfoData";
+import Ethnicity from "../../data/MembershipApp/Ethnicity";
+import Race from "../../data/MembershipApp/Race";
+import remove from "../../utils/remove";
 
 type ContactInfoProps = ContactInfoData & {
   updateFields: (fields: Partial<ContactInfoData>) => void;
@@ -37,6 +40,7 @@ const ContactInfo = ({
   pronouns,
   updateFields,
 }: ContactInfoProps) => {
+  console.log(race);
   return (
     <FormWrapper title="Contact / General Information">
       <Select
@@ -147,8 +151,11 @@ const ContactInfo = ({
           <input
             type="checkbox"
             onChange={(e) => {
-              if (e.target.checked) {
+              if (e.target.checked && !race.includes(racetype)) {
                 race.push(racetype);
+                if (e.target.checked && race.includes(racetype)) {
+                  remove(race, racetype);
+                }
               }
               updateFields({ race });
             }}
@@ -165,6 +172,9 @@ const ContactInfo = ({
             onChange={(e) => {
               if (e.target.checked) {
                 ethnicity.push(ethnicitytype);
+              }
+              if (!e.target.checked && ethnicity.includes(ethnicitytype)) {
+                remove(ethnicity, ethnicitytype);
               }
               updateFields({ ethnicity });
             }}

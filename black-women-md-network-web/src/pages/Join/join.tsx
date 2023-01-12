@@ -2,10 +2,10 @@ import React, { FormEvent, useState } from "react";
 import ContactInfo from "./ContactInfo";
 import FinalQuestions from "./FinalQuestions";
 import MembershipType from "./MembershipType";
-import { useMultiStepForm } from "./useMultiStepForm";
+import { useMultiStepForm } from "../../hooks/useMultiStepForm";
 import "./Join.css";
-import { FormData } from "./Data/FormData";
-import DEFAULT_DATA from "./Data/DefaultData";
+import { FormData } from "../../data/MembershipApp/FormData";
+import DEFAULT_DATA from "../../data/MembershipApp/DefaultData";
 import { Button } from "react-bootstrap";
 
 const userData: FormData = DEFAULT_DATA;

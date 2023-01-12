@@ -1,4 +1,4 @@
-import { SelectOption } from "../Components/Select/Select";
+import { SelectOption } from "../components/MembershipApp/Select/Select";
 
 type ContactInfoData = {
   currentRole: SelectOption;
