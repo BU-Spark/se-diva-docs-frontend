@@ -192,7 +192,7 @@ const ContactInfo = ({
             checked={gender === gendertype}
             onChange={(e) => updateFields({ gender: e.target.value })}
           />
-          {gender}
+          {gendertype}
         </label>
       ))}
       <input type="text" placeholder="self descibe as..." />
