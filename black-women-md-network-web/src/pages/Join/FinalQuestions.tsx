@@ -47,7 +47,7 @@ const FinalQuestions = ({
         <label htmlFor={answerType}>
           <input
             type="radio"
-            checked={startChapter === answerType}
+            checked={includeInDirectory === answerType}
             onChange={(e) =>
               updateFields({ includeInDirectory: e.target.value })
             }
@@ -63,7 +63,7 @@ const FinalQuestions = ({
         <label htmlFor={answerType}>
           <input
             type="radio"
-            checked={startChapter === answerType}
+            checked={includeInResumeBank === answerType}
             onChange={(e) =>
               updateFields({ includeInResumeBank: e.target.value })
             }
@@ -77,7 +77,7 @@ const FinalQuestions = ({
         <label htmlFor={answerType}>
           <input
             type="radio"
-            checked={startChapter === answerType}
+            checked={memberOfDivaDocsBoston === answerType}
             onChange={(e) =>
               updateFields({ memberOfDivaDocsBoston: e.target.value })
             }
@@ -94,7 +94,7 @@ const FinalQuestions = ({
         <label htmlFor={answerType}>
           <input
             type="radio"
-            checked={startChapter === answerType}
+            checked={wantToMentor === answerType}
             onChange={(e) => updateFields({ wantToMentor: e.target.value })}
           />
           {answerType}
@@ -109,7 +109,7 @@ const FinalQuestions = ({
         <label htmlFor={answerType}>
           <input
             type="radio"
-            checked={startChapter === answerType}
+            checked={wantToSponsor === answerType}
             onChange={(e) => updateFields({ wantToSponsor: e.target.value })}
           />
           {answerType}
