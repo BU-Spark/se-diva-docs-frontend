@@ -4,8 +4,8 @@ import FinalQuestions from "./FinalQuestions";
 import MembershipType from "./MembershipType";
 import { useMultiStepForm } from "../../hooks/useMultiStepForm";
 import "./Join.css";
-import { FormData } from "../../data/MembershipApp/FormData";
-import DEFAULT_DATA from "../../data/MembershipApp/DefaultData";
+import { FormData } from "./FormData";
+import DEFAULT_DATA from "./DefaultData";
 import { Button } from "react-bootstrap";
 import Success from "./Success";
 
