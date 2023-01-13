@@ -45,6 +45,7 @@ const MembershipType = ({
           placeholder={"N/A if Not Applicable"}
           value={hospitalOrcompany}
           onChange={(hospitalOrcompany) => updateFields({ hospitalOrcompany })}
+          required={false}
         ></TextBox>
 
         <span>Areas of Expertise</span>
