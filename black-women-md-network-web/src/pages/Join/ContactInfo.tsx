@@ -51,14 +51,14 @@ const ContactInfo = ({
       <label>Name*</label>
       <input
         autoFocus
-        required
+        // required
         type="text"
         value={firstName}
         placeholder="First Name"
         onChange={(e) => updateFields({ firstName: e.target.value })}
       />
       <input
-        required
+        // required
         type="text"
         value={lastName}
         placeholder="Last Name"
@@ -81,7 +81,7 @@ const ContactInfo = ({
       <input
         type="email"
         id="email-preferred"
-        required
+        // required
         placeholder="Emal Address (Preferred)"
         onChange={(e) => updateFields({ email: e.target.value })}
       />
@@ -97,34 +97,34 @@ const ContactInfo = ({
       <span>Phone Number (Mobile)*</span>
       <input
         type="tel"
-        required
+        // required
         placeholder="Phone Number (Mobile)"
         onChange={(e) => updateFields({ phone: e.target.value })}
       />
 
       <span>Mailing Address*</span>
       <input
-        required
+        // required
         placeholder="Street"
         onChange={(e) => updateFields({ street: e.target.value })}
       />
       <input
-        required
+        // required
         placeholder="City"
         onChange={(e) => updateFields({ city: e.target.value })}
       />
       <input
-        required
+        // required
         placeholder="State"
         onChange={(e) => updateFields({ state: e.target.value })}
       />
       <input
-        required
+        // required
         placeholder="Zip Code"
         onChange={(e) => updateFields({ zipcode: e.target.value })}
       />
       <input
-        required
+        // required
         placeholder="Country"
         onChange={(e) => updateFields({ country: e.target.value })}
       />
@@ -201,6 +201,7 @@ const ContactInfo = ({
 
       <label>What are your pronouns?</label>
       <input
+        // required
         type="text"
         onChange={(e) => updateFields({ pronouns: e.target.value })}
       />

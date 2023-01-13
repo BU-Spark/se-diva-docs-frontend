@@ -7,6 +7,7 @@ import "./Join.css";
 import { FormData } from "../../data/MembershipApp/FormData";
 import DEFAULT_DATA from "../../data/MembershipApp/DefaultData";
 import { Button } from "react-bootstrap";
+import Success from "./Success";
 
 const userData: FormData = DEFAULT_DATA;
 
@@ -40,6 +41,7 @@ const Join = () => {
     // Prevent page from refreshing
     e.preventDefault();
     if (!isLastStep) return next();
+
     // Fetch request to post to API would go here!
     alert("Form is submitted!");
   };
