@@ -40,7 +40,6 @@ const ContactInfo = ({
   pronouns,
   updateFields,
 }: ContactInfoProps) => {
-  console.log(race);
   return (
     <FormWrapper title="Contact / General Information">
       <Select
@@ -189,6 +188,9 @@ const ContactInfo = ({
         <label>
           <input
             type="radio"
+            id={gendertype}
+            name="gender-type"
+            value={gendertype}
             checked={gender === gendertype}
             onChange={(e) => updateFields({ gender: e.target.value })}
           />

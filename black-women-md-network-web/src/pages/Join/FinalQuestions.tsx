@@ -2,7 +2,13 @@ import React from "react";
 import FormWrapper from "./FormWrapper";
 
 type FinalQuestionsData = {
-  shareDataInDirectory: string;
+  startChapter: string;
+  includeInDirectory: string;
+  includeResume: string;
+  includeInResumeBank: string;
+  memberOfDivaDocsBoston: string;
+  wantToMentor: string;
+  wantToSponsor: string;
 };
 
 type FinalQuestionsProps = FinalQuestionsData & {
@@ -10,22 +16,18 @@ type FinalQuestionsProps = FinalQuestionsData & {
 };
 
 const FinalQuestions = ({
-  shareDataInDirectory,
+  startChapter,
+  includeInDirectory,
+  includeResume,
+  includeInResumeBank,
+  memberOfDivaDocsBoston,
+  wantToMentor,
+  wantToSponsor,
   updateFields,
 }: FinalQuestionsProps) => {
   return (
-    <FormWrapper title={"Final Questions"}>
-      <label>
-        Can we share your name, degrees, current work institution affiliation
-        with other membrs in a resource directory?
-      </label>
-      <input
-        autoFocus
-        required
-        type="text"
-        value={shareDataInDirectory}
-        onChange={(e) => updateFields({ shareDataInDirectory: e.target.value })}
-      />
+    <FormWrapper title={"Black Women M.D. Network Questions"}>
+      <div></div>
     </FormWrapper>
   );
 };

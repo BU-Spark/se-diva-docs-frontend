@@ -2,8 +2,12 @@ import React from "react";
 import FormWrapper from "./FormWrapper";
 
 type MembershipTypeData = {
-  memType: string;
-  medSpecialty: string;
+  academicAffiliation: string;
+  hospitalOrcompany: string;
+  position: string;
+  specialty: string;
+  expertise: string;
+  region: string;
 };
 
 type MembershipTypeProps = MembershipTypeData & {
@@ -11,30 +15,18 @@ type MembershipTypeProps = MembershipTypeData & {
 };
 
 const MembershipType = ({
-  memType,
-  medSpecialty,
+  academicAffiliation,
+  hospitalOrcompany,
+  position,
+  specialty,
+  expertise,
+  region,
   updateFields,
 }: MembershipTypeProps) => {
   return (
     <div>
-      <FormWrapper title={"Please Select your Membership Type"}>
-        <label>Membership Type</label>
-        <input
-          autoFocus
-          required
-          type="text"
-          value={memType}
-          onChange={(e) => updateFields({ memType: e.target.value })}
-        />
-
-        <label>Medical Speciality</label>
-        <input
-          autoFocus
-          required
-          type="text"
-          value={medSpecialty}
-          onChange={(e) => updateFields({ medSpecialty: e.target.value })}
-        />
+      <FormWrapper title={"Credential Information"}>
+        <div></div>
       </FormWrapper>
     </div>
   );

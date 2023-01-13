@@ -2,9 +2,9 @@ const GenderIdentity = [
   "Female",
   "Male",
   "Non-binary",
-  "Genderqueer",
+  "Gender Queer",
   "Prefer not to answer",
-  "Prefer to self-describe as:",
+  "Self-describe as:",
 ];
 
 export default GenderIdentity;

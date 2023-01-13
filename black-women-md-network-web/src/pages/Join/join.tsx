@@ -12,6 +12,7 @@ const userData: FormData = DEFAULT_DATA;
 
 const Join = () => {
   const [data, setData] = useState(userData);
+  console.log(data);
 
   // Create a function that updates the data fields
   // Using partial so can use only some of the fields
