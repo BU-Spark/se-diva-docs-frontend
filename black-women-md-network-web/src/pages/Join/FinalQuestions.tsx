@@ -110,7 +110,7 @@ const FinalQuestions = ({
           <input
             type="radio"
             checked={startChapter === answerType}
-            onChange={(e) => updateFields({ startChapter: e.target.value })}
+            onChange={(e) => updateFields({ wantToSponsor: e.target.value })}
           />
           {answerType}
         </label>
