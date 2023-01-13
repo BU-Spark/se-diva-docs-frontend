@@ -64,11 +64,11 @@ const Join = () => {
           {step}
           <div>
             {!isFirstStep && (
-              <button className="button" type="button" onClick={back}>
+              <button className="back-button" type="button" onClick={back}>
                 Back
               </button>
             )}
-            <button className="button" type="submit">
+            <button className="next-button" type="submit">
               {isLastStep ? "Submit" : "Next"}
             </button>
           </div>
