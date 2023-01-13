@@ -48,6 +48,14 @@ const MembershipType = ({
           required={false}
         ></TextBox>
 
+        <TextBox
+          title={"Current Position"}
+          placeholder={"N/A if Not Applicable"}
+          value={position}
+          onChange={(position) => updateFields({ position })}
+          required={false}
+        ></TextBox>
+
         <span>Areas of Expertise</span>
         {expertiseTypes.map((expertiseType) => (
           <label>

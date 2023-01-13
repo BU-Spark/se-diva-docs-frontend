@@ -1,12 +1,12 @@
 .container {
   position: relative;
-  width: 20em;
+  width: 100%;
   min-width: 1.5em;
-  border: 0.05em solid #777;
+  border: 1px double black;
   align-items: center;
   gap: 0.5em;
   padding: 0.5em;
-  border-radius: 0.25em;
+  border-radius: 5px;
   outline: none;
 }
 
@@ -76,9 +76,10 @@
 
 .option.selected {
   color: rgb(96, 5, 5);
+  background-color: #ccdfff;
 }
 
 .option.highlighted {
-  background-color: hs1(200, 100%, 50%);
+  background-color: #ccdfff;
   color: rgb(205, 36, 36);
 }
