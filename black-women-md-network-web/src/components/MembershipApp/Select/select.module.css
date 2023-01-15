@@ -1,13 +1,17 @@
 .container {
   position: relative;
   width: 100%;
-  min-width: 1.5em;
   border: 1px double black;
-  align-items: center;
+  /* align-items: center;
   gap: 0.5em;
-  padding: 0.5em;
+  padding: 0.5em; */
   border-radius: 5px;
-  outline: none;
+  /*outline: none; */
+  padding-top: 20px;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .container:focus {
@@ -23,63 +27,69 @@
   flex-grow: 1;
 }
 
-.clear-btn {
-  background: none;
-  color: #777;
-  outline: none;
-  cursor: pointer;
-  padding: 0;
-  font-size: 1.25em;
+.caret-open {
+  transform: rotate(180deg);
+  font-size: 40px;
+  position: absolute;
+  font-weight: 100;
+  top: -10px;
+  right: 20px;
 }
 
-.clear-btn:focus,
-.clear-btn:hover {
-  color: #333;
-}
-
-.divider {
-  background-color: #777;
-  align-self: stretch;
-  width: 0.05em;
-}
-.caret {
-  translate: 0 25%;
-  border: 0.25em solid transparent;
-  border-top-color: #777;
+.caret-close {
+  font-size: 40px;
+  position: absolute;
+  font-weight: 100;
+  top: 0;
+  right: 20px;
 }
 
 .options {
   position: absolute;
   margin: 0;
   padding: 0;
-  list-style: none;
   display: none;
   max-height: 15em;
   overflow-y: auto;
-  border: 0.05em solid #777;
-  border-radius: 0.25em;
   width: 100%;
   left: 0;
   top: calc(100% + 0.25em);
-  background-color: white;
   z-index: 100;
 }
 
 .options.show {
-  display: block;
+  display: list-item;
 }
 
 .option {
   padding: 0.25em 0.5em;
   cursor: pointer;
+  list-style-type: none;
+  list-style-position: outside;
+  font-weight: 300;
+  border-top: 1px solid #c9dcfb;
 }
 
 .option.selected {
   color: rgb(96, 5, 5);
-  background-color: #ccdfff;
+  background-color: #f2f7ff;
+  margin-bottom: 10px;
+  box-shadow: -2em 0 #f2f7ff;
+  border-top: 1px solid #c9dcfb;
 }
 
 .option.highlighted {
-  background-color: #ccdfff;
+  background-color: #f2f7ff;
   color: rgb(205, 36, 36);
+  margin-bottom: 10px;
+  box-shadow: -2em 0 #f2f7ff;
+  border-top: 1px solid #c9dcfb;
+}
+
+.title {
+  top: 0;
+  left: 7px;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
 }

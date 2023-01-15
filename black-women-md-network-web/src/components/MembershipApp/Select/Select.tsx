@@ -42,7 +42,7 @@ const Select = ({ value, onChange, options }: SelectProps) => {
       >
         {value.value}
       </span>
-      <button
+      {/* <button
         onClick={(e) => {
           e.stopPropagation();
           clearOptions();
@@ -51,9 +51,11 @@ const Select = ({ value, onChange, options }: SelectProps) => {
       >
         {" "}
         &times;
-      </button>
-      <div className={styles.divider}></div>
-      <div className={styles.caret}></div>
+      </button> */}
+      {/* <div className={styles.divider}></div> */}
+      <div className={isOpen ? styles["caret-close"] : styles["caret-open"]}>
+        &#94;
+      </div>
       <ul className={isOpen ? styles.show : styles.options}>
         {options.map((option, index) => (
           <li
@@ -71,6 +73,7 @@ const Select = ({ value, onChange, options }: SelectProps) => {
           </li>
         ))}
       </ul>
+      <div className={styles.title}>hello!</div>
     </div>
   );
 };
