@@ -8,6 +8,10 @@
   text-align: center;
 }
 
+.btn:hover{
+  border:#000;
+}
+
 .img-buddies{
   position: absolute;
   width: 1441px;
@@ -80,6 +84,10 @@
   flex: none;
   order: 1;
   flex-grow: 0;
+}
+
+.btn.btn-join{
+  border:#000!important;
 }
 
 .p-mission
