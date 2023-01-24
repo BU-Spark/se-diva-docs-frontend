@@ -19,27 +19,29 @@
 .img-buddies{
   position: absolute;
   width: 1441px;
-  height: 583px;
+  height: 598px;
   left: -1px;
-  top: 130px;
+  top: 64px;
+  
+  box-shadow: inset 0px -10px 8px rgba(90, 154, 152, 0.27);
 }
 
 .p-buddies{
   position: absolute;
-  width: 599px;
-  height: 180px;
-  left: 19px;
+  width: 488px;
+  height: 175px;
+  left: 112px;
   top: 206px;
 
-  font-family: 'Inter';
+  font-family: 'Lora';
   font-style: normal;
   font-weight: 700;
-  font-size: 75px;
-  line-height: 90px;
-  /* or 120% */
+  font-size: 70px;
+  line-height: 60px;
+  /* or 86% */
 
 
-  color: #56453E;
+  color: #456B68;
 
 
 }
