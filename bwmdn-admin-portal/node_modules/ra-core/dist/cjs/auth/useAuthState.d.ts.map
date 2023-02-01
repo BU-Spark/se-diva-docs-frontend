@@ -1,0 +1,1 @@
+{"version":3,"file":"useAuthState.d.ts","sourceRoot":"","sources":["../../../src/auth/useAuthState.ts"],"names":[],"mappings":"AAKA,UAAU,KAAK;IACX,SAAS,EAAE,OAAO,CAAC;IACnB,aAAa,CAAC,EAAE,OAAO,CAAC;CAC3B;AAID;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;GAoCG;AACH,QAAA,MAAM,YAAY,YACN,GAAG,oBACM,OAAO,KACzB,KAYF,CAAC;AAEF,eAAe,YAAY,CAAC"}
