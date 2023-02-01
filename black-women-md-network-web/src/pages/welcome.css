@@ -1,28 +1,31 @@
 .welcome-body 
 {
   display: flex;
-  background: linear-gradient(155deg, #F0FFFF 60%, #5A9A98 60%);
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 4px;
+  background-color: #F0FFFF;
 }
 
-.btn{
-  text-align: center;
+.bwmdn-box {
+  border-radius: 4px;
+  display: flex;
 }
 
-.btn:hover{
-  border:#000;
-}
-
-.img-buddies{
-  position: absolute;
-  width: 1441px;
-  height: 598px;
-  left: -1px;
-  top: 64px;
-  
+.bwmdn-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
   box-shadow: inset 0px -10px 8px rgba(90, 154, 152, 0.27);
 }
 
-.p-buddies{
+.bwmdn-box p {
   position: absolute;
   width: 488px;
   height: 175px;
@@ -38,66 +41,17 @@
 
 
   color: #456B68;
-
-
 }
-.btn.btn-join{
-  /* padding: 14px 24px;
-  border: 0 none;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase; */
 
+.intro-box {
+  border-radius: 4px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 12px 16px;
-  gap: 8px;
-  border: none;
-
-  position: absolute;
-  width: 210px;
-  height: 40px;
-  left: 112px;
-  top: 363px;
-
-  background-color: #5A9A98!important;
-
-  /* typography/body */
-
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px!important;
-  line-height: 100%;
-  /* identical to box height, or 16px */
-
-  display: flex;
-  align-items: center;
-
-  color: #F0FFFF!important;
-
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 }
 
-.btn.btn-join{
-  border:#000!important;
-}
-
-.p-mission
-{
-  position: absolute;
-  width: 1217px;
-  height: 77px;
-  left: 112px;
-  top: 704px;
-
+.intro-box h1 {
+  padding-top: 4vh;
   font-family: 'Lora';
   font-style: normal;
   font-weight: 700;
@@ -108,13 +62,8 @@
   color: #456B68;
 }
 
-.p-welcome
-{
-  position: absolute;
-  width: 592px;
-  height: 161px;
-  left: 359px;
-  top: 767px;
+.intro-box p {
+  width: 40%;
 
   font-family: 'Verdana';
   font-style: normal;
@@ -124,16 +73,40 @@
   text-align: center;
 
   color: #456B68;
+
 }
 
-.p-events
-{
-  position: absolute;
-  width: 116px;
-  height: 46px;
-  left: 1212px;
-  top: 885px;
+.events-box {
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 2vw;
+}
 
+.events-box img {
+  width: 30%;
+  height: 30%;
+  object-fit: contain;
+  border-radius: 4px;
+  padding: 2vw;
+}
+
+.membership-box {
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: flext-start;
+  justify-content: center;
+}
+
+.membership-text {
+  width: 45%;
+  padding: 3vw;
+}
+
+.membership-text h1{
   font-family: 'Lora';
   font-style: normal;
   font-weight: 700;
@@ -141,85 +114,12 @@
   line-height: 46px;
   /* identical to box height */
 
-  text-align: right;
-
   color: #456B68;
+  padding-bottom: 3vw;
 }
 
-.p-events-join
-{
-  position: absolute;
-  width: 227px;
-  height: 17px;
-  left: 1101px;
-  top: 942px;
-
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  /* identical to box height */
-
-  text-align: right;
-
-  color: #5A9A98;
-
-}
-
-.btn.btn-members
-{
-  position: absolute;
-  width: 517px;
-  height: 123px;
-  left: 0px;
-  top: 1271px;
-
-  background: #F1E2AD!important;
-  border-radius: 0px 18px 18px 0px;
-
-  pointer-events: none;
-}
-
-.img-explain
-{
-  position: absolute;
-  width: 586px;
-  height: 639px;
-  left: 742px;
-  top: 1413px;
-
-  border: 12px solid #5A9A98;
-}
-
-.p-membership
-{
-  position: absolute;
-  width: 560px;
-  height: 46px;
-  left: 114px;
-  top: 1413px;
-
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 46px;
-  /* identical to box height */
-
-
-  color: #456B68;
-}
-
-.p-member
-{
-  position: absolute;
-  width: 486px;
-  height: 618px;
-  left: 114px;
-  top: 1511px;
-
-  font-family: 'Inter';
+.membership-text p{
+  font-family: 'Inter'!important;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -228,9 +128,20 @@
 
 
   color: #456B68;
+  padding-bottom: 3vw;
 }
+
+.membership-box img {
+  width: 45%;
+  height: 45%;
+  object-fit: contain;
+  border-radius: 4px;
+  padding: 3vw;
+}
+
 .btn.btn-search
 {
+  border-radius: 0px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -238,16 +149,12 @@
   padding: 10px 45px;
   gap: 10px;
 
-  position: absolute;
-  width: 377px;
-  height: 60px;
-  left: 114px;
-  top: 1729px;
+  width:75%;
 
   background: #5A9A98!important;
   border: none;
 
-  font-family: 'Inter';
+  font-family: 'Inter'!important;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -264,3 +171,4 @@
   order: 0;
   flex-grow: 0;
 }
+
