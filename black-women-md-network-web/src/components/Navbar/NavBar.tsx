@@ -59,8 +59,8 @@ function NavBar() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="/join">Join</Nav.Link>
             <Nav.Link href="/signin">Sign In</Nav.Link>
+            <Nav.Link href="/join">Join</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
