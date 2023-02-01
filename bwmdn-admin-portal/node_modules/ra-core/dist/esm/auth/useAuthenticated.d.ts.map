@@ -1,0 +1,1 @@
+{"version":3,"file":"useAuthenticated.d.ts","sourceRoot":"","sources":["../../../src/auth/useAuthenticated.ts"],"names":[],"mappings":"AAGA;;;;;;;;;;;;;;;;;;;;;;;;GAwBG;AACH,eAAO,MAAM,gBAAgB,2EAU5B,CAAC;AAEF,oBAAY,uBAAuB,CAAC,UAAU,IAAI;IAC9C,OAAO,CAAC,EAAE,OAAO,CAAC;IAClB,MAAM,CAAC,EAAE,UAAU,CAAC;CACvB,CAAC"}
