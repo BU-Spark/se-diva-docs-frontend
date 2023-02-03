@@ -1,6 +1,6 @@
 import React from "react";
-import buddies from "../images/blackwomenbuddies_modified.jpg";
-import explain from "../images/blackwomanexplains.jpg";
+import buddies from "../assets/blackwomenbuddies.jpg";
+import explain from "../assets/blackwomanexplains.jpg";
 import "./welcome.css";
 
 const Welcome = () => {
