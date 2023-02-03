@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import NavBar from "./components/Navbar/NavBar";
+import Footer from "./components/Footer/Footer";
 import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Welcome from "./pages/welcome";
@@ -40,6 +41,7 @@ function App() {
         <Route path="/coaching" element={<Coaching />} />
         <Route path="/events" element={<Events />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

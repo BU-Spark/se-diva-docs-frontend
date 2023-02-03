@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Background.module.css";
-import buddies from "../images/blackwomenbuddies_modified.jpg";
-import explain from "../images/blackwomanexplains.jpg";
-import barbaque from "../images/barbaque.jpg";
-import plant from "../images/plant.jpg";
-import brunch from "../images/brunch.jpg";
+import buddies from "../assets/blackwomenbuddies_modified.jpg";
+import explain from "../assets/blackwomanexplains.jpg";
+import barbaque from "../assets/barbaque.jpg";
+import plant from "../assets/plant.jpg";
+import brunch from "../assets/brunch.jpg";
 import "./welcome.css";
 
 const Welcome = () => {
