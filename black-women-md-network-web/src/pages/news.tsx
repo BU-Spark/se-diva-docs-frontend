@@ -3,7 +3,7 @@ import doctor from "../images/blackfemaledoctorsconfident.jpg";
 import "./construction.css";
 
 
-const ResumeBank = () => {
+const News = () => {
   return (
     <div className="construction-body">
       <img className="doctor-img" src={doctor} alt="" />
@@ -12,4 +12,4 @@ const ResumeBank = () => {
   );
 };
 
-export default ResumeBank;
+export default News;
