@@ -13,7 +13,7 @@ const Welcome = () => {
       <div className="bwmdn-box">
         <img src={buddies} alt="" />
         <div className="">
-          <p>Black Women <br></br>M.D. Network</p>
+          <p>Black Women M.D. Network</p>
           <a href="/join" className="btn btn-join btn-lg active" role="button" aria-pressed="true">Join Our Community</a>
         </div>
       </div>
