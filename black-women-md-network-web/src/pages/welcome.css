@@ -36,10 +36,10 @@
 
 .bwmdn-box p {
  position: absolute;
- width: 100vw;
- height: 5vh;
+ width: 40vw;
+ height: 1vi;
  left: 8vw;
- top: 25vh;
+ top: 15vi;
 
 
  font-family: 'Lora';
@@ -74,7 +74,7 @@
  width: 20vw;
  height: 5vh;
  left: 8vw;
- top: 43vh;
+ top: 25vi;
 
 
  background-color: #5A9A98!important;
