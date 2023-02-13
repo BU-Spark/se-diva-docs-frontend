@@ -44,6 +44,7 @@ const ContactInfo = ({
     <FormWrapper title="Contact / General Information">
       <Select
         options={physicianMember}
+        title="Current Role*"
         value={currentRole}
         onChange={(e) => updateFields({ currentRole: e })}
       ></Select>

@@ -6,17 +6,18 @@ export type SelectOption = {
   value: string | number;
 };
 type SelectProps = {
+  title: string;
   options: SelectOption[];
   value: SelectOption;
   onChange: (value: SelectOption) => void;
 };
 
-const Select = ({ value, onChange, options }: SelectProps) => {
+const Select = ({ value, onChange, options, title }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(0);
   // make select input required!!!
   const clearOptions = () => {
-    onChange({ label: "default", value: "Black Women Physician Member" });
+    onChange({ label: "default", value: "N/A if not applicable" });
   };
   const selectOption = (option: SelectOption) => {
     if (option !== value) onChange(option);
@@ -73,7 +74,7 @@ const Select = ({ value, onChange, options }: SelectProps) => {
           </li>
         ))}
       </ul>
-      <div className={styles.title}>hello!</div>
+      <div className={styles.title}>{title}</div>
     </div>
   );
 };

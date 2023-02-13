@@ -11,10 +11,10 @@ import remove from "../../utils/remove";
 import FormWrapper from "./FormWrapper";
 
 type MembershipTypeData = {
-  academicAffiliation: SelectOption;
+  academicAffiliation: string;
   hospitalOrcompany: string;
   position: string;
-  specialty: SelectOption;
+  specialty: string;
   expertise: string[];
   region: SelectOption;
 };
@@ -41,6 +41,16 @@ const MembershipType = ({
     <div>
       <FormWrapper title={"Credential Information"}>
         <TextBox
+          title={"Current Academic Affiliation"}
+          placeholder={"N/A if Not Applicable"}
+          value={academicAffiliation}
+          onChange={(academicAffiliation) =>
+            updateFields({ academicAffiliation })
+          }
+          required={false}
+        ></TextBox>
+
+        <TextBox
           title={"Current Hospital / Company"}
           placeholder={"N/A if Not Applicable"}
           value={hospitalOrcompany}
@@ -53,6 +63,14 @@ const MembershipType = ({
           placeholder={"N/A if Not Applicable"}
           value={position}
           onChange={(position) => updateFields({ position })}
+          required={false}
+        ></TextBox>
+
+        <TextBox
+          title={"Speciality"}
+          placeholder={"N/A if Not Applicable"}
+          value={specialty}
+          onChange={(specialty) => updateFields({ specialty })}
           required={false}
         ></TextBox>
 
@@ -74,6 +92,13 @@ const MembershipType = ({
             {expertiseType}
           </label>
         ))}
+
+        <Select
+          options={regionTypes}
+          title={"Geographic Region"}
+          value={region}
+          onChange={(e) => updateFields({ region: e })}
+        ></Select>
       </FormWrapper>
     </div>
   );
