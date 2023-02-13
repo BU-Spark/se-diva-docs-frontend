@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Select, {
   SelectOption,
 } from "../../components/MembershipApp/Select/Select";
@@ -148,13 +148,21 @@ const ContactInfo = ({
       {racetypes.map((racetype) => (
         <label>
           <input
+            // type="checkbox"
+            // onChange={(e) => {var updatedList = [...checked];
+            //   if (event.target.checked) {
+            //     updatedList = [...checked, event.target.value];
+            //   } else {
+            //     updatedList.splice(checked.indexOf(event.target.value), 1);
+            //   }
+            //   setChecked(updatedList);}}
             type="checkbox"
             onChange={(e) => {
-              if (e.target.checked && !race.includes(racetype)) {
-                race.push(racetype);
-                if (e.target.checked && race.includes(racetype)) {
-                  remove(race, racetype);
-                }
+              if (e.target.checked) {
+                ethnicity.push(racetype);
+              }
+              if (!e.target.checked && race.includes(racetype)) {
+                remove(ethnicity, racetype);
               }
               updateFields({ race });
             }}

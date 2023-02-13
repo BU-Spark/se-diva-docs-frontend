@@ -1,7 +1,6 @@
-import React from 'react';
-import logo from "/Users/paigedeveau/Desktop/se-diva-docs-frontend/black-women-md-network-web/src/images/BlackWomenMDNetworkLogo1.jpg";
-import twitter from "/Users/paigedeveau/Desktop/se-diva-docs-frontend/black-women-md-network-web/src/images/twitter.jpg";
-import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
+import React from "react";
+import logo from "/Users/myaturner/Desktop/DivaDocsCode/se-diva-docs-frontend/black-women-md-network-web/src/assets/BlackWomenMDNetworkLogo1.jpg";
+import twitter from "/Users/myaturner/Desktop/DivaDocsCode/se-diva-docs-frontend/black-women-md-network-web/src/assets/twitter.jpg";
 import "./Footer.css";
 
 const Footer = () => (

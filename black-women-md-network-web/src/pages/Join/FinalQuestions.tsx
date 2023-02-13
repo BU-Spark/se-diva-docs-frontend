@@ -31,10 +31,14 @@ const FinalQuestions = ({
       <span>
         Would you be interested in starting a BWMDN Chapter in your region?
       </span>
-      {answerTypes.map((answerType) => (
+      {answerTypes.map((answerType, index) => (
         <label htmlFor={answerType}>
           <input
+            // Needs to have id, name and value
             type="radio"
+            id="startChapter"
+            name="startChapter"
+            value={answerType}
             checked={startChapter === answerType}
             onChange={(e) => updateFields({ startChapter: e.target.value })}
           />
@@ -47,6 +51,9 @@ const FinalQuestions = ({
         <label htmlFor={answerType}>
           <input
             type="radio"
+            id="includeInDirectory"
+            name="includeInDirectory"
+            value={answerType}
             checked={includeInDirectory === answerType}
             onChange={(e) =>
               updateFields({ includeInDirectory: e.target.value })
@@ -57,12 +64,16 @@ const FinalQuestions = ({
       ))}
 
       <span>Please upload your resume,(not required to share)</span>
+      <span> Put functionality here</span>
 
       <span>Would you like your resume to be inlcuded in the resume bank?</span>
       {answerTypes.map((answerType) => (
         <label htmlFor={answerType}>
           <input
             type="radio"
+            id="includeInResumeBank"
+            name="includeInResumeBank"
+            value={answerType}
             checked={includeInResumeBank === answerType}
             onChange={(e) =>
               updateFields({ includeInResumeBank: e.target.value })
@@ -77,6 +88,9 @@ const FinalQuestions = ({
         <label htmlFor={answerType}>
           <input
             type="radio"
+            id="memberOfDivaDocsBoston"
+            name="memberOfDivaDocsBoston"
+            value={answerType}
             checked={memberOfDivaDocsBoston === answerType}
             onChange={(e) =>
               updateFields({ memberOfDivaDocsBoston: e.target.value })
@@ -94,6 +108,9 @@ const FinalQuestions = ({
         <label htmlFor={answerType}>
           <input
             type="radio"
+            id="wantToMentor"
+            name="wantToMentor"
+            value={answerType}
             checked={wantToMentor === answerType}
             onChange={(e) => updateFields({ wantToMentor: e.target.value })}
           />
@@ -109,6 +126,9 @@ const FinalQuestions = ({
         <label htmlFor={answerType}>
           <input
             type="radio"
+            id="wantToSponsor"
+            name="wantToSponsor"
+            value={answerType}
             checked={wantToSponsor === answerType}
             onChange={(e) => updateFields({ wantToSponsor: e.target.value })}
           />
