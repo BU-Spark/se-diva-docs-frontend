@@ -1,5 +1,7 @@
 .navbar{
   display: flex;
+  position: fixed;
+  top: 0;
 }
 .navbar-custom{
   color:#FFFFFF;
@@ -7,7 +9,7 @@
   width: 100%;
   height: 8vh;
   left: 0px;
-  top: 51px;
+  top: 0px;
 }
 /* change the brand color*/
 .navbar-custom .navbar-brand
