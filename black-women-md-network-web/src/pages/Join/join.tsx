@@ -8,11 +8,13 @@ import { FormData } from "./FormData";
 import DEFAULT_DATA from "./DefaultData";
 import { Button } from "react-bootstrap";
 import Success from "./Success";
+import formatSubmission from "./formatSubmission";
 
 const userData: FormData = DEFAULT_DATA;
 
 const Join = () => {
   const [data, setData] = useState(userData);
+  console.log("DATA not JSON:");
   console.log(data);
 
   // Create a function that updates the data fields
@@ -43,6 +45,8 @@ const Join = () => {
     if (!isLastStep) return next();
 
     // Fetch request to post to API would go here!
+    const JSON = formatSubmission(data);
+    console.log(JSON);
     alert("Form is submitted!");
   };
 

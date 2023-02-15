@@ -145,7 +145,7 @@ const ContactInfo = ({
         </label>
       ))}
 
-      <span>Race</span>
+      {/* <span>Race</span>
       {racetypes.map((racetype) => (
         <label>
           <input
@@ -170,7 +170,7 @@ const ContactInfo = ({
           />
           {racetype}
         </label>
-      ))}
+      ))} */}
 
       <span>Ethnicity</span>
       {ethnicityTypes.map((ethnicitytype) => (
