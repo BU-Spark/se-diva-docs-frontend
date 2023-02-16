@@ -7815,6 +7815,13 @@
     "query-string" "^7.1.1"
     "ra-core" "^4.7.2"
 
+"ra-data-simple-rest@^4.8.0":
+  "integrity" "sha512-09YCmOuFJPJsLM6TjhMFWfR8bLDAwLED0Yrt3qLywoDtF1HE2KNOWFqZv4UUjI+piw4kZ+Dj+fBfobi0TG1tYQ=="
+  "resolved" "https://registry.npmjs.org/ra-data-simple-rest/-/ra-data-simple-rest-4.8.0.tgz"
+  "version" "4.8.0"
+  dependencies:
+    "query-string" "^7.1.1"
+
 "ra-i18n-polyglot@^4.7.2":
   "integrity" "sha512-5K9dm0P2fjrPiVhyTxuXCS8K2ZAdlh6YfAVWva+Z4y1jbJVLJZj6JgHtpLPZIO3MW5MeQu7g3E0W/jGUM3N0dQ=="
   "resolved" "https://registry.npmjs.org/ra-i18n-polyglot/-/ra-i18n-polyglot-4.7.2.tgz"
