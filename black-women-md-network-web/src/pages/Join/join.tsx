@@ -60,14 +60,17 @@ const Join = () => {
       .then((response) => {
         if (response.status == 200) {
           console.log("Success: " + response.status);
+          // Move to Success page
+          setFormSubmitted(true);
         } else {
           console.log("Error: " + response.status);
+          alert("There was an error!  Please try again later.");
         }
       })
-      .catch((error) => console.log("Error: " + error.response.status));
-
-    alert("Form is submitted!");
-    setFormSubmitted(true);
+      .catch((error) => {
+        console.log("Error: " + error.response.status);
+        alert("There was an error!  Please try again later.");
+      });
   };
 
   if (formSubmitted) {
