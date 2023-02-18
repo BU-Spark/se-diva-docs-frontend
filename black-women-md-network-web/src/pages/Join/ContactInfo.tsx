@@ -145,32 +145,24 @@ const ContactInfo = ({
         </label>
       ))}
 
-      {/* <span>Race</span>
+      <span>Race</span>
       {racetypes.map((racetype) => (
         <label>
           <input
-            // type="checkbox"
-            // onChange={(e) => {var updatedList = [...checked];
-            //   if (event.target.checked) {
-            //     updatedList = [...checked, event.target.value];
-            //   } else {
-            //     updatedList.splice(checked.indexOf(event.target.value), 1);
-            //   }
-            //   setChecked(updatedList);}}
             type="checkbox"
             onChange={(e) => {
-              if (e.target.checked) {
-                ethnicity.push(racetype);
+              if (e.target.checked && !race.includes(racetype)) {
+                race.push(racetype);
               }
               if (!e.target.checked && race.includes(racetype)) {
-                remove(ethnicity, racetype);
+                remove(race, racetype);
               }
               updateFields({ race });
             }}
           />
           {racetype}
         </label>
-      ))} */}
+      ))}
 
       <span>Ethnicity</span>
       {ethnicityTypes.map((ethnicitytype) => (
