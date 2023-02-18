@@ -40,6 +40,7 @@ const ContactInfo = ({
   pronouns,
   updateFields,
 }: ContactInfoProps) => {
+  const [selfDescribe, setSelfDescribe] = useState(false);
   return (
     <FormWrapper title="Contact / General Information">
       <Select
@@ -170,7 +171,7 @@ const ContactInfo = ({
           <input
             type="checkbox"
             onChange={(e) => {
-              if (e.target.checked) {
+              if (e.target.checked && !ethnicity.includes(ethnicitytype)) {
                 ethnicity.push(ethnicitytype);
               }
               if (!e.target.checked && ethnicity.includes(ethnicitytype)) {
@@ -193,12 +194,23 @@ const ContactInfo = ({
             name="gender-type"
             value={gendertype}
             checked={gender === gendertype}
-            onChange={(e) => updateFields({ gender: e.target.value })}
+            onChange={(e) => {
+              if (e.target.value == "Self-describe as:") {
+                setSelfDescribe(true);
+              }
+              updateFields({ gender: e.target.value });
+            }}
           />
           {gendertype}
         </label>
       ))}
-      <input type="text" placeholder="self descibe as..." />
+      {selfDescribe && (
+        <input
+          type="text"
+          placeholder="Self-descibe as..."
+          onChange={(e) => updateFields({ gender: e.target.value })}
+        />
+      )}
 
       <label>What are your pronouns?</label>
       <input
