@@ -26,12 +26,17 @@ const FinalQuestions = ({
   updateFields,
 }: FinalQuestionsProps) => {
   const answerTypes = ["Yes", "No", "Don't Know"];
+  const answerTypes2 = [
+    "Yes",
+    "No",
+    "No, but I would like more information about starting a branch in my region",
+  ];
   return (
     <FormWrapper title={"Black Women M.D. Network Questions"}>
       <span>
         Would you be interested in starting a BWMDN Chapter in your region?
       </span>
-      {answerTypes.map((answerType, index) => (
+      {answerTypes2.map((answerType, index) => (
         <label htmlFor={answerType}>
           <input
             // Needs to have id, name and value
@@ -46,7 +51,7 @@ const FinalQuestions = ({
         </label>
       ))}
 
-      <span>Do you agree to be inlcuded in the Membership Directory?</span>
+      <span>Do you agree to be included in the Membership Directory?</span>
       {answerTypes.map((answerType) => (
         <label htmlFor={answerType}>
           <input

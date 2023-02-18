@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import ContactInfo from "./ContactInfo";
 import FinalQuestions from "./FinalQuestions";
 import MembershipType from "./MembershipType";
@@ -14,6 +14,7 @@ const userData: FormData = DEFAULT_DATA;
 
 const Join = () => {
   const [data, setData] = useState(userData);
+  const [formSubmitted, setFormSubmitted] = useState(false);
   console.log("DATA not JSON:");
   console.log(data);
 
@@ -45,41 +46,71 @@ const Join = () => {
     if (!isLastStep) return next();
 
     // Fetch request to post to API would go here!
-    const JSON = formatSubmission(data);
-    console.log(JSON);
+    const applicantForm = formatSubmission(data);
+    console.log(JSON.stringify(applicantForm.submission));
+
+    // POST request using fetch inside useEffect React hook
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(applicantForm.submission),
+    };
+
+    fetch("https://se-diva-docs.herokuapp.com/applicants/add", requestOptions)
+      .then((response) => {
+        if (response.status == 200) {
+          console.log("Success: " + response.status);
+        } else {
+          console.log("Error: " + response.status);
+        }
+      })
+      .catch((error) => console.log("Error: " + error.response.status));
+
     alert("Form is submitted!");
+    setFormSubmitted(true);
   };
 
-  return (
-    <div className="container">
-      <h1 className="title">Membership Application</h1>
-      <p className="text">
-        Welcome to the Black Women M.D.Network! Please fill out this form to
-        complete a membership profile!
-      </p>
-      <progress
-        className="progress-bar"
-        max="1"
-        value={stepIndex + 1 / steps.length}
-      ></progress>
+  if (formSubmitted) {
+    return (
+      <div className="container">
+        <h1 className="title">Membership Application</h1>
 
-      <div className="content">
-        <form onSubmit={onSubmit}>
-          {step}
-          <div>
-            {!isFirstStep && (
-              <button className="back-button" type="button" onClick={back}>
-                Back
-              </button>
-            )}
-            <button className="next-button" type="submit">
-              {isLastStep ? "Submit" : "Next"}
-            </button>
-          </div>
-        </form>
+        <div className="content">
+          <Success></Success>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="container">
+        <h1 className="title">Membership Application</h1>
+        <p className="text">
+          Welcome to the Black Women M.D.Network! Please fill out this form to
+          complete a membership profile!
+        </p>
+        <progress
+          className="progress-bar"
+          max="1"
+          value={stepIndex / steps.length}
+        ></progress>
+        <div className="content">
+          <form onSubmit={onSubmit}>
+            {step}
+            <div>
+              {!isFirstStep && (
+                <button className="back-button" type="button" onClick={back}>
+                  Back
+                </button>
+              )}
+              <button className="next-button" type="submit">
+                {isLastStep ? "Submit" : "Next"}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    );
+  }
 };
 
 export default Join;

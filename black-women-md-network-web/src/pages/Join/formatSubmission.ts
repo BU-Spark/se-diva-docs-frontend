@@ -2,7 +2,7 @@ import { FormData } from "./FormData";
 
 const formatSubmission = (data: FormData) => {
   const uuid: number = 1;
-  const submision: JSON = <JSON>(<unknown>{
+  const submision = {
     submission: {
       universal_applicant_id: uuid,
       first_name: data.firstName,
@@ -27,19 +27,20 @@ const formatSubmission = (data: FormData) => {
       specialty: data.specialty,
       areas_of_work: "EXPERTISE",
       geographic_region: data.region.value,
-      bwmdn_chapter_question: "EXPERTISE",
+      bwmdn_chapter_question: data.startChapter,
       membership_directory_agreement: "No",
       resume_included_question: "No",
       divadocs_boston_member: {
         divadocs_boston_member_question: "No",
         years: "string",
       },
-      race_ethnicity: "RACEANDETHNICITYARRAY",
+      race: ["Black"],
+      ethnicity: ["American"],
       gender_identity: data.gender,
       pronouns: data.pronouns,
       will_sponsor_question: {
         sponsor_question_answer: data.wantToSponsor,
-        activities_interested: "TBD",
+        activities_interested: ["TBD"],
       },
       applicant_status: {
         subscription_tier: "",
@@ -49,7 +50,7 @@ const formatSubmission = (data: FormData) => {
         account_password: "",
       },
     },
-  });
+  };
 
   return submision;
 };
