@@ -47,6 +47,7 @@ const SignIn = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <button className={styles["link-btn"]}>Forgot password?</button>
           <button className={styles["submit"]} type="submit">
             Log In
           </button>
