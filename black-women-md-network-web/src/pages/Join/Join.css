@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid tomato;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.text {
+  font-size: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 50px;
+}
+
+.content {
+  width: 60%;
+  flex-direction: column;
+  /* to override container layout*/
+  align-self: center;
+  border: 1px solid tomato;
+}
+
+.back-button {
+  width: 60px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  margin-right: 20px;
+  border: 1px double black;
+  color: black;
+  background-color: white;
+}
+
+.next-button {
+  width: 60px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  border: none;
+  color: white;
+  background-color: black;
+}
