@@ -8,6 +8,7 @@
   padding-bottom: 5px;
   font-size: 18px;
   font-weight: 600;
+  background-color: white;
 }
 
 .container:focus {

@@ -1,6 +1,6 @@
 import React, { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./signin.css";
+import styles from "./signin.module.css";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -18,34 +18,43 @@ const SignIn = () => {
     navigate(path);
   };
   return (
-    <div className="auth-form-container">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">email: </label>
+    <div className={styles["outer-container"]}>
+      <div className={styles["auth-form-container"]}>
+        <h2>Login</h2>
+        <form className={styles["login-form"]} onSubmit={handleSubmit}>
+          <label className={styles["label-signin"]} htmlFor="email">
+            Email:{" "}
+          </label>
 
-        <input
-          type="email"
-          placeholder="Email"
-          className="email"
-          name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+          <input
+            className={styles["email"]}
+            type="email"
+            placeholder="Email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-        <label htmlFor="password">password: </label>
+          <label className={styles["label-signin"]} htmlFor="password">
+            Password:{" "}
+          </label>
 
-        <input
-          type="password"
-          placeholder="Password"
-          className="password"
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Log In</button>
-      </form>
-      <button onClick={routeChange}>
-        Don't already have an account Register here.
-      </button>
+          <input
+            className={styles["password"]}
+            type="password"
+            placeholder="Password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button className={styles["submit"]} type="submit">
+            Log In
+          </button>
+        </form>
+        <button className={styles["link-btn"]} onClick={routeChange}>
+          Not apart of the Black Women M.D. Network? Become a member here.
+        </button>
+      </div>
     </div>
   );
 };

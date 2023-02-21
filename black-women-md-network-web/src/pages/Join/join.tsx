@@ -75,41 +75,45 @@ const Join = () => {
 
   if (formSubmitted) {
     return (
-      <div className="container">
-        <h1 className="title">Membership Application</h1>
+      <div className="background">
+        <div className="container">
+          <h1 className="title">Membership Application</h1>
 
-        <div className="content">
-          <Success></Success>
+          <div className="content">
+            <Success></Success>
+          </div>
         </div>
       </div>
     );
   } else {
     return (
-      <div className="container">
-        <h1 className="title">Membership Application</h1>
-        <p className="text">
-          Welcome to the Black Women M.D.Network! Please fill out this form to
-          complete a membership profile!
-        </p>
-        <progress
-          className="progress-bar"
-          max="1"
-          value={stepIndex / steps.length}
-        ></progress>
-        <div className="content">
-          <form onSubmit={onSubmit}>
-            {step}
-            <div>
-              {!isFirstStep && (
-                <button className="back-button" type="button" onClick={back}>
-                  Back
+      <div className="background">
+        <div className="container">
+          <h1 className="title">Membership Application</h1>
+          <p className="text">
+            Welcome to the Black Women M.D.Network! Please fill out this form to
+            complete a membership profile!
+          </p>
+          <progress
+            className="progress-bar"
+            max="1"
+            value={stepIndex / steps.length}
+          ></progress>
+          <div className="content">
+            <form onSubmit={onSubmit}>
+              {step}
+              <div>
+                {!isFirstStep && (
+                  <button className="back-button" type="button" onClick={back}>
+                    Back
+                  </button>
+                )}
+                <button className="next-button" type="submit">
+                  {isLastStep ? "Submit" : "Next"}
                 </button>
-              )}
-              <button className="next-button" type="submit">
-                {isLastStep ? "Submit" : "Next"}
-              </button>
-            </div>
-          </form>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     );
