@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import NavBar from "./components/Navbar/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -41,7 +41,7 @@ function App() {
         <Route path="/coaching" element={<Coaching />} />
         <Route path="/events" element={<Events />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }
