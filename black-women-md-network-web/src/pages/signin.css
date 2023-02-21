@@ -1,20 +1,8 @@
-.container {
+.auth-form-container {
+  text-align: center;
   display: flex;
-  flex-direction: column;
-  border: 1px solid tomato;
-  margin: auto;
-  margin-top: 100px;
-}
-
-.title {
-  font-weight: bold;
-  font-size: 60px;
-}
-
-.content {
-  width: 60%;
-  flex-direction: column;
-  /* to override container layout*/
-  align-self: center;
-  border: 1px solid tomato;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #f0ffff 76%);
 }
