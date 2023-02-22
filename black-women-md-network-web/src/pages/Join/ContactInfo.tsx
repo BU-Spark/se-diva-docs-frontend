@@ -216,6 +216,7 @@ const ContactInfo = ({
       <input
         // required
         type="text"
+        placeholder="/"
         onChange={(e) => updateFields({ pronouns: e.target.value })}
       />
     </FormWrapper>

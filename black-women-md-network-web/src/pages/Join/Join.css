@@ -52,3 +52,13 @@
   color: white;
   background-color: black;
 }
+
+input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  color: #456b68;
+  font-weight: bold;
+  border: 1px solid #456b68;
+}
