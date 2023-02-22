@@ -30,7 +30,7 @@
   padding: 0.25rem 0;
 }
 
-.email,
+/* .email,
 .password {
   margin: 0.5rem 0;
   padding: 1rem;
@@ -39,7 +39,7 @@
   color: #456b68;
   font-weight: bold;
   border: 1px solid #456b68;
-}
+} */
 
 .submit,
 .link-btn {
@@ -58,4 +58,12 @@
   background: none;
 
   text-decoration: underline;
+}
+
+.submit:hover {
+  background-color: #456b68;
+  color: white;
+}
+.link-btn:hover {
+  color: #609896;
 }
