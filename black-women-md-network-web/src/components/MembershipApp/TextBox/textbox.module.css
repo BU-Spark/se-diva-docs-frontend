@@ -4,7 +4,7 @@
 }
 
 .textbox {
-  border: 1px double #ccdfff;
+  border: 1px solid #456b68;
   border-radius: 5px;
   width: 100%;
   height: 65px;
@@ -12,6 +12,7 @@
   padding-left: 15px;
   font-size: 18px;
   font-weight: 600;
+  color: #456b68;
 }
 
 .title {

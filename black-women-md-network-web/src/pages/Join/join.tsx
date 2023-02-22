@@ -1,4 +1,4 @@
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { FormEvent, useState } from "react";
 import ContactInfo from "./ContactInfo";
 import FinalQuestions from "./FinalQuestions";
 import MembershipType from "./MembershipType";
@@ -6,7 +6,6 @@ import { useMultiStepForm } from "../../hooks/useMultiStepForm";
 import "./Join.css";
 import { FormData } from "./FormData";
 import DEFAULT_DATA from "./DefaultData";
-import { Button } from "react-bootstrap";
 import Success from "./Success";
 import formatSubmission from "./formatSubmission";
 
