@@ -6,7 +6,7 @@ type FinalQuestionsData = {
   includeInDirectory: string;
   includeResume: string;
   includeInResumeBank: string;
-  memberOfDivaDocsBoston: string;
+  identifyAsBlackWomenMD: string;
   wantToMentor: string;
   wantToSponsor: string;
 };
@@ -20,7 +20,7 @@ const FinalQuestions = ({
   includeInDirectory,
   includeResume,
   includeInResumeBank,
-  memberOfDivaDocsBoston,
+  identifyAsBlackWomenMD,
   wantToMentor,
   wantToSponsor,
   updateFields,
@@ -67,9 +67,9 @@ const FinalQuestions = ({
           {answerType}
         </label>
       ))}
-
+      {/* 
       <span>Please upload your resume,(not required to share)</span>
-      <span> Put functionality here</span>
+      <span> Put functionality here</span> */}
 
       <span>Would you like your resume to be inlcuded in the resume bank?</span>
       {answerTypes.map((answerType) => (
@@ -88,17 +88,17 @@ const FinalQuestions = ({
         </label>
       ))}
 
-      <span>Are you a past or current member of Diva Docs Boston?</span>
+      <span>Do you identify as a Black Women Physician?</span>
       {answerTypes.map((answerType) => (
         <label htmlFor={answerType}>
           <input
             type="radio"
-            id="memberOfDivaDocsBoston"
-            name="memberOfDivaDocsBoston"
+            id="identifyAsBlackWomenMD"
+            name="identifyAsBlackWomenMD"
             value={answerType}
-            checked={memberOfDivaDocsBoston === answerType}
+            checked={identifyAsBlackWomenMD === answerType}
             onChange={(e) =>
-              updateFields({ memberOfDivaDocsBoston: e.target.value })
+              updateFields({ identifyAsBlackWomenMD: e.target.value })
             }
           />
           {answerType}

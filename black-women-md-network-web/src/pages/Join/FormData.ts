@@ -29,7 +29,7 @@ export type FormData = {
   includeInDirectory: string;
   includeResume: string;
   includeInResumeBank: string;
-  memberOfDivaDocsBoston: string;
+  identifyAsBlackWomenMD: string;
   wantToMentor: string;
   wantToSponsor: string;
 };

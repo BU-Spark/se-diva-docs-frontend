@@ -29,7 +29,7 @@ const DefaultData: FormData = {
   includeInDirectory: "",
   includeResume: "",
   includeInResumeBank: "",
-  memberOfDivaDocsBoston: "",
+  identifyAsBlackWomenMD: "",
   wantToMentor: "",
   wantToSponsor: "",
 };
