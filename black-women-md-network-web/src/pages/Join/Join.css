@@ -62,3 +62,36 @@ input {
   font-weight: bold;
   border: 1px solid #456b68;
 }
+
+input:where([type="checkbox"], [type="radio"]) {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  margin: calc(0.75em - 11px) 0.25rem 0 0;
+  vertical-align: top;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  background: #fff no-repeat center center;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input:where([type="checkbox"], [type="radio"]):where(:active:not(:disabled), :focus) {
+  border-color: #696;
+  outline: none;
+}
+
+input:where([type="checkbox"], [type="radio"]):disabled {
+  background: #eee;
+}
+
+input[type="checkbox"]:checked {
+  background-image: url("checkbox.svg");
+}
+
+input[type="radio"]:checked {
+  background-image: url("radio.svg");
+}
