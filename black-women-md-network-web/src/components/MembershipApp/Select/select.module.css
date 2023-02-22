@@ -5,10 +5,12 @@
   border-radius: 10px;
   padding-top: 20px;
   padding-left: 15px;
-  padding-bottom: 5px;
+  padding-bottom: 0px;
   font-size: 18px;
   font-weight: 600;
   background-color: white;
+  color: #456b68;
+  font-weight: bold;
 }
 
 .container:focus {
@@ -52,6 +54,8 @@
   left: 0;
   top: calc(100% + 0.25em);
   z-index: 100;
+  color: #456b68;
+  font-weight: bold;
 }
 
 .options.show {
@@ -64,23 +68,23 @@
   list-style-type: none;
   list-style-position: outside;
   font-weight: 300;
-  border-top: 1px solid #c9dcfb;
+
+  color: #456b68;
 }
 
 .option.selected {
-  color: rgb(96, 5, 5);
-  background-color: #f2f7ff;
+  color: #456b68;
+  font-weight: bold;
+  background-color: #f0ffff;
   margin-bottom: 10px;
-  box-shadow: -2em 0 #f2f7ff;
-  border-top: 1px solid #c9dcfb;
+  box-shadow: -2em 0 #f0ffff;
 }
 
 .option.highlighted {
-  background-color: #f2f7ff;
-  color: rgb(205, 36, 36);
+  background-color: #f0ffff;
+  color: black;
   margin-bottom: 10px;
-  box-shadow: -2em 0 #f2f7ff;
-  border-top: 1px solid #c9dcfb;
+  box-shadow: -2em 0 #f0ffff;
 }
 
 .title {
