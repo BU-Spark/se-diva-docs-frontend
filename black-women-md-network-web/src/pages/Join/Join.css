@@ -34,23 +34,26 @@
   /* border: 1px solid tomato; */
 }
 
-.back-button {
-  width: 60px;
+.back-button,
+.next-button {
+  width: 90px;
   margin-top: 50px;
   margin-bottom: 100px;
   margin-right: 20px;
-  border: 1px double black;
-  color: black;
-  background-color: white;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.back-button {
+  border: 1px solid #456b68;
+  color: #456b68;
+  background-color: #f0ffff;
 }
 
 .next-button {
-  width: 60px;
-  margin-top: 50px;
-  margin-bottom: 100px;
   border: none;
-  color: white;
-  background-color: black;
+  color: #f0ffff;
+  background-color: #456b68;
 }
 
 input {
