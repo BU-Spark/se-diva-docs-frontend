@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "/Users/myaturner/Desktop/DivaDocsCode/se-diva-docs-frontend/black-women-md-network-web/src/assets/BlackWomenMDNetworkLogo1.jpg";
-import twitter from "/Users/myaturner/Desktop/DivaDocsCode/se-diva-docs-frontend/black-women-md-network-web/src/assets/twitter.jpg";
+import logo from "./BlackWomenMDNetworkLogo1.jpg";
+import twitter from "./twitter.jpg";
 import "./Footer.css";
 
 const Footer = () => (
