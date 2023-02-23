@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Placeholder } from "react-bootstrap";
 import styles from "./textbox.module.css";
 
 type TextBoxProps = {

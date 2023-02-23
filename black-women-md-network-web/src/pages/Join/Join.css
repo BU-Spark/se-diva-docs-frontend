@@ -34,28 +34,12 @@
   /* border: 1px solid tomato; */
 }
 
-.back-button,
-.next-button {
-  width: 90px;
+.progression-buttons {
+  display: flex;
   margin-top: 50px;
-  margin-bottom: 100px;
-  margin-right: 20px;
-  font-weight: bold;
-  border-radius: 10px;
+  margin-bottom: 50px;
+  flex-direction: row;
 }
-
-.back-button {
-  border: 1px solid #456b68;
-  color: #456b68;
-  background-color: #f0ffff;
-}
-
-.next-button {
-  border: none;
-  color: #f0ffff;
-  background-color: #456b68;
-}
-
 input {
   margin: 0.5rem 0;
   padding: 1rem;

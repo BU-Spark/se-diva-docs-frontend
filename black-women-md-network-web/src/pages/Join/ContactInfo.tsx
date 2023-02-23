@@ -15,11 +15,13 @@ type ContactInfoProps = ContactInfoData & {
   updateFields: (fields: Partial<ContactInfoData>) => void;
 };
 
+// Need to make Select Option custom component required!!!
 const racetypes = Race;
 const ethnicityTypes = Ethnicity;
 const physicianMember = PhysicianMember;
 const gendertypes = GenderIdentity;
 const addresstypes = ["Work", "Home"];
+
 const ContactInfo = ({
   currentRole,
   firstName,
@@ -41,6 +43,7 @@ const ContactInfo = ({
   updateFields,
 }: ContactInfoProps) => {
   const [selfDescribe, setSelfDescribe] = useState(false);
+
   return (
     <FormWrapper title="Contact / General Information">
       <Select

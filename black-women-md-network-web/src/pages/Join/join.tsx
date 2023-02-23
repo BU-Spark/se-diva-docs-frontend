@@ -8,6 +8,8 @@ import { FormData } from "./FormData";
 import DEFAULT_DATA from "./DefaultData";
 import Success from "./Success";
 import formatSubmission from "./formatSubmission";
+import NextButton from "../../components/NextButton/NextButton";
+import BackButton from "../../components/BackButton/BackButton";
 
 const userData: FormData = DEFAULT_DATA;
 
@@ -101,15 +103,18 @@ const Join = () => {
           <div className="content">
             <form onSubmit={onSubmit}>
               {step}
-              <div>
+              <div className="progression-buttons">
                 {!isFirstStep && (
-                  <button className="back-button" type="button" onClick={back}>
-                    Back
-                  </button>
+                  <BackButton
+                    type="button"
+                    text="Back"
+                    onClick={back}
+                  ></BackButton>
                 )}
-                <button className="next-button" type="submit">
-                  {isLastStep ? "Submit" : "Next"}
-                </button>
+                <NextButton
+                  type="submit"
+                  text={isLastStep ? "Submit" : "Next"}
+                ></NextButton>
               </div>
             </form>
           </div>
