@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { Datagrid, DateField, List, TextField, DateInput, Edit, SimpleForm, TextInput } from 'react-admin';
+import { Datagrid, DateField, List, TextField, EmailField, DateInput, Edit, SimpleForm, TextInput, Toolbar, SaveButton, DeleteButton, Show, SimpleShowLayout } from 'react-admin';
 import { useRecordContext} from "react-admin";
 import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
 export const UserList = () => (
     <List>
@@ -11,28 +12,11 @@ export const UserList = () => (
             <TextField source="first_name" />
             <TextField source="middle_name" />
             <TextField source="last_name" />
-            <DateField source="suffix" />
-            <TextField source="primary_email" />
-            <DateField source="secondary_email" />
-            <TextField source="phone_number" />
-            <TextField source="address.street" />
-            <TextField source="address_type" />
-            <TextField source="current_academic_affiliation" />
-            <TextField source="current_hospital_company" />
+            <EmailField source="primary_email" />
             <TextField source="current_position" />
             <TextField source="specialty" />
-            <TextField source="areas_of_work" />
             <TextField source="geographic_region" />
-            <TextField source="bwmdn_chapter_question" />
-            <TextField source="membership_directory_agreement" />
-            <TextField source="resume_included_question" />
             <TextField source="divadocs_boston_member.divadocs_boston_member_question" />
-            <TextField source="race" />
-            <TextField source="ethnicity" />
-            <TextField source="gender_identity" />
-            <TextField source="pronouns" />
-            <TextField source="will_sponsor_question.sponsor_question_answer" />
-            <DateField source="applicant_status.subscription_tier" />
         </Datagrid>
     </List>
 );
@@ -42,9 +26,19 @@ const EditTitle = () => {
     return <span>{record ? `${record.first_name} ${record.last_name}` : ''}</span>;
 };
 
+const ApproveButton = (props:any) => <SaveButton {...props} icon={<AddBoxIcon />} label="Approve" alwaysEnable/>;
+const DeclineButton = (props:any) => <DeleteButton {...props} icon={<AddBoxIcon />} label="Decline" alwaysEnable/>;
+
+const MyToolbar = () => (
+    <Toolbar>
+        <ApproveButton/>
+        <DeclineButton />
+    </Toolbar>
+);
+
 export const UserEdit = () => (
     <Edit title={<EditTitle />}>
-        <SimpleForm>
+        <SimpleForm toolbar={<MyToolbar/>}>
             <Typography variant="h6" gutterBottom>
                 Identity
             </Typography>
@@ -196,4 +190,37 @@ export const UserEdit = () => (
             </Box>
         </SimpleForm>
     </Edit>
+);
+
+export const UserShow = () => (
+    <Show>
+        <SimpleShowLayout>
+            <TextField source="id" />
+            <TextField source="first_name" />
+            <TextField source="middle_name" />
+            <TextField source="last_name" />
+            <DateField source="suffix" />
+            <TextField source="primary_email" />
+            <DateField source="secondary_email" />
+            <TextField source="phone_number" />
+            <TextField source="address.street" />
+            <TextField source="address_type" />
+            <TextField source="current_academic_affiliation" />
+            <TextField source="current_hospital_company" />
+            <TextField source="current_position" />
+            <TextField source="specialty" />
+            <TextField source="areas_of_work" />
+            <TextField source="geographic_region" />
+            <TextField source="bwmdn_chapter_question" />
+            <TextField source="membership_directory_agreement" />
+            <TextField source="resume_included_question" />
+            <TextField source="divadocs_boston_member.divadocs_boston_member_question" />
+            <TextField source="race" />
+            <TextField source="ethnicity" />
+            <TextField source="gender_identity" />
+            <TextField source="pronouns" />
+            <TextField source="will_sponsor_question.sponsor_question_answer" />
+            <DateField source="applicant_status.subscription_tier" />
+        </SimpleShowLayout>
+    </Show>
 );
