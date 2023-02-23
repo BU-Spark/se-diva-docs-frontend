@@ -50,15 +50,15 @@ function NavBar() {
                 Corporate Sponsors
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item className="disabled">
+              <NavDropdown.Item href="/directory">
                 <b>Member Directory</b>
               </NavDropdown.Item>
-              <NavDropdown.Item href="/directory">
+              {/* <NavDropdown.Item href="/directory">
                 Search by Last Name
               </NavDropdown.Item>
               <NavDropdown.Item href="/directory">
                 Search by Specialty
-              </NavDropdown.Item>
+              </NavDropdown.Item> */}
               <NavDropdown.Divider />
               <NavDropdown.Item className="disabled">
                 <b>Member Resume Bank</b>

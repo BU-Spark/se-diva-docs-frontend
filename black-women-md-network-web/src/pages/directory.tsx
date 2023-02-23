@@ -1,18 +1,15 @@
-import React from 'react';
-  
+import React from "react";
+import "./directory.css";
+
 const Directory = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'Right',
-        alignItems: 'Right',
-        height: '100vh'
-      }}
-    >
-      <h1>DivaDocs Directory</h1>
+    <div className="background">
+      <div className="container">
+        <h1>Directory</h1>
+        <hr />
+      </div>
     </div>
   );
 };
-  
+
 export default Directory;
