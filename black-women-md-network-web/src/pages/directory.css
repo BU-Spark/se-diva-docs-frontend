@@ -1,24 +1,36 @@
-.background {
+.outside {
   background-color: #f0ffff;
   min-height: 100vh;
-  color: #456b68;
-  font-weight: bold;
-  /* border: 1px solid tomato; */
 }
 .container {
-  display: flex;
-  flex-direction: column;
-
-  margin: auto;
   padding-top: 100px;
   color: #456b68;
   font-weight: bold;
 }
-hr {
+
+.horizontal-line {
   position: relative;
-  top: 20px;
   border: none;
-  height: 12px;
-  background: black;
+  height: 10px;
+  background-color: #456b68;
   margin-bottom: 50px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  justify-content: space-between;
+}
+
+.search-bar {
+  background: green;
+  flex: 1;
+}
+
+.profiles {
+  background: blue;
+  flex: 2;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }

@@ -3,10 +3,14 @@ import "./directory.css";
 
 const Directory = () => {
   return (
-    <div className="background">
+    <div className="outside">
       <div className="container">
-        <h1>Directory</h1>
-        <hr />
+        <h1 className="title">Directory</h1>
+        <div className="horizontal-line" />
+        <div className="flex-container">
+          <div className="search-bar">hi</div>
+          <div className="profiles">hello</div>
+        </div>
       </div>
     </div>
   );
