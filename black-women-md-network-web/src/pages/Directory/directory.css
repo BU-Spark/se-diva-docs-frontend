@@ -1,0 +1,36 @@
+.outside {
+  background-color: #f0ffff;
+  min-height: 100vh;
+}
+.container {
+  padding-top: 100px;
+  color: #456b68;
+  font-weight: bold;
+}
+
+.horizontal-line {
+  position: relative;
+  border: none;
+  height: 10px;
+  background-color: #5a9a98;
+  margin-bottom: 50px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  justify-content: space-between;
+}
+
+.search-bar {
+  background: white;
+  flex: 1;
+}
+
+.profiles {
+  background: yellow;
+  flex: 2;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

@@ -11,7 +11,7 @@ import Events from "./pages/events";
 import Community from "./pages/community";
 import SignIn from "./pages/signin";
 import Join from "./pages/Join/join";
-import Directory from "./pages/directory";
+import Directory from "./pages/Directory/directory";
 import ResumeBank from "./pages/resumebank";
 import FindAnExpert from "./pages/findanexpert";
 import ResumeReview from "./pages/resumereview";
