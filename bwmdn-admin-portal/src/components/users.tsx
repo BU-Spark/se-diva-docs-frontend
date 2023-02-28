@@ -54,13 +54,15 @@ const MyToolbar = () => (
 
 export const UserEdit = () => {
     const [create] = useCreate();
-    const postSave = (data:any) => {
+    const redirect = useRedirect();
+    const approve = (data:any) => {
         create('applicants/approveapplicant', { data });
+        redirect('list');
         console.log(data);
     };
     return(
     <Edit title={<EditTitle />} >
-        <SimpleForm  toolbar={<MyToolbar/>} onSubmit={postSave}>
+        <SimpleForm  toolbar={<MyToolbar/>} onSubmit={approve}>
             <Typography variant="h6" gutterBottom>
                 Identity
             </Typography>
