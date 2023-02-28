@@ -71,7 +71,7 @@ const FinalQuestions = ({
       <span>Please upload your resume,(not required to share)</span>
       <span> Put functionality here</span> */}
 
-      <span>Would you like your resume to be inlcuded in the resume bank?</span>
+      {/* <span>Would you like your resume to be inlcuded in the resume bank?</span>
       {answerTypes.map((answerType) => (
         <label htmlFor={answerType}>
           <input
@@ -86,7 +86,7 @@ const FinalQuestions = ({
           />
           {answerType}
         </label>
-      ))}
+      ))} */}
 
       <span>Do you identify as a Black Women Physician?</span>
       {answerTypes.map((answerType) => (

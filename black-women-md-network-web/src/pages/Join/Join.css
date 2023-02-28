@@ -7,12 +7,13 @@
   flex-direction: column;
   /* border: 1px solid tomato; */
   margin: auto;
-  margin-top: 100px;
+
   color: #456b68;
   font-weight: bold;
 }
 
 .title {
+  margin-top: 100px;
   font-weight: bold;
   font-size: 60px;
 }
