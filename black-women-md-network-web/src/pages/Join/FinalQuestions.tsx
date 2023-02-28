@@ -25,12 +25,20 @@ const FinalQuestions = ({
   wantToSponsor,
   updateFields,
 }: FinalQuestionsProps) => {
+  // generic answer types
   const answerTypes = ["Yes", "No", "Don't Know"];
   const answerTypes2 = [
     "Yes",
     "No",
     "No, but I would like more information about starting a branch in my region",
   ];
+  const answerTypes3 = [
+    "Yes",
+    "No",
+    "No, but I would consider it in the future.",
+  ];
+
+  const yesOrNo = ["Yes", "No"];
   return (
     <FormWrapper title={"Black Women M.D. Network Questions"}>
       <span>
@@ -52,7 +60,7 @@ const FinalQuestions = ({
       ))}
 
       <span>Do you agree to be included in the Membership Directory?</span>
-      {answerTypes.map((answerType) => (
+      {yesOrNo.map((answerType) => (
         <label htmlFor={answerType}>
           <input
             type="radio"
@@ -89,7 +97,7 @@ const FinalQuestions = ({
       ))} */}
 
       <span>Do you identify as a Black Women Physician?</span>
-      {answerTypes.map((answerType) => (
+      {yesOrNo.map((answerType) => (
         <label htmlFor={answerType}>
           <input
             type="radio"
@@ -109,7 +117,7 @@ const FinalQuestions = ({
         Are you interested in providing mentorship to a Black woman physician or
         student / trainee?
       </span>
-      {answerTypes.map((answerType) => (
+      {answerTypes3.map((answerType) => (
         <label htmlFor={answerType}>
           <input
             type="radio"
@@ -127,7 +135,7 @@ const FinalQuestions = ({
         Are you interested in sponsoring a black woman physician or student /
         trainee who has a defined, limited sponsorship request or question?
       </span>
-      {answerTypes.map((answerType) => (
+      {answerTypes3.map((answerType) => (
         <label htmlFor={answerType}>
           <input
             type="radio"
