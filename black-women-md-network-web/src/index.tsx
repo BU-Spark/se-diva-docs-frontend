@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-=======
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -18,7 +7,6 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
->>>>>>> 3246fe86ee4abd21a82cdc6426e2a36bcfc99003
 );
 root.render(
   <React.StrictMode>
