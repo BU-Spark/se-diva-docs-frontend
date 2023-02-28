@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Datagrid, DateField, List, TextField, EmailField, Edit, SimpleForm, TextInput, Toolbar, SaveButton, DeleteButton, Show, SimpleShowLayout } from 'react-admin';
+import { Datagrid, DateField, List, TextField, EmailField, Edit, SimpleForm, TextInput, Toolbar, SaveButton, DeleteButton, Show, SimpleShowLayout, useNotify, useRedirect, useCreate } from 'react-admin';
 import { useRecordContext} from "react-admin";
 import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
@@ -21,6 +21,22 @@ export const UserList = () => (
     </List>
 );
 
+
+/*export const UserEdit = () => {
+    const [create] = useCreate();
+    const postSave = (data:any) => {
+        create('applicants/approveapplicant', { data });
+    };
+    return (
+        <Edit>
+            <SimpleForm onSubmit={postSave}>
+                <TextInput source="first_name" fullWidth helperText={false}/>
+            </SimpleForm>
+        </Edit>
+    );
+};*/
+
+
 const EditTitle = () => {
     const record = useRecordContext();
     return <span>{record ? `${record.first_name} ${record.last_name}` : ''}</span>;
@@ -36,9 +52,15 @@ const MyToolbar = () => (
     </Toolbar>
 );
 
-export const UserEdit = () => (
-    <Edit title={<EditTitle />}>
-        <SimpleForm toolbar={<MyToolbar/>}>
+export const UserEdit = () => {
+    const [create] = useCreate();
+    const postSave = (data:any) => {
+        create('applicants/approveapplicant', { data });
+        console.log(data);
+    };
+    return(
+    <Edit title={<EditTitle />} >
+        <SimpleForm  toolbar={<MyToolbar/>} onSubmit={postSave}>
             <Typography variant="h6" gutterBottom>
                 Identity
             </Typography>
@@ -191,6 +213,7 @@ export const UserEdit = () => (
         </SimpleForm>
     </Edit>
 );
+};
 
 export const UserShow = () => (
     <Show>
