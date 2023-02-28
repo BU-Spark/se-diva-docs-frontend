@@ -1,17 +1,16 @@
-import React from 'react';
-import logo from "/Users/paigedeveau/Desktop/se-diva-docs-frontend/black-women-md-network-web/src/images/BlackWomenMDNetworkLogo1.jpg";
-import twitter from "/Users/paigedeveau/Desktop/se-diva-docs-frontend/black-women-md-network-web/src/images/twitter.jpg";
-import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
+import React from "react";
+import logo from "./BlackWomenMDNetworkLogo1.jpg";
+import twitter from "./twitter.jpg";
 import "./Footer.css";
 
 const Footer = () => (
   <div className="footer">
     <div className="footer-links">
-      <a href="/">Home</a>
-      <a href="/directory">Membership</a>
-      <a href="/jobs">Resources</a>
-      <a href="/events">Events</a>
-      <a href="/societies">Community</a>
+      <a href="/">BWMDN</a>
+      <a href="/about">About</a>
+      <a href="/membership">Membership</a>
+      <a href="/resources">Resources</a>
+      <a href="/news">News</a>
     </div>
     <div className="footer-image">
       <img className="logo-img" src={logo} alt="" />
