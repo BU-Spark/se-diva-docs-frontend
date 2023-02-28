@@ -177,6 +177,7 @@ const ContactInfo = ({
             id={racetype}
             name="race-type"
             value={racetype}
+            checked={race.includes(racetype)}
             onChange={(e) => {
               if (e.target.checked && !race.includes(racetype)) {
                 race.push(racetype);
@@ -199,6 +200,7 @@ const ContactInfo = ({
             id={ethnicitytype}
             name="ethnicity-type"
             value={ethnicitytype}
+            checked={ethnicity.includes(ethnicitytype)}
             onChange={(e) => {
               if (e.target.checked && !ethnicity.includes(ethnicitytype)) {
                 ethnicity.push(ethnicitytype);
@@ -241,7 +243,6 @@ const ContactInfo = ({
         <input
           type="text"
           id="self-describe"
-          value={gender}
           placeholder="Self-descibe as..."
           onChange={(e) => updateFields({ gender: e.target.value })}
         />
