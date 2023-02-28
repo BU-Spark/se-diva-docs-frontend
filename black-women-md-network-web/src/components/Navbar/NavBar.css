@@ -6,13 +6,8 @@
 .navbar-custom{
   color:#FFFFFF;
   background-color: #5A9A98;
-<<<<<<< HEAD
-  width: 1441px;
-  height: 79px;
-=======
   width: 100%;
   height: 8vh;
->>>>>>> main
   left: 0px;
   top: 0px;
 }
@@ -31,10 +26,7 @@
 .navbar-custom .navbar-text,
 .navbar-custom .navbar-nav .nav-link 
 {
-<<<<<<< HEAD
-=======
   display: flex;
->>>>>>> main
   color: #F0FFFF;
   margin-left: 10px;
   margin-right: 10px;
