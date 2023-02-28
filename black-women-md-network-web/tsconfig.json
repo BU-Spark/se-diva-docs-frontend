@@ -1,8 +1,16 @@
 {
   "compilerOptions": {
     "target": "es5",
+<<<<<<< HEAD
     "lib": ["dom", "dom.iterable", "esnext"],
 
+=======
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+>>>>>>> 3246fe86ee4abd21a82cdc6426e2a36bcfc99003
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -17,5 +25,11 @@
     "noEmit": true,
     "jsx": "preserve"
   },
+<<<<<<< HEAD
   "include": ["src"]
+=======
+  "include": [
+    "src"
+  ]
+>>>>>>> 3246fe86ee4abd21a82cdc6426e2a36bcfc99003
 }

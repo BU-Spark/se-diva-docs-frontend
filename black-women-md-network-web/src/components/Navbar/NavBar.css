@@ -1,4 +1,4 @@
-.navbar {
+.navbar{
   display: flex;
   position: fixed;
   top: 0;
@@ -12,10 +12,11 @@
   top: 0px;
 }
 /* change the brand color*/
-.navbar-custom .navbar-brand {
-  color: #f0ffff;
+.navbar-custom .navbar-brand
+{
+  color: #F0FFFF;
 
-  font-family: "Times";
+  font-family: 'Times';
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -23,18 +24,19 @@
 }
 /* change the text color */
 .navbar-custom .navbar-text,
-.navbar-custom .navbar-nav .nav-link {
+.navbar-custom .navbar-nav .nav-link 
+{
   display: flex;
-  color: #f0ffff;
+  color: #F0FFFF;
   margin-left: 10px;
   margin-right: 10px;
 
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 100%;
-  /*
+    /*
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -43,13 +45,14 @@
     */
 }
 /*change the color of hovered brand*/
-.navbar-custom .navbar-brand:hover {
-  color: #456b68;
+.navbar-custom .navbar-brand:hover
+{
+  color: #456B68;
 }
 /* change the color of active or hovered links */
 .navbar-custom .nav-item.active,
 .navbar-custom .nav-item:hover,
 .navbar-custom .nav-link.active,
-.navbar-custom .nav-link:hover {
-  color: #456b68;
+.navbar-custom .nav-link:hover{
+    color: #456B68;
 }
