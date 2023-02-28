@@ -79,6 +79,9 @@ const MembershipType = ({
           <label>
             <input
               type="checkbox"
+              id={expertiseType}
+              name="expertise-type"
+              value={expertiseType}
               onChange={(e) => {
                 if (e.target.checked && !expertise.includes(expertiseType)) {
                   expertise.push(expertiseType);
