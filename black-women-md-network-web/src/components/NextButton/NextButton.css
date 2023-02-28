@@ -1,0 +1,10 @@
+.next-button {
+  width: 90px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  color: #f0ffff;
+  background-color: #456b68;
+  flex: auto;
+  margin-right: 30px;
+}

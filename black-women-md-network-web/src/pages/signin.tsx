@@ -2,7 +2,6 @@ import React from "react";
 import doctor from "../images/blackfemaledoctorsconfident.jpg";
 import "./construction.css";
 
-
 const SignIn = () => {
   return (
     <div className="construction-body">
