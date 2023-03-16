@@ -23,6 +23,11 @@ import FindAnExpert from "./pages/findanexpert";
 import ResumeReview from "./pages/resumereview";
 import Headshot from "./pages/headshot";
 import Coaching from "./pages/coaching";
+const members = [
+  { name: 'John Smith', email: 'john@example.com', phone: '555-1234' },
+  { name: 'Jane Doe', email: 'jane@example.com', phone: '555-5678' },
+  { name: 'Bob Johnson', email: 'bob@example.com', phone: '555-9012' },
+];
 
 function App() {
   useEffect(() => {
@@ -37,7 +42,7 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/whoarewe" element={<WhoAreWe />} />
         <Route path="/mission" element={<Mission />} />
-        <Route path="/membership" element={<Membership />} />
+        <Route path="/membership" element={<Directory />} />
         <Route path="/team" element={<Team />} />
         <Route path="/directors" element={<Directors />} />
         <Route path="/resources" element={<Resources />} />
