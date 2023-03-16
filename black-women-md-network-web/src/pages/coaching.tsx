@@ -1,18 +1,15 @@
-import React from 'react';
-  
-const Coaching= () => {
+import React from "react";
+import doctor from "../images/blackfemaledoctorsconfident.jpg";
+import "./construction.css";
+
+
+const Coaching = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'Right',
-        alignItems: 'Right',
-        height: '100vh'
-      }}
-    >
-      <h1>Coaching</h1>
+    <div className="construction-body">
+      <img className="doctor-img" src={doctor} alt="" />
+      <p>Page Coming Soon</p>
     </div>
   );
 };
-  
+
 export default Coaching;

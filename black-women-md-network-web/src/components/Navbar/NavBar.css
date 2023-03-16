@@ -1,13 +1,15 @@
 .navbar{
   display: flex;
+  position: fixed;
+  top: 0;
 }
-.navbar-custom{
-  color:#FFFFFF;
-  background-color: #5A9A98;
+.navbar-custom {
+  color: #ffffff;
+  background-color: #5a9a98;
   width: 100%;
   height: 8vh;
   left: 0px;
-  top: 51px;
+  top: 0px;
 }
 /* change the brand color*/
 .navbar-custom .navbar-brand
@@ -32,7 +34,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 100%;
     /*
     font-family: 'Inter';

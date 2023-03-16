@@ -1,9 +1,9 @@
-import { FaBars } from 'react-icons/fa';
-import { NavLink as Link } from 'react-router-dom';
-import styled from 'styled-components';
-  
+import { FaBars } from "react-fa-icon"
+import { NavLink as Link } from "react-router-dom";
+import styled from "styled-components";
+
 export const Nav = styled.nav`
-  background: #FFFFFF;
+  background: #ffffff;
   height: 85px;
   display: flex;
   justify-content: space-between;
@@ -21,9 +21,8 @@ export const NavLogo = styled(Link)`
   height: 100%;
   cursor: pointer;
   font: 1.2em "Fira Sans", sans-serif;
-
 `;
-  
+
 export const NavLink = styled(Link)`
   color: #000000;
   display: flex;
@@ -38,7 +37,7 @@ export const NavLink = styled(Link)`
     color: #000000;
   }
 `;
-  
+
 export const Bars = styled(FaBars)`
   display: none;
   color: #000000;
@@ -52,7 +51,7 @@ export const Bars = styled(FaBars)`
     cursor: pointer;
   }
 `;
-  
+
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
@@ -78,11 +77,11 @@ export const NavBtn = styled.nav`
     display: none;
   }
 `;
-  
+
 export const SignInBtnLink = styled(Link)`
   display: flex;
   border-radius: none;
-  background: #FFFFFF;
+  background: #ffffff;
   padding: 25% 50px;
   color: #000000;
   align-items: center;
@@ -97,7 +96,7 @@ export const SignInBtnLink = styled(Link)`
   &:hover {
     transition: all 0.2s ease-in-out;
     background: #000;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 `;
 export const JoinBtnLink = styled(Link)`
@@ -105,7 +104,7 @@ export const JoinBtnLink = styled(Link)`
   border-radius: none;
   background: #000000;
   padding: 25% 50px;
-  color: #FFFFFF;
+  color: #ffffff;
   align-items: center;
   outline: none;
   border: none;

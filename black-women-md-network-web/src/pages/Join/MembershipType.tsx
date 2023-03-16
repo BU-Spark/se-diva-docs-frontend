@@ -47,7 +47,7 @@ const MembershipType = ({
           onChange={(academicAffiliation) =>
             updateFields({ academicAffiliation })
           }
-          required={false}
+          required={true}
         ></TextBox>
 
         <TextBox
@@ -55,7 +55,7 @@ const MembershipType = ({
           placeholder={"N/A if Not Applicable"}
           value={hospitalOrcompany}
           onChange={(hospitalOrcompany) => updateFields({ hospitalOrcompany })}
-          required={false}
+          required={true}
         ></TextBox>
 
         <TextBox
@@ -63,7 +63,7 @@ const MembershipType = ({
           placeholder={"N/A if Not Applicable"}
           value={position}
           onChange={(position) => updateFields({ position })}
-          required={false}
+          required={true}
         ></TextBox>
 
         <TextBox
@@ -71,7 +71,7 @@ const MembershipType = ({
           placeholder={"N/A if Not Applicable"}
           value={specialty}
           onChange={(specialty) => updateFields({ specialty })}
-          required={false}
+          required={true}
         ></TextBox>
 
         <span>Areas of Expertise</span>
@@ -79,6 +79,10 @@ const MembershipType = ({
           <label>
             <input
               type="checkbox"
+              id={expertiseType}
+              name="expertise-type"
+              required
+              checked={expertise.includes(expertiseType)}
               onChange={(e) => {
                 if (e.target.checked && !expertise.includes(expertiseType)) {
                   expertise.push(expertiseType);

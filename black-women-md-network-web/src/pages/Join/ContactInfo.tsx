@@ -35,6 +35,7 @@ const ContactInfo = ({
   city,
   state,
   zipcode,
+  country,
   address,
   race,
   ethnicity,
@@ -56,14 +57,14 @@ const ContactInfo = ({
       <label>Name*</label>
       <input
         autoFocus
-        // required
+        required
         type="text"
         value={firstName}
         placeholder="First Name"
         onChange={(e) => updateFields({ firstName: e.target.value })}
       />
       <input
-        // required
+        required
         type="text"
         value={lastName}
         placeholder="Last Name"
@@ -86,7 +87,8 @@ const ContactInfo = ({
       <input
         type="email"
         id="email-preferred"
-        // required
+        required
+        value={email}
         placeholder="Emal Address (Preferred)"
         onChange={(e) => updateFields({ email: e.target.value })}
       />
@@ -95,6 +97,7 @@ const ContactInfo = ({
       <input
         type="email"
         id="email-secondary"
+        value={emailSecondary}
         placeholder="Email Address (Secondary)"
         onChange={(e) => updateFields({ emailSecondary: e.target.value })}
       />
@@ -102,34 +105,51 @@ const ContactInfo = ({
       <span>Phone Number (Mobile)*</span>
       <input
         type="tel"
-        // required
+        id="phone"
+        value={phone}
+        required
         placeholder="Phone Number (Mobile)"
         onChange={(e) => updateFields({ phone: e.target.value })}
       />
 
       <span>Mailing Address*</span>
       <input
-        // required
+        type="text"
+        id="street"
+        value={street}
+        required
         placeholder="Street"
         onChange={(e) => updateFields({ street: e.target.value })}
       />
       <input
-        // required
+        type="text"
+        id="city"
+        value={city}
+        required
         placeholder="City"
         onChange={(e) => updateFields({ city: e.target.value })}
       />
       <input
-        // required
+        type="text"
+        id="state"
+        value={state}
+        required
         placeholder="State"
         onChange={(e) => updateFields({ state: e.target.value })}
       />
       <input
-        // required
+        type="text"
+        id="zipcode"
+        value={zipcode}
+        required
         placeholder="Zip Code"
         onChange={(e) => updateFields({ zipcode: e.target.value })}
       />
       <input
-        // required
+        type="text"
+        id="country"
+        value={country}
+        required
         placeholder="Country"
         onChange={(e) => updateFields({ country: e.target.value })}
       />
@@ -141,6 +161,7 @@ const ContactInfo = ({
             type="radio"
             id={adresstype}
             name="address-type"
+            required
             value={adresstype}
             checked={address === adresstype}
             onChange={(e) => updateFields({ address: e.target.value })}
@@ -154,6 +175,11 @@ const ContactInfo = ({
         <label>
           <input
             type="checkbox"
+            id={racetype}
+            name="race-type"
+            required
+            value={racetype}
+            checked={race.includes(racetype)}
             onChange={(e) => {
               if (e.target.checked && !race.includes(racetype)) {
                 race.push(racetype);
@@ -173,6 +199,11 @@ const ContactInfo = ({
         <label>
           <input
             type="checkbox"
+            id={ethnicitytype}
+            name="ethnicity-type"
+            required
+            value={ethnicitytype}
+            checked={ethnicity.includes(ethnicitytype)}
             onChange={(e) => {
               if (e.target.checked && !ethnicity.includes(ethnicitytype)) {
                 ethnicity.push(ethnicitytype);
@@ -195,12 +226,17 @@ const ContactInfo = ({
             type="radio"
             id={gendertype}
             name="gender-type"
+            required
             value={gendertype}
             checked={gender === gendertype}
             onChange={(e) => {
+              if (e.target.value != "Self-describe as:") {
+                setSelfDescribe(false);
+              }
               if (e.target.value == "Self-describe as:") {
                 setSelfDescribe(true);
               }
+
               updateFields({ gender: e.target.value });
             }}
           />
@@ -210,6 +246,7 @@ const ContactInfo = ({
       {selfDescribe && (
         <input
           type="text"
+          id="self-describe"
           placeholder="Self-descibe as..."
           onChange={(e) => updateFields({ gender: e.target.value })}
         />
@@ -217,8 +254,10 @@ const ContactInfo = ({
 
       <label>What are your pronouns?</label>
       <input
-        // required
+        required
         type="text"
+        id="pronouns"
+        value={pronouns}
         placeholder="/"
         onChange={(e) => updateFields({ pronouns: e.target.value })}
       />
