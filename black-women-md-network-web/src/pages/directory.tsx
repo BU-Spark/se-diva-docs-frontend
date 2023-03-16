@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Button, Badge, Modal } from 'react-bootstrap';
+import Switch from 'react-switch';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./directory.css";
 
@@ -33,7 +34,7 @@ interface MemberData {
         <Card.Body>
           <Card.Title>{last_name}, {first_name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">{specialty}</Card.Subtitle>
-          <Card.Text>{phone_number}</Card.Text>
+          <Card.Text>Bio</Card.Text>
           {resume_included_question.toLowerCase() == "yes" && (
             <Badge pill bg="success">
               Resume Available
@@ -44,7 +45,6 @@ interface MemberData {
               Resume Not Available
             </Badge>
           )}
-          <Card.Text>Bio</Card.Text>
           <Button variant="primary" onClick={handleShowModal}>
             Contact
           </Button>
@@ -70,10 +70,19 @@ interface MemberData {
   
   
   const Directory: React.FC = () => {
+    const options = [
+        { label: 'Male', value: 'male' },
+        { label: 'Female', value: 'female' },
+        { label: 'Non-binary', value: 'non-binary' },
+        // Add more options here as needed
+      ];
+      
     const [members, setMembers] = useState<MemberData[]>([]);
     const [searchTerm, setSearchTerm] = useState<string>('');
-    const [showResumeOnly, setShowResumeOnly] = useState<boolean>(false);
-    const [showConnectionOnly, setShowConnectionOnly] = useState<boolean>(false);
+    const [isResumeChecked, setIsResumeChecked] = useState(false);
+    const [isConnectionChecked, setIsConnectionChecked] = useState(false);
+    const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+
   
     useEffect(() => {
       const fetchMembers = async () => {
@@ -88,37 +97,53 @@ interface MemberData {
       .filter((member) =>
         member.first_name.toLowerCase().includes(searchTerm.toLowerCase())
       )
-      .filter((member) => (!showResumeOnly || member.resume_included_question.toLowerCase() == "yes"))
-      .filter((member) => (!showConnectionOnly || member.will_sponsor_question.sponsor_question_answer.toLowerCase() == "yes"));
+      .filter((member) => (!isResumeChecked || member.resume_included_question.toLowerCase() == "yes"))
+      .filter((member) => (!isConnectionChecked || member.will_sponsor_question.sponsor_question_answer.toLowerCase() == "yes"));
   
     return (
       <div>
+        {options.map((option) => (
+            <div key={option.value}>
+                <label>
+                <input
+                    type="checkbox"
+                    value={option.value}
+                    checked={selectedOptions.includes(option.value)}
+                    onChange={(event) => {
+                    if (event.target.checked) {
+                        setSelectedOptions([...selectedOptions, option.value]);
+                    } else {
+                        setSelectedOptions(
+                        selectedOptions.filter((value) => value !== option.value)
+                        );
+                    }
+                    }}
+                />
+                {option.label}
+                </label>
+            </div>
+        ))}
         <div className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Search by name"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+          <label>
+            <span>Resume Available</span>
+            <Switch
+                onChange={(checked) => setIsResumeChecked(checked)}
+                checked={isResumeChecked}
+                uncheckedIcon={false}
+                checkedIcon={false}
+            />
+          </label>
         </div>
-        <div className="form-group form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            checked={showResumeOnly}
-            onChange={(e) => setShowResumeOnly(e.target.checked)}
-          />
-          <label className="form-check-label">Resume Available</label>
-        </div>
-        <div className="form-group form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            checked={showConnectionOnly}
-            onChange={(e) => setShowConnectionOnly(e.target.checked)}
-          />
-          <label className="form-check-label">Open to Connect</label>
+        <div className="form-group">
+          <label>
+            <span>Open to Connect</span>
+            <Switch
+                onChange={(checked) => setIsConnectionChecked(checked)}
+                checked={isConnectionChecked}
+                uncheckedIcon={false}
+                checkedIcon={false}
+            />
+          </label>
         </div>
         <div className="d-flex flex-wrap justify-content-center">
           {filteredMembers.map((member) => (
@@ -129,7 +154,7 @@ interface MemberData {
     );
   };
   
-  
+ /*<span>{isResumeChecked ? 'Resume Available' : 'Show All Members With or Without resume'}</span>*/ 
 
   export default Directory;
   
