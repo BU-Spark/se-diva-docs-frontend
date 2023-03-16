@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Button, Badge } from 'react-bootstrap';
+import { Card, Button, Badge, Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./directory.css";
 
@@ -9,6 +9,7 @@ interface MemberData {
     last_name: string;
     primary_email: string;
     phone_number: string;
+    specialty: string;
     resume_included_question: string;
     will_sponsor_question: {
         sponsor_question_answer: String,
@@ -16,12 +17,22 @@ interface MemberData {
       };
   }
 
-  const MemberCard: React.FC<MemberData> = ({ id, first_name, last_name, primary_email, phone_number, resume_included_question }) => {
+  const MemberCard: React.FC<MemberData> = ({ id, first_name, last_name, primary_email, phone_number, specialty, resume_included_question }) => {
+    const [showModal, setShowModal] = useState(false);
+
+    const handleShowModal = () => {
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
     return (
       <Card style={{ width: '18rem' }}>
         <Card.Body>
           <Card.Title>{last_name}, {first_name}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">{primary_email}</Card.Subtitle>
+          <Card.Subtitle className="mb-2 text-muted">{specialty}</Card.Subtitle>
           <Card.Text>{phone_number}</Card.Text>
           {resume_included_question.toLowerCase() == "yes" && (
             <Badge pill bg="success">
@@ -33,8 +44,25 @@ interface MemberData {
               Resume Not Available
             </Badge>
           )}
-          <Button variant="primary">View Details</Button>
+          <Card.Text>Bio</Card.Text>
+          <Button variant="primary" onClick={handleShowModal}>
+            Contact
+          </Button>
         </Card.Body>
+        <Modal show={showModal} onHide={handleCloseModal}>
+            <Modal.Header closeButton>
+            <Modal.Title>Contact {first_name} {last_name}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            <p>Phone number: {phone_number}</p>
+            <p>Email: {primary_email}</p>
+            </Modal.Body>
+            <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseModal}>
+                Close
+            </Button>
+            </Modal.Footer>
+        </Modal>
       </Card>
     );
   };
