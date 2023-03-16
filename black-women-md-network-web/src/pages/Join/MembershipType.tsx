@@ -81,7 +81,6 @@ const MembershipType = ({
               type="checkbox"
               id={expertiseType}
               name="expertise-type"
-              required
               checked={expertise.includes(expertiseType)}
               onChange={(e) => {
                 if (e.target.checked && !expertise.includes(expertiseType)) {

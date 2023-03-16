@@ -177,7 +177,6 @@ const ContactInfo = ({
             type="checkbox"
             id={racetype}
             name="race-type"
-            required
             value={racetype}
             checked={race.includes(racetype)}
             onChange={(e) => {
@@ -201,7 +200,6 @@ const ContactInfo = ({
             type="checkbox"
             id={ethnicitytype}
             name="ethnicity-type"
-            required
             value={ethnicitytype}
             checked={ethnicity.includes(ethnicitytype)}
             onChange={(e) => {
