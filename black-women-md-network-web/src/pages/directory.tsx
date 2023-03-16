@@ -23,9 +23,11 @@ interface MemberData {
       </Card>
     );
   };
-
+  
+  
   const Directory: React.FC = () => {
     const [members, setMembers] = useState<MemberData[]>([]);
+    const [searchTerm, setSearchTerm] = useState<string>('');
   
     useEffect(() => {
       const fetchMembers = async () => {
@@ -36,11 +38,26 @@ interface MemberData {
       fetchMembers();
     }, []);
   
+    const filteredMembers = members.filter((member) =>
+      member.first_name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  
     return (
-      <div className="d-flex flex-wrap justify-content-center">
-        {members.map((member) => (
-          <MemberCard key={member.id} {...member} />
-        ))}
+      <div>
+        <div className="form-group">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Search by name"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+        <div className="d-flex flex-wrap justify-content-center">
+          {filteredMembers.map((member) => (
+            <MemberCard key={member.id} {...member} />
+          ))}
+        </div>
       </div>
     );
   };
