@@ -51,6 +51,7 @@ const FinalQuestions = ({
             type="radio"
             id="startChapter"
             name="startChapter"
+            required
             value={answerType}
             checked={startChapter === answerType}
             onChange={(e) => updateFields({ startChapter: e.target.value })}
@@ -66,6 +67,7 @@ const FinalQuestions = ({
             type="radio"
             id="includeInDirectory"
             name="includeInDirectory"
+            required
             value={answerType}
             checked={includeInDirectory === answerType}
             onChange={(e) =>
@@ -103,6 +105,7 @@ const FinalQuestions = ({
             type="radio"
             id="identifyAsBlackWomenMD"
             name="identifyAsBlackWomenMD"
+            required
             value={answerType}
             checked={identifyAsBlackWomenMD === answerType}
             onChange={(e) =>
@@ -123,6 +126,7 @@ const FinalQuestions = ({
             type="radio"
             id="wantToMentor"
             name="wantToMentor"
+            required
             value={answerType}
             checked={wantToMentor === answerType}
             onChange={(e) => updateFields({ wantToMentor: e.target.value })}
@@ -141,6 +145,7 @@ const FinalQuestions = ({
             type="radio"
             id="wantToSponsor"
             name="wantToSponsor"
+            required
             value={answerType}
             checked={wantToSponsor === answerType}
             onChange={(e) => updateFields({ wantToSponsor: e.target.value })}
