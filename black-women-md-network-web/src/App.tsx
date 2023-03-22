@@ -23,6 +23,7 @@ import FindAnExpert from "./pages/findanexpert";
 import ResumeReview from "./pages/resumereview";
 import Headshot from "./pages/headshot";
 import Coaching from "./pages/coaching";
+import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 
 function App() {
   useEffect(() => {
@@ -52,6 +53,7 @@ function App() {
         <Route path="/headshot" element={<Headshot />} />
         <Route path="/coaching" element={<Coaching />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
       </Routes>
       <Footer />
     </Router>

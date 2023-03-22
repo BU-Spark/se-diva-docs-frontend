@@ -12,6 +12,11 @@ const SignIn = () => {
     navigate(path);
   };
 
+  const forgotPasswordRoute = () => {
+    let path = "/forgotpassword";
+    navigate(path);
+  };
+
   // Submits data before moving to next step!
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -32,6 +37,8 @@ const SignIn = () => {
         if (response.status == 200) {
           console.log(response);
           // redirect to homepage
+          let path = "/";
+          navigate(path);
         } else {
           console.log("Error: " + response.status);
           alert("There was an error!  Please try again later.");
@@ -73,7 +80,9 @@ const SignIn = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className={styles["link-btn"]}>Forgot password?</button>
+          <button className={styles["link-btn"]} onClick={forgotPasswordRoute}>
+            Forgot password?
+          </button>
           <button className={styles["submit"]} type="submit">
             Log In
           </button>
