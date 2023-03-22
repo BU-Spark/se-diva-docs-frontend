@@ -30,11 +30,13 @@ const SignIn = () => {
       }).toString(),
     };
 
-    fetch("https://se-diva-docs.herokuapp.com/applicants/login", requestOptions)
+    fetch("https://se-diva-docs.herokuapp.com/login", requestOptions)
       .then((response) => {
         if (response.status == 200) {
-          let path = "/welcome";
-          navigate(path);
+          console.log(response);
+          //let path = "/welcome";
+          //const access_token = response.body.access_token;
+          // navigate(path);
         } else {
           console.log("Error: " + response.status);
           alert("There was an error!  Please try again later.");
