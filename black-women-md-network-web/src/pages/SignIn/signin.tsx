@@ -5,9 +5,6 @@ import styles from "./signin.module.css";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [accessToken, setAccessToken] = useState(
-  //   sessionStorage.getItem("accessToken")
-  // );
 
   let navigate = useNavigate();
   const routeChange = () => {
@@ -34,9 +31,7 @@ const SignIn = () => {
       .then((response) => {
         if (response.status == 200) {
           console.log(response);
-          //let path = "/welcome";
-          //const access_token = response.body.access_token;
-          // navigate(path);
+          // redirect to homepage
         } else {
           console.log("Error: " + response.status);
           alert("There was an error!  Please try again later.");
