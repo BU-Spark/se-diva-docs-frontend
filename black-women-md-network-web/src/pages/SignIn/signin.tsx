@@ -5,18 +5,47 @@ import styles from "./signin.module.css";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    console.log(email);
-    console.log(password);
-  };
+  // const [accessToken, setAccessToken] = useState(
+  //   sessionStorage.getItem("accessToken")
+  // );
 
   let navigate = useNavigate();
   const routeChange = () => {
     let path = "/join";
     navigate(path);
   };
+
+  // Submits data before moving to next step!
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    console.log(email);
+    console.log(password);
+    // POST request using fetch inside useEffect React hook
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        username: email,
+        password: password,
+      }).toString(),
+    };
+
+    fetch("https://se-diva-docs.herokuapp.com/applicants/login", requestOptions)
+      .then((response) => {
+        if (response.status == 200) {
+          let path = "/welcome";
+          navigate(path);
+        } else {
+          console.log("Error: " + response.status);
+          alert("There was an error!  Please try again later.");
+        }
+      })
+      .catch((error) => {
+        console.log("Error: " + error.response.status);
+        alert("There was an error!  Please try again later.");
+      });
+  };
+
   return (
     <div className={styles["outer-container"]}>
       <div className={styles["auth-form-container"]}>
@@ -34,7 +63,7 @@ const SignIn = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-
+          <br></br>
           <label className={styles["label-signin"]} htmlFor="password">
             Password:{" "}
           </label>

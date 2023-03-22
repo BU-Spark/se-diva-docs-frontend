@@ -15,7 +15,7 @@ import Directors from "./pages/directors";
 import Resources from "./pages/resources";
 import Events from "./pages/events";
 import Community from "./pages/community";
-import SignIn from "./pages/signin";
+import SignIn from "./pages/SignIn/signin";
 import Join from "./pages/Join/join";
 import Directory from "./pages/directory";
 import ResumeBank from "./pages/resumebank";
