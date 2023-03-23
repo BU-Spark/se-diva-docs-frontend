@@ -71,9 +71,20 @@ interface MemberData {
   
   const Directory: React.FC = () => {
     const options = [
-        { label: 'Male', value: 'male' },
-        { label: 'Female', value: 'female' },
-        { label: 'Non-binary', value: 'non-binary' },
+        { label: 'Allergy & Immunology', value: 'Allergy & Immunology' },
+        { label: 'Anesthesiology', value: 'Anesthesiology' },
+        { label: 'Cardiology', value: "Cardiology" },
+        { label: 'Coaching', value: 'Coaching' },
+        { label: 'Critical Care Medicine', value: 'Critical Care Medicine' },
+        { label: 'Dermatology', value: 'Dermatology' },
+        { label: 'Emergency Medicine', value: 'Emergency Medicine' },
+        { label: 'Endocrinology', value: 'Endocrinology' },
+        { label: 'Family Medicine', value: 'Family Medicine' },
+        { label: 'Gastroenterology', value: 'Gastroenterology' },
+        { label: 'Geriatrics', value: 'Geriatrics' },
+        { label: 'Hematology & Oncology', value: 'Hematology & Oncology' },
+        { label: 'Infectious Disease', value: 'Infectious Disease' },
+        { label: 'Internal Medicine', value: 'Internal Medicine' },
         // Add more options here as needed
       ];
       
@@ -94,11 +105,26 @@ interface MemberData {
     }, []);
   
     const filteredMembers = members
-      .filter((member) =>
-        member.first_name.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-      .filter((member) => (!isResumeChecked || member.resume_included_question.toLowerCase() == "yes"))
-      .filter((member) => (!isConnectionChecked || member.will_sponsor_question.sponsor_question_answer.toLowerCase() == "yes"));
+        .filter((member) =>
+            member.first_name.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+        /*.filter((member) =>
+            selectedOptions.map((option) =>
+            member.specialty.includes(option)
+            )
+        )*/
+        .filter((member) =>
+        {
+            if (selectedOptions.length === 0) {
+                return true; // No options selected, show all items
+              }
+              return selectedOptions.includes(member.specialty);
+        })
+        .filter((member) => (!isResumeChecked || member.resume_included_question.toLowerCase() == "yes"))
+        .filter((member) => (!isConnectionChecked || member.will_sponsor_question.sponsor_question_answer.toLowerCase() == "yes"));
+        console.log(selectedOptions);
+      console.log(isResumeChecked);
+      console.log(members);
   
     return (
       <div>
