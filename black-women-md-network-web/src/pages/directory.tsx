@@ -10,6 +10,7 @@ interface MemberData {
     last_name: string;
     primary_email: string;
     phone_number: string;
+    current_position: string;
     specialty: string;
     resume_included_question: string;
     will_sponsor_question: {
@@ -18,7 +19,7 @@ interface MemberData {
       };
   }
 
-  const MemberCard: React.FC<MemberData> = ({ id, first_name, last_name, primary_email, phone_number, specialty, resume_included_question }) => {
+  const MemberCard: React.FC<MemberData> = ({ id, first_name, last_name, primary_email, phone_number, current_position, specialty, resume_included_question }) => {
     const [showModal, setShowModal] = useState(false);
 
     const handleShowModal = () => {
@@ -99,14 +100,21 @@ interface MemberData {
       const fetchMembers = async () => {
         const response = await fetch('https://se-diva-docs.herokuapp.com/approvedapplicants/view');
         const data = await response.json();
-        setMembers(data);
+        setMembers(data)
       };
       fetchMembers();
     }, []);
   
+    const searchTerms = searchTerm.toLowerCase().split(" ");
+
     const filteredMembers = members
         .filter((member) =>
-            member.first_name.toLowerCase().includes(searchTerm.toLowerCase())
+            searchTerms.every((term) =>
+                [member.first_name, member.last_name, member.current_position]
+                    .join(" ")
+                    .toLowerCase()
+                    .includes(term)
+            )
         )
         /*.filter((member) =>
             selectedOptions.map((option) =>
@@ -122,9 +130,6 @@ interface MemberData {
         })
         .filter((member) => (!isResumeChecked || member.resume_included_question.toLowerCase() == "yes"))
         .filter((member) => (!isConnectionChecked || member.will_sponsor_question.sponsor_question_answer.toLowerCase() == "yes"));
-        console.log(selectedOptions);
-      console.log(isResumeChecked);
-      console.log(members);
   
     return (
       <div>
