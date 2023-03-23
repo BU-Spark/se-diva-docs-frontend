@@ -10,15 +10,14 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    {/* <AuthProvider
+    <AuthProvider
       authType={"cookie"}
       authName={"access_token"}
       cookieDomain={window.location.hostname}
       cookieSecure
     >
-
-    </AuthProvider> */}
-    <App />
+      <App />
+    </AuthProvider>
   </React.StrictMode>
 );
 

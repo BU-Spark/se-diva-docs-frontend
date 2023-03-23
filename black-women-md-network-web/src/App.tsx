@@ -23,7 +23,7 @@ import FindAnExpert from "./pages/findanexpert";
 import ResumeReview from "./pages/resumereview";
 import Headshot from "./pages/headshot";
 import Coaching from "./pages/coaching";
-import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
+import ForgotPassword from "./pages/ForgotPassword/forgotpassword";
 
 function App() {
   useEffect(() => {
