@@ -102,6 +102,15 @@ interface MemberData {
   
     return (
       <div>
+        <div className="form-group">
+            <input
+            type="text"
+            className="form-control"
+            placeholder="Search by name"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            />
+        </div>
         {options.map((option) => (
             <div key={option.value}>
                 <label>
