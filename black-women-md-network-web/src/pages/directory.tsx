@@ -94,6 +94,7 @@ interface MemberData {
     const [isResumeChecked, setIsResumeChecked] = useState(false);
     const [isConnectionChecked, setIsConnectionChecked] = useState(false);
     const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+    const [collapsed, setCollapsed] = useState(true);
 
   
     useEffect(() => {
@@ -142,27 +143,36 @@ interface MemberData {
             onChange={(e) => setSearchTerm(e.target.value)}
             />
         </div>
-        {options.map((option) => (
-            <div key={option.value}>
-                <label>
-                <input
-                    type="checkbox"
-                    value={option.value}
-                    checked={selectedOptions.includes(option.value)}
-                    onChange={(event) => {
-                    if (event.target.checked) {
-                        setSelectedOptions([...selectedOptions, option.value]);
-                    } else {
-                        setSelectedOptions(
-                        selectedOptions.filter((value) => value !== option.value)
-                        );
-                    }
-                    }}
-                />
-                {option.label}
-                </label>
+        <div className="options-container">
+          <button onClick={() => setCollapsed(!collapsed)}>
+            {collapsed ? 'Show specialties' : 'Hide specialties'}
+          </button>
+
+          {/* Only show options if not collapsed */}
+          {!collapsed && (
+            <div className="options">
+              {options.map((option) => (
+                <div key={option.value}>
+                  <label>
+                    <input
+                      type="checkbox"
+                      value={option.value}
+                      checked={selectedOptions.includes(option.value)}
+                      onChange={() => {
+                        if (selectedOptions.includes(option.value)) {
+                          setSelectedOptions(selectedOptions.filter((s) => s !== option.value));
+                        } else {
+                          setSelectedOptions([...selectedOptions, option.value]);
+                        }
+                      }}
+                    />
+                    {option.label}
+                  </label>
+                </div>
+              ))}
             </div>
-        ))}
+          )}
+        </div>
         <div className="form-group">
           <label>
             <span>Resume Available</span>
