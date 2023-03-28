@@ -149,7 +149,20 @@ interface MemberData {
     const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
     const [collapsed, setCollapsed] = useState(true);
 
-  
+    const sortedOptions = [...options].sort((a, b) => {
+      const aIndex = selectedOptions.indexOf(a.value);
+      const bIndex = selectedOptions.indexOf(b.value);
+      if (aIndex === -1 && bIndex === -1) {
+        return 0;
+      } else if (aIndex === -1) {
+        return 1;
+      } else if (bIndex === -1) {
+        return -1;
+      } else {
+        return aIndex - bIndex;
+      }
+    });
+
     useEffect(() => {
       const fetchMembers = async () => {
         const response = await fetch('https://se-diva-docs.herokuapp.com/approvedapplicants/view');
@@ -186,72 +199,78 @@ interface MemberData {
         .filter((member) => (!isConnectionChecked || member.will_sponsor_question.sponsor_question_answer.toLowerCase() == "yes"));
   
     return (
-      <div>
-        <div className="form-group">
-            <input
-            type="text"
-            className="form-control"
-            placeholder="Search by name, position, ..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            />
-        </div>
-        <div className="options-container">
-          <button onClick={() => setCollapsed(!collapsed)}>
-            {collapsed ? 'Show specialties' : 'Hide specialties'}
-          </button>
+      <div className = "directory-body">
+        <div className="filters">
+          <div className="form-group">
+              <input
+              type="text"
+              className="form-control"
+              placeholder="Search by name, position, ..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              />
+          </div>
+          <div className="options-container">
+            <button onClick={() => setCollapsed(!collapsed)}>
+              {collapsed ? 'Show specialties' : 'Hide specialties'}
+            </button>
 
-          {/* Only show options if not collapsed */}
-          {!collapsed && (
-            <div className="options">
-              {options.map((option) => (
-                <div key={option.value}>
-                  <label>
-                    <input
-                      type="checkbox"
-                      value={option.value}
-                      checked={selectedOptions.includes(option.value)}
-                      onChange={() => {
-                        if (selectedOptions.includes(option.value)) {
-                          setSelectedOptions(selectedOptions.filter((s) => s !== option.value));
-                        } else {
-                          setSelectedOptions([...selectedOptions, option.value]);
-                        }
-                      }}
-                    />
-                    {option.label}
-                  </label>
+            {/* Only show options if not collapsed */}
+            {!collapsed && (
+              <div className="options-wrapper" style={{ height: '200px', overflow: 'auto' }}>
+                <div className="options">
+                  {sortedOptions.map((option) => (
+                    <div key={option.value}>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value={option.value}
+                          checked={selectedOptions.includes(option.value)}
+                          onChange={() => {
+                            if (selectedOptions.includes(option.value)) {
+                              setSelectedOptions(selectedOptions.filter((s) => s !== option.value));
+                            } else {
+                              setSelectedOptions([...selectedOptions, option.value]);
+                            }
+                          }}
+                        />
+                        {option.label}
+                      </label>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          )}
+              </div>
+            )}
+          </div>
+          <div className="form-group">
+            <label>
+              <span>Resume Available</span>
+              <Switch
+                  onChange={(checked) => setIsResumeChecked(checked)}
+                  checked={isResumeChecked}
+                  uncheckedIcon={false}
+                  checkedIcon={false}
+              />
+            </label>
+          </div>
+          <div className="form-group">
+            <label>
+              <span>Open to Connect</span>
+              <Switch
+                  onChange={(checked) => setIsConnectionChecked(checked)}
+                  checked={isConnectionChecked}
+                  uncheckedIcon={false}
+                  checkedIcon={false}
+              />
+            </label>
+          </div>
         </div>
-        <div className="form-group">
-          <label>
-            <span>Resume Available</span>
-            <Switch
-                onChange={(checked) => setIsResumeChecked(checked)}
-                checked={isResumeChecked}
-                uncheckedIcon={false}
-                checkedIcon={false}
-            />
-          </label>
-        </div>
-        <div className="form-group">
-          <label>
-            <span>Open to Connect</span>
-            <Switch
-                onChange={(checked) => setIsConnectionChecked(checked)}
-                checked={isConnectionChecked}
-                uncheckedIcon={false}
-                checkedIcon={false}
-            />
-          </label>
-        </div>
-        <div className="d-flex flex-wrap justify-content-center">
-          {filteredMembers.map((member) => (
-            <MemberCard key={member.id} {...member} />
-          ))}
+        <div className = "members">
+          <div className="d-flex flex-wrap justify-content-center">
+            {filteredMembers.map((member) => (
+              <MemberCard key={member.id} {...member} />
+            ))}
+          </div>
         </div>
       </div>
     );
