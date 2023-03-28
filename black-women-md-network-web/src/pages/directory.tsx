@@ -255,7 +255,7 @@ interface MemberData {
           </div>
           <div className="form-group">
             <label>
-              <span>Open to Connect</span>
+              <span>Will Sponsor</span>
               <Switch
                   onChange={(checked) => setIsConnectionChecked(checked)}
                   checked={isConnectionChecked}
