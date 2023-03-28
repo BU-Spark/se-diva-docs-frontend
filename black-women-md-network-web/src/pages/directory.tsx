@@ -49,22 +49,22 @@ interface MemberData {
     };
 
     return (
-      <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '18rem', backgroundColor: '#5A9A98' }}>
         <Card.Body>
-          <Card.Title>{first_name} {last_name}</Card.Title>
+          <Card.Title style={{color: 'white'}}>{first_name} {last_name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">{specialty}</Card.Subtitle>
           <Card.Text>Bio</Card.Text>
           {resume_included_question.toLowerCase() == "yes" && (
-            <Badge pill bg="success">
+            <Button variant="primary" onClick={handleShowModal} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
               Resume Available
-            </Badge>
+          </Button>
           )}
           {resume_included_question.toLowerCase() == "no" && (
             <Badge pill bg="secondary">
               Resume Not Available
             </Badge>
           )}
-          <Button variant="primary" onClick={handleShowModal}>
+          <Button variant="primary" onClick={handleShowModal} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
             Contact
           </Button>
         </Card.Body>

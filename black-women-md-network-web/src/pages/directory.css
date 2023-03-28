@@ -1,5 +1,5 @@
 body {
-    padding-top: 100px; /* This should be equal to the height of your header */
+    padding-top: 10vh;
     width: 100%;
     height: 100%;
     background: rgb(240,255,255);
@@ -14,4 +14,9 @@ body {
 .filters
 {
 
+}
+
+.Card
+{
+    background-color: #5A9A98;
 }
