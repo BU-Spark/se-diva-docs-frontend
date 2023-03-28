@@ -57,12 +57,12 @@ interface MemberData {
           {resume_included_question.toLowerCase() == "yes" && (
             <Button variant="primary" onClick={handleShowModal} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
               Resume Available
-          </Button>
+            </Button>
           )}
           {resume_included_question.toLowerCase() == "no" && (
-            <Badge pill bg="secondary">
-              Resume Not Available
-            </Badge>
+            <Button variant="primary" disabled onClick={handleShowModal} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
+              Resume
+            </Button>
           )}
           <Button variant="primary" onClick={handleShowModal} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
             Contact
