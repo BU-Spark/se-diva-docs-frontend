@@ -242,9 +242,9 @@ interface MemberData {
               </div>
             )}
           </div>
-          <div className="form-group">
+          <div className="form-group switch" >
             <label>
-              <span>Resume Available</span>
+              <span className="filter-label">Resume Available</span>
               <Switch
                   onChange={(checked) => setIsResumeChecked(checked)}
                   checked={isResumeChecked}
@@ -253,9 +253,9 @@ interface MemberData {
               />
             </label>
           </div>
-          <div className="form-group">
+          <div className="form-group switch" >
             <label>
-              <span>Will Sponsor</span>
+              <span className="filter-label">Will Sponsor</span>
               <Switch
                   onChange={(checked) => setIsConnectionChecked(checked)}
                   checked={isConnectionChecked}

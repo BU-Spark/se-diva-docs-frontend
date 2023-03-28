@@ -9,14 +9,30 @@ body {
 {
     display: flex;
     flex-direction: row;
+    padding-left: 2vw;
+    padding-right: 2vw;
 }
 
 .filters
 {
-
+    width: 25%;
+    padding-right: 1vw;
 }
 
 .Card
 {
     background-color: #5A9A98;
+}
+
+.filter-label
+{
+    color: #456B68;
+     font-weight: bold;
+}
+
+.switch
+{
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    border-bottom: 1px solid #C0ECEE;
 }
