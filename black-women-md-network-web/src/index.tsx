@@ -16,12 +16,12 @@ root.render(
       authName={"access_token"}
       cookieDomain={window.location.hostname}
       // Set to true if using https
-      cookieSecure = {false}
+      cookieSecure={false}
     >
-      <BrowserRouter>
+      {/* <BrowserRouter>
       <App />
-      </BrowserRouter>
-      
+      </BrowserRouter> */}
+      <App />
     </AuthProvider>
   </React.StrictMode>
 );

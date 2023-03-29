@@ -1,10 +1,12 @@
 import React, { FormEvent, useState } from "react";
+import { useSignIn } from "react-auth-kit";
 import { useNavigate } from "react-router-dom";
 import styles from "./signin.module.css";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const signIn = useSignIn();
 
   let navigate = useNavigate();
   const routeChange = () => {
@@ -39,6 +41,14 @@ const SignIn = () => {
           // redirect to homepage
           let path = "/";
           navigate(path);
+
+          // // Authentication Located Here
+          // signIn({
+          //   token: response.headers,
+          //   tokenType: "bearer",
+          //   expiresIn: 3600,
+          //   authState:{email:email}
+          // })
         } else {
           console.log("Error: " + response.status);
           alert("There was an error!  Please try again later.");
