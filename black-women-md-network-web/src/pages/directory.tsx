@@ -204,11 +204,11 @@ interface MemberData {
         <div className="filters">
           <div className="form-group">
               <input
-              type="text"
-              className="form-control"
-              placeholder="Search by name, position, ..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+                type="text"
+                className="form-control search-bar"
+                placeholder="Search by name, position, ..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
               />
           </div>
           <div className="options-container">
