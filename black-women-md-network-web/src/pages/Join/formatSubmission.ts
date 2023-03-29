@@ -1,7 +1,8 @@
 import { FormData } from "./FormData";
+import { v4 as uuidv4 } from "uuid";
 
 const formatSubmission = (data: FormData) => {
-  const uuid: number = 1;
+  const uuid = uuidv4();
   const submision = {
     submission: {
       id: uuid,
