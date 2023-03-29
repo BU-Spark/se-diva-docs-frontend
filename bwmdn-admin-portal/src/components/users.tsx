@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Datagrid, DateField, List, TextField, EmailField, Edit, SimpleForm, TextInput, Toolbar, SaveButton, DeleteButton, Show, SimpleShowLayout, useNotify, useRedirect, useCreate } from 'react-admin';
+import { Datagrid, DateField, List, TextField, EmailField, Edit, SimpleForm, TextInput, Toolbar, SaveButton, DeleteButton, Show, SimpleShowLayout, useNotify, useRedirect, useCreate, SelectInput, ReferenceInput } from 'react-admin';
 import { useRecordContext} from "react-admin";
 import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
@@ -55,10 +55,16 @@ const MyToolbar = () => (
 export const UserEdit = () => {
     const [create] = useCreate();
     const redirect = useRedirect();
-    const approve = (data:any) => {
-        create('applicants/approveapplicant', { data });
-        redirect('list');
+    const approve = async (data:any) => {
         console.log(data);
+        //data.applicant_status.subscription_tier = 
+        try {
+            await create('applicants/approveapplicant', { data });
+          } catch (error) {
+            console.log('error');
+            console.log(error);
+          }
+        redirect('list');
     };
     return(
     <Edit title={<EditTitle />} >
@@ -212,6 +218,21 @@ export const UserEdit = () => {
                     <TextInput source="will_sponsor_question.activities_interested" disabled fullWidth helperText={false}/>
                 </Box>
             </Box>
+            <ReferenceInput source="applicant_status.subscription_tier" reference="users" multiline fullWidth>
+                <SelectInput 
+                multiline
+                fullWidth
+                source="applicant_status.subscription_tier"
+                optionText="name" 
+                choices={[
+                    { id: 'Joycelyn Elders Society', name: 'Joycelyn Elders Society' },
+                    { id: 'Barbara Ross Society', name: 'Barbara Ross Society' },
+                    { id: 'Alexa Canaday Society', name: 'Alexa Canaday Society' },
+                    { id: 'Mae Jemison Society', name: 'Mae Jemison Society' },
+                    { id: 'Nancy Oriol Society', name: 'Nancy Oriol Society' },
+                ]} 
+                />
+            </ReferenceInput>
         </SimpleForm>
     </Edit>
 );
