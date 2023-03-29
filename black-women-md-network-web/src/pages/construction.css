@@ -1,0 +1,37 @@
+.construction-body
+{
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+
+
+ width: 100%;
+ height: 100%;
+
+
+ border-radius: 4px;
+ background: rgba(253,253,253,255);
+
+
+ padding-top: 6vh;
+}
+
+.construction-body img 
+{
+    width: 50%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+.construction-body p 
+{
+    width: 50%;
+    height: 100%;
+    color: #456B68;
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 5vi;
+    line-height: 60px;
+    }

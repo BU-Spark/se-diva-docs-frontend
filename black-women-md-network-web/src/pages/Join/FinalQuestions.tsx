@@ -25,12 +25,20 @@ const FinalQuestions = ({
   wantToSponsor,
   updateFields,
 }: FinalQuestionsProps) => {
+  // generic answer types
   const answerTypes = ["Yes", "No", "Don't Know"];
   const answerTypes2 = [
     "Yes",
     "No",
     "No, but I would like more information about starting a branch in my region",
   ];
+  const answerTypes3 = [
+    "Yes",
+    "No",
+    "No, but I would consider it in the future.",
+  ];
+
+  const yesOrNo = ["Yes", "No"];
   return (
     <FormWrapper title={"Black Women M.D. Network Questions"}>
       <span>
@@ -43,6 +51,7 @@ const FinalQuestions = ({
             type="radio"
             id="startChapter"
             name="startChapter"
+            required
             value={answerType}
             checked={startChapter === answerType}
             onChange={(e) => updateFields({ startChapter: e.target.value })}
@@ -52,12 +61,13 @@ const FinalQuestions = ({
       ))}
 
       <span>Do you agree to be included in the Membership Directory?</span>
-      {answerTypes.map((answerType) => (
+      {yesOrNo.map((answerType) => (
         <label htmlFor={answerType}>
           <input
             type="radio"
             id="includeInDirectory"
             name="includeInDirectory"
+            required
             value={answerType}
             checked={includeInDirectory === answerType}
             onChange={(e) =>
@@ -71,7 +81,7 @@ const FinalQuestions = ({
       <span>Please upload your resume,(not required to share)</span>
       <span> Put functionality here</span> */}
 
-      <span>Would you like your resume to be inlcuded in the resume bank?</span>
+      {/* <span>Would you like your resume to be inlcuded in the resume bank?</span>
       {answerTypes.map((answerType) => (
         <label htmlFor={answerType}>
           <input
@@ -86,15 +96,16 @@ const FinalQuestions = ({
           />
           {answerType}
         </label>
-      ))}
+      ))} */}
 
       <span>Do you identify as a Black Women Physician?</span>
-      {answerTypes.map((answerType) => (
+      {yesOrNo.map((answerType) => (
         <label htmlFor={answerType}>
           <input
             type="radio"
             id="identifyAsBlackWomenMD"
             name="identifyAsBlackWomenMD"
+            required
             value={answerType}
             checked={identifyAsBlackWomenMD === answerType}
             onChange={(e) =>
@@ -109,12 +120,13 @@ const FinalQuestions = ({
         Are you interested in providing mentorship to a Black woman physician or
         student / trainee?
       </span>
-      {answerTypes.map((answerType) => (
+      {answerTypes3.map((answerType) => (
         <label htmlFor={answerType}>
           <input
             type="radio"
             id="wantToMentor"
             name="wantToMentor"
+            required
             value={answerType}
             checked={wantToMentor === answerType}
             onChange={(e) => updateFields({ wantToMentor: e.target.value })}
@@ -127,12 +139,13 @@ const FinalQuestions = ({
         Are you interested in sponsoring a black woman physician or student /
         trainee who has a defined, limited sponsorship request or question?
       </span>
-      {answerTypes.map((answerType) => (
+      {answerTypes3.map((answerType) => (
         <label htmlFor={answerType}>
           <input
             type="radio"
             id="wantToSponsor"
             name="wantToSponsor"
+            required
             value={answerType}
             checked={wantToSponsor === answerType}
             onChange={(e) => updateFields({ wantToSponsor: e.target.value })}

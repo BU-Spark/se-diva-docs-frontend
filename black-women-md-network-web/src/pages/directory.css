@@ -1,36 +1,60 @@
-.outside {
-  background-color: #f0ffff;
-  min-height: 100vh;
-}
-.container {
-  padding-top: 100px;
-  color: #456b68;
-  font-weight: bold;
+body {
+    padding-top: 10vh;
+    width: 100%;
+    height: 100%;
+    background: #F0FFFF;
 }
 
-.horizontal-line {
-  position: relative;
-  border: none;
-  height: 10px;
-  background-color: #456b68;
-  margin-bottom: 50px;
+.directory-body
+{
+    display: flex;
+    flex-direction: row;
+    padding-left: 2vw;
+    padding-right: 2vw;
 }
 
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  background-color: black;
-  justify-content: space-between;
+.filters
+{
+    width: 25%;
+    padding-right: 1vw;
 }
 
-.search-bar {
-  background: green;
-  flex: 1;
+.Card
+{
+    background-color: #5A9A98;
 }
 
-.profiles {
-  background: blue;
-  flex: 2;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.filter-label
+{
+    color: #456B68;
+    font-weight: bold;
+}
+
+.search-bar
+{
+    border-color: #C0ECEE;
+    background-color: #F0FFFF;
+    color: #C0ECEE;
+}
+
+.switch
+{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    border-bottom: 1px solid #C0ECEE;
+}
+
+.plus-button
+{
+    border-radius: 50%;
+    background-color: #C0ECEE;
+    color: #5A9A98;
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,22 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import NavBar from "./components/Navbar/NavBar";
 import Footer from "./components/Footer/Footer";
 import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Welcome from "./pages/welcome";
+import About from "./pages/about";
+import News from "./pages/news";
+import WhoAreWe from "./pages/whoarewe";
+import Mission from "./pages/mission";
 import Membership from "./pages/membership";
+import Team from "./pages/team";
+import Directors from "./pages/directors";
 import Resources from "./pages/resources";
 import Events from "./pages/events";
 import Community from "./pages/community";
 import SignIn from "./pages/signin";
 import Join from "./pages/Join/join";
-import Directory from "./pages/Directory/directory";
+import Directory from "./pages/directory";
 import ResumeBank from "./pages/resumebank";
 import FindAnExpert from "./pages/findanexpert";
 import ResumeReview from "./pages/resumereview";
 import Headshot from "./pages/headshot";
 import Coaching from "./pages/coaching";
+const members = [
+  { name: 'John Smith', email: 'john@example.com', phone: '555-1234' },
+  { name: 'Jane Doe', email: 'jane@example.com', phone: '555-5678' },
+  { name: 'Bob Johnson', email: 'bob@example.com', phone: '555-9012' },
+];
 
 function App() {
   useEffect(() => {
@@ -27,7 +38,13 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Welcome />} />
-        <Route path="/membership" element={<Membership />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/whoarewe" element={<WhoAreWe />} />
+        <Route path="/mission" element={<Mission />} />
+        <Route path="/membership" element={<Directory />} />
+        <Route path="/team" element={<Team />} />
+        <Route path="/directors" element={<Directors />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/events" element={<Events />} />
         <Route path="/community" element={<Community />} />

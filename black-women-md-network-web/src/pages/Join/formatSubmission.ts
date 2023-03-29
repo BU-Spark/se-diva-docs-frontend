@@ -4,7 +4,7 @@ const formatSubmission = (data: FormData) => {
   const uuid: number = 1;
   const submision = {
     submission: {
-      universal_applicant_id: uuid,
+      id: uuid,
       first_name: data.firstName,
       middle_name: data.middleInitial,
       last_name: data.lastName,
@@ -56,3 +56,57 @@ const formatSubmission = (data: FormData) => {
 };
 
 export default formatSubmission;
+
+// {
+//   "id": "string",
+//   "first_name": "string",
+//   "middle_name": "string",
+//   "last_name": "string",
+//   "suffix": "string",
+//   "primary_email": "string",
+//   "secondary_email": "string",
+//   "phone_number": "string",
+//   "address": {
+//     "street": "string",
+//     "apartment": "string",
+//     "city": "string",
+//     "state": "string",
+//     "zip_code": "string",
+//     "country": "string"
+//   },
+//   "address_type": "Work",
+//   "current_academic_affiliation": "string",
+//   "current_hospital_company": "string",
+//   "current_position": "string",
+//   "specialty": "string",
+//   "areas_of_work": "string",
+//   "geographic_region": "string",
+//   "bwmdn_chapter_question": "No",
+//   "membership_directory_agreement": "No",
+//   "resume_included_question": "No",
+//   "divadocs_boston_member": {
+//     "divadocs_boston_member_question": "No",
+//     "years": "string"
+//   },
+//   "race": [
+//     "string"
+//   ],
+//   "ethnicity": [
+//     "string"
+//   ],
+//   "gender_identity": "string",
+//   "pronouns": "string",
+//   "will_sponsor_question": {
+//     "sponsor_question_answer": "No",
+//     "activities_interested": [
+//       "string"
+//     ]
+//   },
+//   "applicant_status": {
+//     "subscription_tier": "string",
+//     "approved": true,
+//     "paid": true,
+//     "stripe_customer_id": "string",
+//     "account_password": "string"
+//   }
+// }
