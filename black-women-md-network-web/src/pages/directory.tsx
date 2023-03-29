@@ -218,6 +218,32 @@ interface MemberData {
                 {collapsed ? <><FaPlus /></> : <><FaMinus /></> }
               </button>
             </div>
+            {/* Always show selected options */}
+            {collapsed && (
+              <div className="options-wrapper">
+                <div className="options">
+                  {selectedOptions.map((option) => (
+                    <div key={option}>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value={option}
+                          checked={selectedOptions.includes(option)}
+                          onChange={() => {
+                            if (selectedOptions.includes(option)) {
+                              setSelectedOptions(selectedOptions.filter((s) => s !== option));
+                            } else {
+                              setSelectedOptions([...selectedOptions, option]);
+                            }
+                          }}
+                        />
+                        {option}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Only show options if not collapsed */}
             {!collapsed && (
