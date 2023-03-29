@@ -27,12 +27,27 @@ body {
 .filter-label
 {
     color: #456B68;
-     font-weight: bold;
+    font-weight: bold;
 }
 
 .switch
 {
+    display: flex;
+    justify-content: space-between;
     padding-top: 1vw;
     padding-bottom: 1vw;
     border-bottom: 1px solid #C0ECEE;
+}
+
+.plus-button
+{
+    border-radius: 50%;
+    background-color: #C0ECEE;
+    color: #5A9A98;
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

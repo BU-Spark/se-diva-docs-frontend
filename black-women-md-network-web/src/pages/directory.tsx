@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, Button, Badge, Modal } from 'react-bootstrap';
 import Switch from 'react-switch';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { FaPlus, FaMinus } from 'react-icons/fa';
 import "./directory.css";
 
 interface MemberData {
@@ -211,9 +212,12 @@ interface MemberData {
               />
           </div>
           <div className="options-container">
-            <button onClick={() => setCollapsed(!collapsed)}>
-              {collapsed ? 'Show specialties' : 'Hide specialties'}
-            </button>
+            <div className="switch">
+              <span className="filter-label">Specialty</span>
+              <button onClick={() => setCollapsed(!collapsed)} className = "plus-button">
+                {collapsed ? <><FaPlus /></> : <><FaMinus /></> }
+              </button>
+            </div>
 
             {/* Only show options if not collapsed */}
             {!collapsed && (
