@@ -57,7 +57,7 @@ interface MemberData {
           <Card.Text>Bio</Card.Text>
           {resume_included_question.toLowerCase() == "yes" && (
             <Button variant="primary" onClick={handleShowModal} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
-              Resume Available
+              Resume
             </Button>
           )}
           {resume_included_question.toLowerCase() == "no" && (
@@ -166,7 +166,7 @@ interface MemberData {
 
     useEffect(() => {
       const fetchMembers = async () => {
-        const response = await fetch('https://se-diva-docs.herokuapp.com/approvedapplicants/view');
+        const response = await fetch('https://se-diva-docs.herokuapp.com/membershipapplicants/view');
         const data = await response.json();
         setMembers(data)
       };
@@ -204,11 +204,11 @@ interface MemberData {
         <div className="filters">
           <div className="form-group">
               <input
-                type="text"
-                className="form-control search-bar"
-                placeholder="Search by name, position, ..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+              type="text"
+              className="form-control"
+              placeholder="Search by name, position, ..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               />
           </div>
           <div className="options-container">
@@ -314,3 +314,14 @@ interface MemberData {
 
   export default Directory;
   
+
+/*Region 1 - CT, ME, MA, NH, RI, and VT
+Region 2 - NJ, NY
+Region 3 - DC, DE, MD, PA, VA, and WV
+Region 4 - FL, GA, NC, and SC
+Region 5 - AL, LA, MS, TN, and PR
+Region 6 - IL, IN, KY, MI, and OH
+Region 7 - AR, IA, KS, MN, NE, ND, OK, SD, and WI
+Region 8 - AZ, CO, ID, MT, NM, NV, TX, UT, and WY
+Region 9 - AK, CA, HI, OR, and WA
+Region 10 - Other International Affiliation*/
