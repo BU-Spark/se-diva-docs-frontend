@@ -24,6 +24,7 @@ import ResumeReview from "./pages/resumereview";
 import Headshot from "./pages/headshot";
 import Coaching from "./pages/coaching";
 import ForgotPassword from "./pages/ForgotPassword/forgotpassword";
+import { RequireAuth } from "react-auth-kit";
 
 function App() {
   useEffect(() => {
@@ -46,7 +47,14 @@ function App() {
         <Route path="/community" element={<Community />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/join" element={<Join />} />
-        <Route path="/directory" element={<Directory />} />
+        <Route
+          path="/directory"
+          element={
+            <RequireAuth loginPath="/signin">
+              <Directory />
+            </RequireAuth>
+          }
+        />
         <Route path="/resumebank" element={<ResumeBank />} />
         <Route path="/findanexpert" element={<FindAnExpert />} />
         <Route path="/resumereview" element={<ResumeReview />} />

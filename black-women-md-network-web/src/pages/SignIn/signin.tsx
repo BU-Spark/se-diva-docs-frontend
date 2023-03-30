@@ -1,11 +1,13 @@
+import axios, { AxiosError } from "axios";
 import React, { FormEvent, useState } from "react";
 import { useSignIn } from "react-auth-kit";
 import { useNavigate } from "react-router-dom";
 import styles from "./signin.module.css";
 
 const SignIn = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
   const signIn = useSignIn();
 
   let navigate = useNavigate();
@@ -20,44 +22,55 @@ const SignIn = () => {
   };
 
   // Submits data before moving to next step!
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log(email);
+    console.log(username);
     console.log(password);
-    // POST request using fetch inside useEffect React hook
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        username: email,
-        password: password,
-      }).toString(),
-    };
-
-    fetch("https://se-diva-docs.herokuapp.com/login", requestOptions)
-      .then((response) => {
-        if (response.status == 200) {
-          console.log(response);
-          // redirect to homepage
-          let path = "/";
-          navigate(path);
-
-          // // Authentication Located Here
-          // signIn({
-          //   token: response.headers,
-          //   tokenType: "bearer",
-          //   expiresIn: 3600,
-          //   authState:{email:email}
-          // })
-        } else {
-          console.log("Error: " + response.status);
-          alert("There was an error!  Please try again later.");
+    try {
+      const response = await axios.post(
+        "https://se-diva-docs.herokuapp.com/login",
+        new URLSearchParams({
+          username,
+          password,
+        }),
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
         }
-      })
-      .catch((error) => {
-        console.log("Error: " + error.response.status);
-        alert("There was an error!  Please try again later.");
+      );
+      console.log(response.data.access_token);
+      setMessage("Logged in successfully.");
+      // Authentication
+      signIn({
+        token: response.data.access_token,
+        tokenType: "bearer",
+        expiresIn: 3600,
+        authState: { username: username },
       });
+    } catch (err) {
+      // if (err && err instanceof AxiosError)
+      //   setError(err.response?.data.message);
+      // else if (err && err instanceof Error) setError(err.message);
+
+      console.log("Error: ", err);
+      setMessage("Incorrect username or password.");
+    }
+    // try {
+    //   const response = await axios.post('https://se-diva-docs.herokuapp.com/login', new URLSearchParams({
+    //     email,
+    //     password,
+    //   }), {
+    //     headers: {
+    //       'Content-Type': 'application/x-www-form-urlencoded',
+    //     },
+    //   });
+    //   console.log(response.data.access_token)
+    //   localStorage.setItem('access_token', response.data.access_token);
+    //   setMessage('Logged in successfully.');
+    // } catch (error) {
+    //   setMessage('Incorrect username or password.');
+    // }
   };
 
   return (
@@ -74,8 +87,8 @@ const SignIn = () => {
             type="email"
             placeholder="Email"
             name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
           <br></br>
           <label className={styles["label-signin"]} htmlFor="password">
@@ -100,6 +113,8 @@ const SignIn = () => {
         <button className={styles["link-btn"]} onClick={routeChange}>
           Not apart of the Black Women M.D. Network? Become a member here.
         </button>
+
+        {message && <p>{message}</p>}
       </div>
     </div>
   );
