@@ -51,3 +51,15 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.members
+{
+    width: 75%;
+}
+.mem-card
+{
+    width: 30%;
+    background-color: #5A9A98;
+    padding-top: 2px;
+
+}

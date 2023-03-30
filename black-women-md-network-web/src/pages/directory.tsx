@@ -56,7 +56,7 @@ interface MemberData {
     };
 
     return (
-      <Card style={{ width: '18rem', backgroundColor: '#5A9A98' }}>
+      <Card className = "mem-card m-2" >
         <Card.Body>
           <Card.Title style={{color: 'white'}}>{first_name} {last_name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">{specialty}</Card.Subtitle>
