@@ -3,10 +3,11 @@ import { Card, Button, Badge, Modal } from 'react-bootstrap';
 import Switch from 'react-switch';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaPlus, FaMinus } from 'react-icons/fa';
+import ReactPaginate from 'react-paginate';
 import "./directory.css";
 
 interface MemberData {
-    id: number;
+    id: string;
     first_name: string;
     middle_name: string;
     last_name: string;
@@ -48,13 +49,23 @@ interface MemberData {
     };
 
     const [showResume, setShowResume] = useState(false);
-    const handleShowResume = () => {
-        setShowContact(true);
+    const handleShowResume = (id: string) => {
+        fetchResume(id = id);
+        setShowResume(true);
     };
     const handleCloseResume = () => {
-        setShowContact(false);
+        setShowResume(false);
     };
-
+    const fetchResume = async (id: string) => {
+      try {
+        const response = await fetch(`https://se-diva-docs.herokuapp.com/applicants/downloadresume/${id}.pdf`);
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        window.open(url, '_blank');
+      } catch (error) {
+        console.error(error);
+      }
+    };
     return (
       <Card className = "mem-card m-2" >
         <Card.Body>
@@ -62,16 +73,16 @@ interface MemberData {
           <Card.Subtitle className="mb-2 text-muted">{specialty}</Card.Subtitle>
           <Card.Text>Bio</Card.Text>
           {resume_included_question.toLowerCase() == "yes" && (
-            <Button variant="primary" onClick={handleShowResume} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
+            <Button variant="primary" onClick={()=>handleShowResume(id)} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
               Resume
             </Button>
           )}
           {resume_included_question.toLowerCase() == "no" && (
-            <Button variant="primary" disabled onClick={handleShowResume} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
+            <Button variant="primary" disabled style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
               Resume
             </Button>
           )}
-          <Button variant="primary" onClick={handleShowResume} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
+          <Button variant="primary" onClick={handleShowContact} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
             Contact
           </Button>
         </Card.Body>
@@ -178,6 +189,7 @@ interface MemberData {
       };
       fetchMembers();
     }, []);
+
   
     const searchTerms = searchTerm.toLowerCase().split(" ");
 
@@ -204,7 +216,7 @@ interface MemberData {
         })
         .filter((member) => (!isResumeChecked || member.resume_included_question.toLowerCase() == "yes"))
         .filter((member) => (!isConnectionChecked || member.will_sponsor_question.sponsor_question_answer.toLowerCase() == "yes"));
-  
+    
     return (
       <div className = "directory-body">
         <div className="filters">
@@ -331,3 +343,22 @@ Region 7 - AR, IA, KS, MN, NE, ND, OK, SD, and WI
 Region 8 - AZ, CO, ID, MT, NM, NV, TX, UT, and WY
 Region 9 - AK, CA, HI, OR, and WA
 Region 10 - Other International Affiliation*/
+
+/*
+<div className="members">
+          <div className="d-flex flex-wrap justify-content-center">
+            {displayMembers}
+          </div>
+            <ReactPaginate
+              previousLabel={"Prev"}
+              nextLabel={"Next"}
+              pageCount={pageCount}
+              onPageChange={changePage}
+              containerClassName={"pagination"}
+              previousLinkClassName={"previousPage"}
+              nextLinkClassName={"nextPage"}
+              disabledClassName={"paginationDisabled"}
+              activeClassName={"paginationActive"}
+            />
+        </div>
+*/
