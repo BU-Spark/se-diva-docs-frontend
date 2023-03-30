@@ -39,14 +39,20 @@ interface MemberData {
   }
 
   const MemberCard: React.FC<MemberData> = ({ id, first_name, last_name, primary_email, phone_number, current_position, specialty, resume_included_question }) => {
-    const [showModal, setShowModal] = useState(false);
-
-    const handleShowModal = () => {
-        setShowModal(true);
+    const [showContact, setShowContact] = useState(false);
+    const handleShowContact = () => {
+        setShowContact(true);
+    };
+    const handleCloseContact = () => {
+        setShowContact(false);
     };
 
-    const handleCloseModal = () => {
-        setShowModal(false);
+    const [showResume, setShowResume] = useState(false);
+    const handleShowResume = () => {
+        setShowContact(true);
+    };
+    const handleCloseResume = () => {
+        setShowContact(false);
     };
 
     return (
@@ -56,20 +62,20 @@ interface MemberData {
           <Card.Subtitle className="mb-2 text-muted">{specialty}</Card.Subtitle>
           <Card.Text>Bio</Card.Text>
           {resume_included_question.toLowerCase() == "yes" && (
-            <Button variant="primary" onClick={handleShowModal} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
+            <Button variant="primary" onClick={handleShowResume} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
               Resume
             </Button>
           )}
           {resume_included_question.toLowerCase() == "no" && (
-            <Button variant="primary" disabled onClick={handleShowModal} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
+            <Button variant="primary" disabled onClick={handleShowResume} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
               Resume
             </Button>
           )}
-          <Button variant="primary" onClick={handleShowModal} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
+          <Button variant="primary" onClick={handleShowResume} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
             Contact
           </Button>
         </Card.Body>
-        <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal show={showContact} onHide={handleCloseContact}>
             <Modal.Header closeButton>
             <Modal.Title>Contact {first_name} {last_name}</Modal.Title>
             </Modal.Header>
@@ -78,7 +84,7 @@ interface MemberData {
             <p>Email: {primary_email}</p>
             </Modal.Body>
             <Modal.Footer>
-            <Button variant="secondary" onClick={handleCloseModal}>
+            <Button variant="secondary" onClick={handleCloseContact}>
                 Close
             </Button>
             </Modal.Footer>
