@@ -1,14 +1,30 @@
-import React from 'react';
-import './NavBar.css';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Col from 'react-bootstrap/Col'
+import React from "react";
+import "./NavBar.css";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Col from "react-bootstrap/Col";
+import { useIsAuthenticated, useSignOut } from "react-auth-kit";
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
+  const signOut = useSignOut();
+  const navigate = useNavigate();
+  const isAuthenticated = useIsAuthenticated();
+  console.log("is the user authed? " + isAuthenticated());
+
+  const logOut = () => {
+    signOut();
+    navigate("/signin");
+  };
   return (
-    <Navbar className="navbar navbar-custom" fixed="top" expand="lg" collapseOnSelect>
+    <Navbar
+      className="navbar navbar-custom"
+      fixed="top"
+      expand="lg"
+      collapseOnSelect
+    >
       <Container fluid>
         <Navbar.Brand href="/">BMWDN</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -20,7 +36,11 @@ function NavBar() {
             <Nav.Link href="/news">News</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="/signin">Sign In</Nav.Link>
+            {isAuthenticated() ? (
+              <Nav.Link onClick={logOut}>Sign Out</Nav.Link>
+            ) : (
+              <Nav.Link href="/signin">Sign In</Nav.Link>
+            )}
             <Nav.Link href="/join">Join</Nav.Link>
           </Nav>
         </Navbar.Collapse>
