@@ -1,6 +1,6 @@
-import { FormData } from "./FormData";
+import { ApplicationData } from "./ApplicationData";
 
-const DefaultData: FormData = {
+const DefaultData: ApplicationData = {
   currentRole: { label: "default", value: "Black Women Physician Member" },
   firstName: "",
   lastName: "",
@@ -33,6 +33,7 @@ const DefaultData: FormData = {
   identifyAsBlackWomenMD: "",
   wantToMentor: "",
   wantToSponsor: "",
+  uuid: "",
 };
 
 export default DefaultData;

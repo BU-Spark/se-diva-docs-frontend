@@ -1,6 +1,6 @@
 import { SelectOption } from "../../components/MembershipApp/Select/Select";
 
-export type FormData = {
+export type ApplicationData = {
   currentRole: SelectOption;
   firstName: string;
   lastName: string;
@@ -29,8 +29,9 @@ export type FormData = {
   includeInDirectory: string;
   includeInResumeBank: string;
   // Type for resume is FileList
-  resume: FileList | undefined;
+  resume: any;
   identifyAsBlackWomenMD: string;
   wantToMentor: string;
   wantToSponsor: string;
+  uuid: string;
 };

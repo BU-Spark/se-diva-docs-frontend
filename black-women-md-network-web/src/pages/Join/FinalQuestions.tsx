@@ -1,5 +1,6 @@
 import React from "react";
 import FormWrapper from "./FormWrapper";
+import { v4 as uuidv4 } from "uuid";
 
 type FinalQuestionsData = {
   startChapter: string;
@@ -10,6 +11,7 @@ type FinalQuestionsData = {
   identifyAsBlackWomenMD: string;
   wantToMentor: string;
   wantToSponsor: string;
+  uuid: string;
 };
 
 type FinalQuestionsProps = FinalQuestionsData & {
@@ -24,6 +26,7 @@ const FinalQuestions = ({
   identifyAsBlackWomenMD,
   wantToMentor,
   wantToSponsor,
+  uuid,
   updateFields,
 }: FinalQuestionsProps) => {
   // generic answer types
@@ -102,9 +105,12 @@ const FinalQuestions = ({
       <input
         type="file"
         name="resume"
-        accept=".pdf,.doc,.docx"
+        accept=".pdf"
         onChange={(e) =>
-          updateFields({ resume: e.target.files && e.target.files[0] })
+          updateFields({
+            resume: e.target.files && e.target.files[0],
+            uuid: uuidv4(),
+          })
         }
       ></input>
 

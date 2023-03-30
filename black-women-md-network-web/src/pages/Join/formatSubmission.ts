@@ -1,11 +1,9 @@
-import { FormData } from "./FormData";
-import { v4 as uuidv4 } from "uuid";
+import { ApplicationData } from "./ApplicationData";
 
-const formatSubmission = (data: FormData) => {
-  const uuid = uuidv4();
+const formatSubmission = (data: ApplicationData) => {
   const submision = {
     submission: {
-      id: uuid,
+      id: data.uuid,
       first_name: data.firstName,
       middle_name: data.middleInitial,
       last_name: data.lastName,
@@ -31,7 +29,6 @@ const formatSubmission = (data: FormData) => {
       bwmdn_chapter_question: data.startChapter,
       membership_directory_agreement: data.includeInDirectory,
       resume_included_question: data.includeInResumeBank,
-      resume: data.resume,
       divadocs_boston_member: {
         divadocs_boston_member_question: "No",
         years: "string",
