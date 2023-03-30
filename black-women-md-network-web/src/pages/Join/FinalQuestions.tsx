@@ -4,7 +4,8 @@ import FormWrapper from "./FormWrapper";
 type FinalQuestionsData = {
   startChapter: string;
   includeInDirectory: string;
-  resume: FileList | undefined;
+  // Type is FileList | undefined but Visual Studio Code actng stupid
+  resume: any;
   includeInResumeBank: string;
   identifyAsBlackWomenMD: string;
   wantToMentor: string;
