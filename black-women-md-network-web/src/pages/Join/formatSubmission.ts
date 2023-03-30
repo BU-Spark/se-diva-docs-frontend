@@ -29,8 +29,9 @@ const formatSubmission = (data: FormData) => {
       areas_of_work: data.expertise,
       geographic_region: data.region.value,
       bwmdn_chapter_question: data.startChapter,
-      membership_directory_agreement: "No",
-      resume_included_question: "No",
+      membership_directory_agreement: data.includeInDirectory,
+      resume_included_question: data.includeInResumeBank,
+      resume: data.resume,
       divadocs_boston_member: {
         divadocs_boston_member_question: "No",
         years: "string",

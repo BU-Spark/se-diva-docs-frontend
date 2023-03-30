@@ -27,7 +27,8 @@ const DefaultData: FormData = {
   region: { label: "default", value: "Region" },
   startChapter: "",
   includeInDirectory: "",
-  includeResume: "",
+  // Type for resume is Filelist
+  resume: undefined,
   includeInResumeBank: "",
   identifyAsBlackWomenMD: "",
   wantToMentor: "",

@@ -27,8 +27,9 @@ export type FormData = {
   region: SelectOption;
   startChapter: string;
   includeInDirectory: string;
-  includeResume: string;
   includeInResumeBank: string;
+  // Type for resume is FileList
+  resume: FileList | undefined;
   identifyAsBlackWomenMD: string;
   wantToMentor: string;
   wantToSponsor: string;
