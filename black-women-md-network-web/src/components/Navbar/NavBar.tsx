@@ -1,32 +1,74 @@
-import React from 'react';
-import './NavBar.css';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Col from 'react-bootstrap/Col'
+import React from "react";
+import "./NavBar.css";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Col from "react-bootstrap/Col";
+import { useIsAuthenticated, useSignOut } from "react-auth-kit";
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
-  return (
-    <Navbar className="navbar navbar-custom" fixed="top" expand="lg" collapseOnSelect>
-      <Container fluid>
-        <Navbar.Brand href="/">BMWDN</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+  const signOut = useSignOut();
+  const navigate = useNavigate();
+  const isAuthenticated = useIsAuthenticated();
+  console.log("is the user authed? " + isAuthenticated());
+
+  const logOut = () => {
+    signOut();
+    navigate("/signin");
+  };
+  if (isAuthenticated()) {
+    return (
+      <Navbar
+        className="navbar navbar-custom"
+        fixed="top"
+        expand="lg"
+        collapseOnSelect
+      >
+        <Container fluid>
+          <Navbar.Brand href="/">BMWDN</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/about">About</Nav.Link>
+              <Nav.Link href="/membership">Membership</Nav.Link>
+              <Nav.Link href="/resources">Resources</Nav.Link>
+              <Nav.Link href="/news">News</Nav.Link>
+            </Nav>
+            <Nav>
+              <Nav.Link onClick={logOut}>Sign Out</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    );
+  } else {
+    return (
+      <Navbar
+        className="navbar navbar-custom"
+        fixed="top"
+        expand="lg"
+        collapseOnSelect
+      >
+        <Container fluid>
+          <Navbar.Brand href="/">BMWDN</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            {/* <Nav className="me-auto">
             <Nav.Link href="/about">About</Nav.Link>
             <Nav.Link href="/membership">Membership</Nav.Link>
             <Nav.Link href="/resources">Resources</Nav.Link>
             <Nav.Link href="/news">News</Nav.Link>
-          </Nav>
-          <Nav>
-            <Nav.Link href="/signin">Sign In</Nav.Link>
-            <Nav.Link href="/join">Join</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-    /*
+          </Nav> */}
+            <Nav>
+              <Nav.Link href="/signin">Sign In</Nav.Link>
+              <Nav.Link href="/join">Join</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      /*
     <Navbar className="navbar navbar-custom" fixed="top" expand="lg" collapseOnSelect>
       <Container fluid>
         <Navbar.Brand href="/">BMWDN</Navbar.Brand>
@@ -85,7 +127,8 @@ function NavBar() {
       </Container>
     </Navbar>
   */
-  );
+    );
+  }
 }
 
 export default NavBar;

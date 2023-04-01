@@ -15,7 +15,7 @@ import Directors from "./pages/directors";
 import Resources from "./pages/resources";
 import Events from "./pages/events";
 import Community from "./pages/community";
-import SignIn from "./pages/signin";
+import SignIn from "./pages/SignIn/signin";
 import Join from "./pages/Join/join";
 import Directory from "./pages/directory";
 import ResumeBank from "./pages/resumebank";
@@ -23,6 +23,8 @@ import FindAnExpert from "./pages/findanexpert";
 import ResumeReview from "./pages/resumereview";
 import Headshot from "./pages/headshot";
 import Coaching from "./pages/coaching";
+import ForgotPassword from "./pages/ForgotPassword/forgotpassword";
+import { RequireAuth } from "react-auth-kit";
 
 function App() {
   useEffect(() => {
@@ -45,13 +47,21 @@ function App() {
         <Route path="/community" element={<Community />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/join" element={<Join />} />
-        <Route path="/directory" element={<Directory />} />
+        <Route
+          path="/directory"
+          element={
+            <RequireAuth loginPath="/signin">
+              <Directory />
+            </RequireAuth>
+          }
+        />
         <Route path="/resumebank" element={<ResumeBank />} />
         <Route path="/findanexpert" element={<FindAnExpert />} />
         <Route path="/resumereview" element={<ResumeReview />} />
         <Route path="/headshot" element={<Headshot />} />
         <Route path="/coaching" element={<Coaching />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
       </Routes>
       <Footer />
     </Router>
