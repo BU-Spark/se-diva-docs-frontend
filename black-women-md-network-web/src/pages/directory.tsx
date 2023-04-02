@@ -353,7 +353,9 @@ interface MemberData {
       <nav>
         <ul className="pagination">
           {pages.map((page) => (
-            <li key={page} className={`page-item ${page === currentPage ? 'active' : ''}`}>
+            <li key={page} 
+            className={`page-item ${page === currentPage ? 'active' : ''}`}
+            >
               <button className="page-link" onClick={() => onPageChange(page)}>
                 {page + 1}
               </button>
@@ -368,32 +370,3 @@ interface MemberData {
   export default Directory;
   
 
-/*Region 1 - CT, ME, MA, NH, RI, and VT
-Region 2 - NJ, NY
-Region 3 - DC, DE, MD, PA, VA, and WV
-Region 4 - FL, GA, NC, and SC
-Region 5 - AL, LA, MS, TN, and PR
-Region 6 - IL, IN, KY, MI, and OH
-Region 7 - AR, IA, KS, MN, NE, ND, OK, SD, and WI
-Region 8 - AZ, CO, ID, MT, NM, NV, TX, UT, and WY
-Region 9 - AK, CA, HI, OR, and WA
-Region 10 - Other International Affiliation*/
-
-/*
-<div className="members">
-          <div className="d-flex flex-wrap justify-content-center">
-            {displayMembers}
-          </div>
-            <ReactPaginate
-              previousLabel={"Prev"}
-              nextLabel={"Next"}
-              pageCount={pageCount}
-              onPageChange={changePage}
-              containerClassName={"pagination"}
-              previousLinkClassName={"previousPage"}
-              nextLinkClassName={"nextPage"}
-              disabledClassName={"paginationDisabled"}
-              activeClassName={"paginationActive"}
-            />
-        </div>
-*/

@@ -63,3 +63,21 @@ body {
     padding-top: 2px;
 
 }
+
+.pagination .page-link {
+    background-color: rgb(240,255,255);
+    border-color: #5A9A98;
+    color: #5A9A98;
+}
+
+.pagination .page-link:hover {
+    background-color: #5A9A98;
+    border-color: #5A9A98;
+    color: white;
+  }
+
+.pagination .page-item.active .page-link {
+    background-color: #5A9A98;
+    border-color: #5A9A98;
+    color: white;
+  }
