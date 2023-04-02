@@ -202,11 +202,6 @@ interface MemberData {
                     .includes(term)
             )
         )
-        /*.filter((member) =>
-            selectedOptions.map((option) =>
-            member.specialty.includes(option)
-            )
-        )*/
         .filter((member) =>
         {
             if (selectedOptions.length === 0) {
@@ -215,7 +210,9 @@ interface MemberData {
               return selectedOptions.includes(member.specialty);
         })
         .filter((member) => (!isResumeChecked || member.resume_included_question.toLowerCase() == "yes"))
-        .filter((member) => (!isConnectionChecked || member.will_sponsor_question.sponsor_question_answer.toLowerCase() == "yes"));
+        .filter((member) => (!isConnectionChecked || member.will_sponsor_question.sponsor_question_answer.toLowerCase() == "yes"))
+        .sort((a, b) => a.last_name.localeCompare(b.last_name)); // Sort by last name in ascending order
+
     
     return (
       <div className = "directory-body">
