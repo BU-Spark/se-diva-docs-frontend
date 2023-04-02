@@ -6,6 +6,8 @@ import { FaPlus, FaMinus } from 'react-icons/fa';
 import ReactPaginate from 'react-paginate';
 import "./directory.css";
 
+const PAGE_SIZE = 12;
+
 interface MemberData {
     id: string;
     first_name: string;
@@ -213,7 +215,16 @@ interface MemberData {
         .filter((member) => (!isConnectionChecked || member.will_sponsor_question.sponsor_question_answer.toLowerCase() == "yes"))
         .sort((a, b) => a.last_name.localeCompare(b.last_name)); // Sort by last name in ascending order
 
-    
+    const [currentPage, setCurrentPage] = useState(0);
+    const numPages = Math.ceil(filteredMembers.length / PAGE_SIZE);
+    const startIdx = currentPage * PAGE_SIZE;
+    const endIdx = startIdx + PAGE_SIZE;
+    const visibleMembers = filteredMembers.slice(startIdx, endIdx);
+
+    const handlePageChange = (newPage: number) => {
+      setCurrentPage(newPage);
+    };
+  
     return (
       <div className = "directory-body">
         <div className="filters">
@@ -314,17 +325,44 @@ interface MemberData {
             </label>
           </div>
         </div>
-        <div className = "members">
+        <div className="members">
           <div className="d-flex flex-wrap justify-content-center">
-            {filteredMembers.map((member) => (
+            {visibleMembers.map((member) => (
               <MemberCard key={member.id} {...member} />
             ))}
+          </div>
+          <div className="d-flex justify-content-center mt-4">
+            <Pagination currentPage={currentPage} numPages={numPages} onPageChange={handlePageChange} />
           </div>
         </div>
       </div>
     );
   };
   
+  interface PaginationProps {
+    currentPage: number;
+    numPages: number;
+    onPageChange: (newPage: number) => void;
+  }
+
+  
+  function Pagination({ currentPage, numPages, onPageChange }: PaginationProps) {
+    const pages = Array.from({ length: numPages }, (_, i) => i);
+    
+    return (
+      <nav>
+        <ul className="pagination">
+          {pages.map((page) => (
+            <li key={page} className={`page-item ${page === currentPage ? 'active' : ''}`}>
+              <button className="page-link" onClick={() => onPageChange(page)}>
+                {page + 1}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    );
+  }
  /*<span>{isResumeChecked ? 'Resume Available' : 'Show All Members With or Without resume'}</span>*/ 
 
   export default Directory;
