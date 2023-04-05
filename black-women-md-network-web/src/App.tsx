@@ -17,6 +17,18 @@ import ResumeReview from './pages/resumereview';
 import Headshot from './pages/headshot';
 import Coaching from './pages/coaching';
 
+import { Admin, Resource, ShowGuesser, EditGuesser } from "react-admin";
+import jsonServerProvider from "ra-data-json-server";
+import { UserList, UserEdit } from "./components/Admin/users";
+import authProvider from "./components/Admin/authProvider";
+//import simpleRestProvider from 'ra-data-simple-rest';
+
+
+
+const dataProvider = jsonServerProvider('https://se-diva-docs.herokuapp.com');
+//const dataProvider = simpleRestProvider('https://se-diva-docs.herokuapp.com');
+console.log(dataProvider)
+
 function App() {
   useEffect(() => {document.title = "Black Women M.D. Network"}, [])
   return (
@@ -38,6 +50,9 @@ function App() {
         <Route path='/coaching' element={<Coaching />} />
         <Route path='/events' element={<Events />} />
       </Routes>
+      <Admin authProvider={authProvider} dataProvider={dataProvider}>
+        <Resource name="applicants/view" list={UserList} edit={UserEdit} show={ShowGuesser}/>
+      </Admin>
     </Router>
   );
 }
