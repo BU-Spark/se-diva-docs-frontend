@@ -5,6 +5,7 @@
     justify-content: space-around;
     align-items: stretch;
     background-color: #5A9A98;
+    width: 100%
 }
 
 .footer-links{
@@ -18,7 +19,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.5vw;
     line-height: 15px;
 
     color: #F0FFFF;
@@ -41,7 +42,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.5vw;
     line-height: 15px;
 
     color: #F0FFFF;

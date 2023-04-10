@@ -8,7 +8,7 @@ const Footer = () => (
     <div className="footer-links">
       <a href="/">BWMDN</a>
       <a href="/about">About</a>
-      <a href="/membership">Membership</a>
+      <a href="/members">Membership</a>
       <a href="/resources">Resources</a>
       <a href="/news">News</a>
     </div>

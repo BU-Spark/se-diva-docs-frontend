@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Datagrid, DateField, List, TextField, EmailField, Edit, SimpleForm, TextInput, Toolbar, SaveButton, DeleteButton, Show, SimpleShowLayout, useNotify, useRedirect, useCreate } from 'react-admin';
+import React, { useState } from 'react';
+import { Datagrid, DateField, List, TextField, EmailField, Edit, SimpleForm, TextInput, Toolbar, SaveButton, DeleteButton, Show, SimpleShowLayout, useNotify, useRedirect, useCreate, SelectInput, ReferenceInput } from 'react-admin';
 import { useRecordContext} from "react-admin";
 import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
@@ -43,26 +43,59 @@ const EditTitle = () => {
 };
 
 const ApproveButton = (props:any) => <SaveButton {...props} icon={<AddBoxIcon />} label="Approve" alwaysEnable/>;
-const DeclineButton = (props:any) => <DeleteButton {...props} icon={<AddBoxIcon />} label="Decline" alwaysEnable/>;
+const DeclineButton = (props:any) => <SaveButton {...props} icon={<AddBoxIcon />} label="Decline" alwaysEnable/>;
+
 
 const MyToolbar = () => (
     <Toolbar>
         <ApproveButton/>
-        <DeclineButton />
+        <DeclineButton/>
     </Toolbar>
 );
 
 export const UserEdit = () => {
+    const [button, setButton] = useState("");
+
+    const handleApprove = () => {
+        setButton("approve");
+    }
+    const handleDecline = () => {
+        setButton("decline");
+    }
+    const MyToolbar = () => (
+        <Toolbar>
+            <ApproveButton onClick={handleApprove}/>
+            <DeclineButton onClick={handleDecline}/>
+        </Toolbar>
+    );
     const [create] = useCreate();
     const redirect = useRedirect();
-    const approve = (data:any) => {
-        create('applicants/approveapplicant', { data });
-        redirect('list');
-        console.log(data);
+    const approveORdecline = async (data:any) => {
+        if (button == "approve"){
+            console.log(data);
+            //data.applicant_status.subscription_tier = 
+            try {
+                await create('applicants/approveapplicant', { data });
+            } catch (error) {
+                console.log('error');
+                console.log(error);
+            }
+            redirect('list');
+        }
+        else if (button == "decline"){
+            console.log(data);
+            try {
+                await create('applicants/declineapplicant', { data });
+            } catch (error) {
+                console.log('error');
+                console.log(error);
+            }
+            redirect('list');
+        }
     };
     return(
     <Edit title={<EditTitle />} >
-        <SimpleForm  toolbar={<MyToolbar/>} onSubmit={approve}>
+        <SimpleForm  toolbar={<MyToolbar/>} onSubmit={approveORdecline} >
             <Typography variant="h6" gutterBottom>
                 Identity
             </Typography>
@@ -212,6 +245,19 @@ export const UserEdit = () => {
                     <TextInput source="will_sponsor_question.activities_interested" disabled fullWidth helperText={false}/>
                 </Box>
             </Box>
+            <SelectInput 
+            multiline
+            fullWidth
+            source="applicant_status.subscription_tier"
+            optionText="name" 
+            choices={[
+                { id: 'Joycelyn Elders Society', name: 'Joycelyn Elders Society' },
+                { id: 'Barbara Ross Society', name: 'Barbara Ross Society' },
+                { id: 'Alexa Canaday Society', name: 'Alexa Canaday Society' },
+                { id: 'Mae Jemison Society', name: 'Mae Jemison Society' },
+                { id: 'Nancy Oriol Society', name: 'Nancy Oriol Society' },
+            ]} 
+            />
         </SimpleForm>
     </Edit>
 );

@@ -1,0 +1,83 @@
+body {
+    padding-top: 10vh;
+    width: 100%;
+    height: 100%;
+    background: rgb(240,255,255);
+}
+
+.directory-body
+{
+    display: flex;
+    flex-direction: row;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.filters
+{
+    width: 25%;
+    padding-right: 1vw;
+}
+
+.Card
+{
+    background-color: #5A9A98;
+}
+
+.filter-label
+{
+    color: #456B68;
+    font-weight: bold;
+}
+
+.switch
+{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    border-bottom: 1px solid #C0ECEE;
+}
+
+.plus-button
+{
+    border-radius: 50%;
+    background-color: #C0ECEE;
+    color: #5A9A98;
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.members
+{
+    width: 75%;
+}
+.mem-card
+{
+    width: 30%;
+    background-color: #5A9A98;
+    padding-top: 2px;
+
+}
+
+.pagination .page-link {
+    background-color: rgb(240,255,255);
+    border-color: #5A9A98;
+    color: #5A9A98;
+}
+
+.pagination .page-link:hover {
+    background-color: #5A9A98;
+    border-color: #5A9A98;
+    color: white;
+  }
+
+.pagination .page-item.active .page-link {
+    background-color: #5A9A98;
+    border-color: #5A9A98;
+    color: white;
+  }
