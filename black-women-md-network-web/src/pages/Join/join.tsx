@@ -4,41 +4,32 @@ import FinalQuestions from "./FinalQuestions";
 import MembershipType from "./MembershipType";
 import { useMultiStepForm } from "../../hooks/useMultiStepForm";
 import "./Join.css";
-import { FormData } from "./FormData";
+import { ApplicationData } from "./ApplicationData";
 import DEFAULT_DATA from "./DefaultData";
 import Success from "./Success";
 import formatSubmission from "./formatSubmission";
 import NextButton from "../../components/NextButton/NextButton";
 import BackButton from "../../components/BackButton/BackButton";
 
-const userData: FormData = DEFAULT_DATA;
+const userData: ApplicationData = DEFAULT_DATA;
 
 const Join = () => {
   const [data, setData] = useState(userData);
   const [formSubmitted, setFormSubmitted] = useState(false);
-  console.log("DATA not JSON:");
-  console.log(data);
 
   // Create a function that updates the data fields
   // Using partial so can use only some of the fields
-  const updateFields = (fields: Partial<FormData>) => {
+  const updateFields = (fields: Partial<ApplicationData>) => {
     setData((prev) => {
       return { ...prev, ...fields };
     });
   };
-  const {
-    steps,
-    stepIndex,
-    step,
-    isFirstStep,
-    isLastStep,
-    back,
-    next,
-  } = useMultiStepForm([
-    <ContactInfo {...data} updateFields={updateFields}></ContactInfo>,
-    <MembershipType {...data} updateFields={updateFields}></MembershipType>,
-    <FinalQuestions {...data} updateFields={updateFields}></FinalQuestions>,
-  ]);
+  const { steps, stepIndex, step, isFirstStep, isLastStep, back, next } =
+    useMultiStepForm([
+      <ContactInfo {...data} updateFields={updateFields}></ContactInfo>,
+      <MembershipType {...data} updateFields={updateFields}></MembershipType>,
+      <FinalQuestions {...data} updateFields={updateFields}></FinalQuestions>,
+    ]);
 
   // Submits data before moving to next step!
   const onSubmit = (e: FormEvent) => {
@@ -50,27 +41,64 @@ const Join = () => {
     const applicantForm = formatSubmission(data);
     console.log(JSON.stringify(applicantForm.submission));
 
-    // POST request using fetch inside useEffect React hook
+    // Create FormData to send the resume file
+    const formData = new FormData();
+    const resumeName = data.uuid + ".pdf";
+    formData.append("upload_file", data.resume, resumeName);
+
+    // for resume upload
+    const requestOptionsForResume = {
+      method: "POST",
+      body: formData,
+    };
+
+    // for everything else, only do if resume uploads
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(applicantForm.submission),
     };
 
-    fetch("https://se-diva-docs.herokuapp.com/applicants/add", requestOptions)
+    fetch(
+      "https://se-diva-docs.herokuapp.com/applicants/resume/upload",
+      requestOptionsForResume
+    )
       .then((response) => {
         if (response.status == 200) {
-          console.log("Success: " + response.status);
-          // Move to Success page
-          setFormSubmitted(true);
+          console.log("Resume successflly submiited: " + response.status);
+
+          fetch(
+            "https://se-diva-docs.herokuapp.com/applicants/add",
+            requestOptions
+          )
+            .then((response) => {
+              if (response.status == 200) {
+                console.log(
+                  "Application Form Successfully Submitted: " + response.status
+                );
+                // Move to Success page
+                setFormSubmitted(true);
+              } else {
+                console.log(
+                  "Application Form Incurred An Error: " + response.status
+                );
+                alert("There was an error!  Please try again later.");
+              }
+            })
+            .catch((error) => {
+              console.log(
+                "Application Form Incurred An Error: " + error.response.status
+              );
+              alert("There was an error!  Please try again later.");
+            });
         } else {
-          console.log("Error: " + response.status);
-          alert("There was an error!  Please try again later.");
+          console.log("Resume Upload Incurred Error: " + response.status);
+          alert("Resume could not upload!  Please try again later.");
         }
       })
       .catch((error) => {
-        console.log("Error: " + error.response.status);
-        alert("There was an error!  Please try again later.");
+        console.log("Resume Upload Incurred Error: " + error.response.status);
+        alert("Resume could not upload!  Please try again later.");
       });
   };
 

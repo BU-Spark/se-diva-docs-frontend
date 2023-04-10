@@ -1,14 +1,17 @@
 import React from "react";
 import FormWrapper from "./FormWrapper";
+import { v4 as uuidv4 } from "uuid";
 
 type FinalQuestionsData = {
   startChapter: string;
   includeInDirectory: string;
-  includeResume: string;
+  // Type is FileList | undefined but Visual Studio Code actng stupid
+  resume: any;
   includeInResumeBank: string;
   identifyAsBlackWomenMD: string;
   wantToMentor: string;
   wantToSponsor: string;
+  uuid: string;
 };
 
 type FinalQuestionsProps = FinalQuestionsData & {
@@ -18,11 +21,12 @@ type FinalQuestionsProps = FinalQuestionsData & {
 const FinalQuestions = ({
   startChapter,
   includeInDirectory,
-  includeResume,
   includeInResumeBank,
+  resume,
   identifyAsBlackWomenMD,
   wantToMentor,
   wantToSponsor,
+  uuid,
   updateFields,
 }: FinalQuestionsProps) => {
   // generic answer types
@@ -59,8 +63,7 @@ const FinalQuestions = ({
           {answerType}
         </label>
       ))}
-
-      <span>Do you agree to be included in the Membership Directory?</span>
+      <span>Do you agree to be included in the Membership Directory?*</span>
       {yesOrNo.map((answerType) => (
         <label htmlFor={answerType}>
           <input
@@ -77,17 +80,16 @@ const FinalQuestions = ({
           {answerType}
         </label>
       ))}
-      {/* 
-      <span>Please upload your resume,(not required to share)</span>
-      <span> Put functionality here</span> */}
-
-      {/* <span>Would you like your resume to be inlcuded in the resume bank?</span>
-      {answerTypes.map((answerType) => (
+      <span>
+        Would you like your resume to be inlcuded in the resume bank?*
+      </span>
+      {yesOrNo.map((answerType) => (
         <label htmlFor={answerType}>
           <input
             type="radio"
             id="includeInResumeBank"
             name="includeInResumeBank"
+            required
             value={answerType}
             checked={includeInResumeBank === answerType}
             onChange={(e) =>
@@ -96,7 +98,21 @@ const FinalQuestions = ({
           />
           {answerType}
         </label>
-      ))} */}
+      ))}
+      <label htmlFor="resume">
+        Please upload your resume (PDFs only, not required to share)*
+      </label>
+      <input
+        type="file"
+        name="resume"
+        accept=".pdf"
+        onChange={(e) =>
+          updateFields({
+            resume: e.target.files && e.target.files[0],
+            uuid: uuidv4(),
+          })
+        }
+      ></input>
 
       <span>Do you identify as a Black Women Physician?</span>
       {yesOrNo.map((answerType) => (
@@ -115,7 +131,6 @@ const FinalQuestions = ({
           {answerType}
         </label>
       ))}
-
       <span>
         Are you interested in providing mentorship to a Black woman physician or
         student / trainee?
@@ -134,7 +149,6 @@ const FinalQuestions = ({
           {answerType}
         </label>
       ))}
-
       <span>
         Are you interested in sponsoring a black woman physician or student /
         trainee who has a defined, limited sponsorship request or question?

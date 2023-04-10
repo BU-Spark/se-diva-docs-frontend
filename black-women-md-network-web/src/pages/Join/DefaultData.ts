@@ -1,6 +1,6 @@
-import { FormData } from "./FormData";
+import { ApplicationData } from "./ApplicationData";
 
-const DefaultData: FormData = {
+const DefaultData: ApplicationData = {
   currentRole: { label: "default", value: "Black Women Physician Member" },
   firstName: "",
   lastName: "",
@@ -27,11 +27,13 @@ const DefaultData: FormData = {
   region: { label: "default", value: "Region" },
   startChapter: "",
   includeInDirectory: "",
-  includeResume: "",
+  // Type for resume is Filelist
+  resume: undefined,
   includeInResumeBank: "",
   identifyAsBlackWomenMD: "",
   wantToMentor: "",
   wantToSponsor: "",
+  uuid: "",
 };
 
 export default DefaultData;
