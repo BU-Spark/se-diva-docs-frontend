@@ -42,7 +42,7 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/whoarewe" element={<WhoAreWe />} />
         <Route path="/mission" element={<Mission />} />
-        <Route path="/membership" element={<Directory />} />
+        <Route path="/members" element={<Directory />} />
         <Route path="/team" element={<Team />} />
         <Route path="/directors" element={<Directors />} />
         <Route path="/resources" element={<Resources />} />

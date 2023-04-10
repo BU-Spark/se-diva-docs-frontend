@@ -17,7 +17,7 @@ const Navbar = () => {
         <NavLogo to="/">Black Women MD Network</NavLogo>
         <Bars />
         <NavMenu>
-          <NavLink to="/membership">Membership</NavLink>
+          <NavLink to="/members">Members</NavLink>
           <NavLink to="/resources">Resources</NavLink>
           <NavLink to="/community">Community</NavLink>
         </NavMenu>
