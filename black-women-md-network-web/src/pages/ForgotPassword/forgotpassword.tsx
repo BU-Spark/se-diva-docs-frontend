@@ -43,13 +43,13 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className={styles["outer-container"]}>
+    <div className={styles["page"]}>
       <div className={styles["container"]}>
+        <label className={styles["label-text"]} htmlFor="email">
+          To have your password reset, enter your email address below. We will
+          then send an email containing a new password.
+        </label>
         <form className={styles["send-email"]} onSubmit={handleSubmit}>
-          <label className={styles["label-signin"]} htmlFor="email">
-            To have your password reset, enter your email address below. We will
-            then send an email containing a new password.
-          </label>
           <input
             className={styles["email"]}
             type="email"
