@@ -1,18 +1,14 @@
-import React from 'react';
-  
+import React from "react";
+import doctor from "../images/blackfemaledoctorsconfident.jpg";
+import "./construction.css";
+
 const Directory = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'Right',
-        alignItems: 'Right',
-        height: '100vh'
-      }}
-    >
-      <h1>DivaDocs Directory</h1>
+    <div className="construction-body">
+      <img className="doctor-img" src={doctor} alt="" />
+      <p>Page Coming Soon</p>
     </div>
   );
 };
-  
+
 export default Directory;

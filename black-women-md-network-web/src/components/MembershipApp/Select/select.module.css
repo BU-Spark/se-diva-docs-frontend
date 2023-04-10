@@ -1,0 +1,96 @@
+.container {
+  position: relative;
+  width: 100%;
+  border: 1px solid #456b68;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-left: 15px;
+  padding-bottom: 0px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: white;
+  color: #456b68;
+  font-weight: bold;
+}
+
+.container:focus {
+  border-color: hs1(200, 100%, 50%);
+}
+
+.value {
+  flex-grow: 1;
+}
+
+.default {
+  color: #8e8e8e;
+  flex-grow: 1;
+}
+
+.caret-open {
+  transform: rotate(180deg);
+  font-size: 40px;
+  position: absolute;
+  font-weight: 100;
+  top: -10px;
+  right: 20px;
+}
+
+.caret-close {
+  font-size: 40px;
+  position: absolute;
+  font-weight: 100;
+  top: 0;
+  right: 20px;
+}
+
+.options {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  display: none;
+  max-height: 15em;
+  overflow-y: auto;
+  width: 100%;
+  left: 0;
+  top: calc(100% + 0.25em);
+  z-index: 100;
+  color: #456b68;
+  font-weight: bold;
+}
+
+.options.show {
+  display: list-item;
+}
+
+.option {
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+  list-style-type: none;
+  list-style-position: outside;
+  font-weight: 300;
+
+  color: #456b68;
+}
+
+.option.selected {
+  color: #456b68;
+  font-weight: bold;
+  background-color: #f0ffff;
+  margin-bottom: 10px;
+  box-shadow: -2em 0 #f0ffff;
+}
+
+.option.highlighted {
+  background-color: #f0ffff;
+  color: black;
+  margin-bottom: 10px;
+  box-shadow: -2em 0 #f0ffff;
+}
+
+.title {
+  top: 0;
+  left: 7px;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+}
