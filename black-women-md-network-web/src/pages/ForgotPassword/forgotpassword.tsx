@@ -1,9 +1,11 @@
+import axios from "axios";
 import React, { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./forgotpassword.module.css";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   let navigate = useNavigate();
   const routeChange = () => {
@@ -12,34 +14,29 @@ const ForgotPassword = () => {
   };
 
   // Submits data before moving to next step!
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     console.log(email);
+    const username = email;
 
-    // // POST request using fetch inside useEffect React hook
-    // const requestOptions = {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: new URLSearchParams({
-    //     username: email,
-    //     password: password,
-    //   }).toString(),
-    // };
-
-    // fetch("https://se-diva-docs.herokuapp.com/login", requestOptions)
-    //   .then((response) => {
-    //     if (response.status == 200) {
-    //       console.log(response);
-    //       // redirect to homepage
-    //     } else {
-    //       console.log("Error: " + response.status);
-    //       alert("There was an error!  Please try again later.");
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.log("Error: " + error.response.status);
-    //     alert("There was an error!  Please try again later.");
-    //   });
+    try {
+      const response = await axios.post(
+        "https://se-diva-docs.herokuapp.com/forgot_password",
+        new URLSearchParams({
+          username,
+        }),
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      );
+      console.log(response.data.access_token);
+      setMessage("A email with your new password has been sent.");
+    } catch (err) {
+      console.log("Error: ", err);
+      setMessage("Incorrect username.  Please try again later!");
+    }
   };
 
   return (
@@ -63,6 +60,8 @@ const ForgotPassword = () => {
             Send Email
           </button>
         </form>
+
+        {message && <p className={styles["label-text"]}>{message}</p>}
       </div>
     </div>
   );

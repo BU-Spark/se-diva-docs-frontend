@@ -49,28 +49,9 @@ const SignIn = () => {
         authState: { username: username },
       });
     } catch (err) {
-      // if (err && err instanceof AxiosError)
-      //   setError(err.response?.data.message);
-      // else if (err && err instanceof Error) setError(err.message);
-
       console.log("Error: ", err);
       setMessage("Incorrect username or password.");
     }
-    // try {
-    //   const response = await axios.post('https://se-diva-docs.herokuapp.com/login', new URLSearchParams({
-    //     email,
-    //     password,
-    //   }), {
-    //     headers: {
-    //       'Content-Type': 'application/x-www-form-urlencoded',
-    //     },
-    //   });
-    //   console.log(response.data.access_token)
-    //   localStorage.setItem('access_token', response.data.access_token);
-    //   setMessage('Logged in successfully.');
-    // } catch (error) {
-    //   setMessage('Incorrect username or password.');
-    // }
   };
 
   return (
