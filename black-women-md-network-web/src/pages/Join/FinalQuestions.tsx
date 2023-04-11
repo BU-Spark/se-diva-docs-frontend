@@ -100,7 +100,8 @@ const FinalQuestions = ({
         </label>
       ))}
       <label htmlFor="resume">
-        Please upload your resume (PDFs only, not required to share)*
+        Please upload your resume (PDFs only, not required to share in
+        Directory)*
       </label>
       <input
         type="file"
