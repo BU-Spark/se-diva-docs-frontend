@@ -106,6 +106,7 @@ const FinalQuestions = ({
         type="file"
         name="resume"
         accept=".pdf"
+        required
         onChange={(e) =>
           updateFields({
             resume: e.target.files && e.target.files[0],
