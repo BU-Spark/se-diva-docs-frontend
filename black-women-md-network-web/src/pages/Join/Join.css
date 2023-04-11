@@ -22,56 +22,36 @@
   font-size: 20px;
 }
 
-.progress-bar {
+progress {
+  /* RESETS */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+
   width: 100%;
-  height: 50px;
+  height: 8px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background-color: #e4f2f2;
+  color: #0882ff;
 }
 
 /* WEBKIT BROWSERS - CHROME, OPERA AND SAFARI */
 progress::-webkit-progress-bar {
-  background-color: #777;
+  background-color: #e4f2f2;
   border-radius: 20px;
 }
 
 progress::-webkit-progress-value {
-  background-image: -webkit-linear-gradient(
-      45deg,
-      transparent 40%,
-      rgba(0, 0, 0, 0.1) 40%,
-      rgba(0, 0, 0, 0.1) 70%,
-      transparent 70%
-    ),
-    -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
-    -webkit-linear-gradient(left, #1abc9c, #3498db);
+  background-color: #0882ff;
   border-radius: 20px;
 }
 
 /* MOZILLA FIREFOX */
 progress::-moz-progress-bar {
-  background-image: -moz-linear-gradient(
-      45deg,
-      transparent 33%,
-      rgba(0, 0, 0, 0.1) 40%,
-      rgba(0, 0, 0, 0.1) 70%,
-      transparent 70%
-    ),
-    -moz-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
-    -moz-linear-gradient(left, #1abc9c, #3498db);
-  border-radius: 20px;
+  background-color: #0882ff;
 }
-
-/* MICROSOFT EDGE & IE */
-.custom-progress::-ms-fill {
-  border-radius: 18px;
-  background: repeating-linear-gradient(
-    45deg,
-    #1abc9c,
-    #1abc9c 10px,
-    #3498db 10px,
-    #3498db 20px
-  );
-}
-
 .content {
   width: 60%;
   flex-direction: column;
