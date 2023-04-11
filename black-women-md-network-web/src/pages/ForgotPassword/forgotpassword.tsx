@@ -17,18 +17,15 @@ const ForgotPassword = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     console.log(email);
+    console.log(email.length);
     const username = email;
 
     try {
       const response = await axios.post(
         "https://se-diva-docs.herokuapp.com/forgot_password",
-        new URLSearchParams({
-          username,
-        }),
+        null,
         {
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
+          params: { username },
         }
       );
       console.log(response.data.access_token);
