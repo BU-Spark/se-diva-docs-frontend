@@ -1,0 +1,110 @@
+{
+    "users": [
+        {
+            "id": "123456",
+            "first_name": "John",
+            "middle_name": "Doe",
+            "last_name": "Smith",
+            "suffix": "Jr.",
+            "primary_email": "abhinoor1@yahoo.com",
+            "secondary_email": "j.smith@example.com",
+            "phone_number": "555-123-4567",
+            "address": {
+              "street": "123 Main St",
+              "apartment": "Apt 2",
+              "city": "Anytown",
+              "state": "CA",
+              "zip_code": "12345",
+              "country": "USA"
+            },
+            "address_type": "personal",
+            "current_academic_affiliation": "University of Anytown",
+            "current_hospital_company": "Anytown General Hospital",
+            "current_position": "Resident",
+            "specialty": "Internal Medicine",
+            "areas_of_work": "Primary Care, Inpatient Care",
+            "geographic_region": "West Coast",
+            "bwmdn_chapter_question": "No",
+            "membership_directory_agreement": "Yes",
+            "resume_included_question": "Yes",
+            "divadocs_boston_member": {
+              "divadocs_boston_member_question": "No",
+              "years": "3"
+            },
+            "race": [
+              "white"
+            ],
+            "ethnicity": [
+              "indian"
+            ],
+            "gender_identity": "Male",
+            "pronouns": "He/Him",
+            "will_sponsor_question": {
+              "sponsor_question_answer": "Yes",
+              "activities_interested": [
+                "Networking",
+                "Mentorship"
+              ]
+            },
+            "applicant_status": {
+              "subscription_tier": "student",
+              "approved": false,
+              "paid": false,
+              "payment_link": "",
+              "account_password": ""
+            }
+          },
+        {
+            "id": "1",
+    "first_name": "Mya",
+    "middle_name": "J",
+    "last_name": "Turner",
+    "suffix": "",
+    "primary_email": "mjturner@bu.edu",
+    "secondary_email": "",
+    "phone_number": "8121901902",
+    "address": {
+      "street": "1742 Westchester Ave",
+      "apartment": "",
+      "city": "Peekskill",
+      "state": "NY",
+      "zip_code": "10566",
+      "country": "United States"
+    },
+    "address_type": "Work",
+    "current_academic_affiliation": "erqwerqwer",
+    "current_hospital_company": "afqwerqwer",
+    "current_position": "Fellow",
+    "specialty": "qwerqwerqwer",
+    "areas_of_work": "EXPERTISE",
+    "geographic_region": "Region 1 - CT, ME, MA, NH, RI, and VT",
+    "bwmdn_chapter_question": "Yes",
+    "membership_directory_agreement": "No",
+    "resume_included_question": "No",
+    "divadocs_boston_member": {
+      "divadocs_boston_member_question": "No",
+      "years": "string"
+    },
+    "race": [
+      "Black"
+    ],
+    "ethnicity": [
+      "American"
+    ],
+    "gender_identity": "Female",
+    "pronouns": "efawerwrw",
+    "will_sponsor_question": {
+      "sponsor_question_answer": "Yes",
+      "activities_interested": [
+        "TBD"
+      ]
+    },
+    "applicant_status": {
+      "subscription_tier": "",
+      "approved": false,
+      "paid": false,
+      "payment_link": "",
+      "account_password": ""
+    }
+}]
+}

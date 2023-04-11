@@ -19,7 +19,7 @@
   font-family: 'Times';
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.5vw;
   line-height: 100%;
 }
 /* change the text color */
@@ -34,7 +34,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.5vw;
   line-height: 100%;
     /*
     font-family: 'Inter';
