@@ -101,7 +101,7 @@ const FinalQuestions = ({
       ))}
       <label htmlFor="resume">
         Please upload your resume (PDFs only, not required to share in
-        Directory)*
+        Directoryma)*
       </label>
       <input
         type="file"
