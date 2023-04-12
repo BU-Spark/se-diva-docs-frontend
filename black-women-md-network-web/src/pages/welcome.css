@@ -46,7 +46,7 @@
  font-style: normal;
  font-weight: 700;
  font-size: 5vi;
- line-height: 60px;
+ line-height: 5vi;
  /* or 86% */
 
 
@@ -265,7 +265,7 @@
 
 
 /* For screens smaller than 600px */
-@media (max-width: 600px) {
+@media only screen and (orientation: portrait) {
     .welcome-body
     {
         display: flex;
