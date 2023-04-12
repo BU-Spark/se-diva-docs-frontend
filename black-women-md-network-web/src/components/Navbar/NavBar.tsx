@@ -52,7 +52,7 @@ function NavBar() {
         collapseOnSelect
       >
         <Container fluid>
-          <Navbar.Brand href="/">BMWDN</Navbar.Brand>
+          <Navbar.Brand href="/">BWMDN</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             {/* <Nav className="me-auto">
