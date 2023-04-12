@@ -264,4 +264,158 @@
 
 
 
+/* For screens smaller than 600px */
+@media (max-width: 600px) {
+    .welcome-body
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
 
+
+        width: 100%;
+        height: 100%;
+
+
+        border-radius: 4px;
+        background: rgb(240,255,255);
+        background: linear-gradient(160deg, #F0FFFF 90%, #5A9A98 77%);
+    }
+    /* Adjust font sizes and padding for smaller screens */
+    .bwmdn-box p {
+      width: 35vw;
+      font-size: 5vw;
+      line-height: 5vw;
+      left: 9vw;
+      top: 30vw;
+    }
+    
+    .bwmdn-box a {
+      width: 35vw;
+      height: 2vh;
+      left: 7vw;
+      top: 40vw;
+      font-size: 3vw;
+    }
+
+    .intro-box h1 {
+      font-size: 8vw;
+      line-height: 10vw;
+      padding-top: 8vh;
+    }
+    
+    .intro-box p {
+      width: 80%;
+      font-size: 4vw;
+      line-height: 5vw;
+    }
+    
+    .events-box h1 {
+      font-size: 8vw;
+      line-height: 10vw;
+      padding-top: 8vh;
+    }
+    
+    .membership-text h1 {
+      font-size: 8vw;
+      line-height: 10vw;
+      padding-bottom: 6vw;
+    }
+    
+    .membership-text p {
+      font-size: 5vw;
+      line-height: 6vw;
+      padding-bottom: 6vw;
+    }
+    
+    .btn.btn-search {
+      padding: 5vw 20vw;
+      font-size: 6vw;
+      line-height: 7vw;
+    }
+  
+    /* Stack events in a column */
+    .events-box {
+      flex-direction: column;
+    }
+    
+    .events-box div {
+      padding: 5vw;
+      margin-bottom: 1vw;
+    }
+    
+    .events-box img {
+      width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  
+    .membership-box {
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: flext-start;
+        justify-content: center;
+    }
+       
+    .membership-text {
+        width:100%;
+        padding: 3vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .membership-text h1{
+        font-family: 'Lora';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+        text-align: center;
+        /* identical to box height */
+        
+        color: #456B68;
+        padding-bottom: 3vw;
+        text-align: center;
+    }
+    /* Adjust image sizes in membership box */
+    .membership-box img {
+      width: 80%;
+      height: auto;
+      padding: 5vw;
+      align-self: center;
+    }
+
+    .btn.btn-search
+    {
+        border-radius: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 45px;
+        gap: 10px;
+
+        width:90%;
+        height:5vh;
+
+        background: #5A9A98!important;
+        border: none;
+
+        font-family: 'Inter'!important;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        /* identical to box height */
+        color: #F0FFFF!important;
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+  }
+  
