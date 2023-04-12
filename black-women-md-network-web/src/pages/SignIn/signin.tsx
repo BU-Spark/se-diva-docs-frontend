@@ -48,6 +48,7 @@ const SignIn = () => {
         expiresIn: 3600,
         authState: { username: username },
       });
+      navigate("/");
     } catch (err) {
       console.log("Error: ", err);
       setMessage("Incorrect username or password.");
