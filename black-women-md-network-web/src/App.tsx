@@ -49,8 +49,22 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Welcome />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/news" element={<News />} />
+        <Route path="/about" 
+          element={<div>
+            {isAuthenticated() ? (
+              <About />
+            ) : (
+              <Navigate to="/signin" replace />
+            )}
+          </div>} />
+        <Route path="/news" 
+          element={<div>
+            {isAuthenticated() ? (
+              <News />
+            ) : (
+              <Navigate to="/signin" replace />
+            )}
+          </div>} />
         <Route path="/whoarewe" element={<WhoAreWe />} />
         <Route path="/mission" element={<Mission />} />
         <Route path="/members" 
@@ -63,7 +77,14 @@ function App() {
           </div>} />
         <Route path="/team" element={<Team />} />
         <Route path="/directors" element={<Directors />} />
-        <Route path="/resources" element={<Resources />} />
+        <Route path="/resources" 
+          element={<div>
+            {isAuthenticated() ? (
+              <Resources />
+            ) : (
+              <Navigate to="/signin" replace />
+            )}
+          </div>} />
         <Route path="/events" element={<Events />} />
         <Route path="/community" element={<Community />} />
         <Route path="/signin" element={<SignIn />} />
