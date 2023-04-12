@@ -26,6 +26,8 @@ import Coaching from "./pages/coaching";
 import ForgotPassword from "./pages/ForgotPassword/forgotpassword";
 import { RequireAuth } from "react-auth-kit";
 import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import { useIsAuthenticated, useSignOut } from "react-auth-kit";
 
 const ExternalLink = () => {
   const navigate = useNavigate();
@@ -41,6 +43,7 @@ function App() {
   useEffect(() => {
     document.title = "Black Women M.D. Network";
   }, []);
+  const isAuthenticated = useIsAuthenticated();
   return (
     <Router>
       <NavBar />
@@ -50,7 +53,14 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/whoarewe" element={<WhoAreWe />} />
         <Route path="/mission" element={<Mission />} />
-        <Route path="/members" element={<Directory />} />
+        <Route path="/members" 
+          element={<div>
+            {isAuthenticated() ? (
+              <Directory />
+            ) : (
+              <Navigate to="/signin" replace />
+            )}
+          </div>} />
         <Route path="/team" element={<Team />} />
         <Route path="/directors" element={<Directors />} />
         <Route path="/resources" element={<Resources />} />
