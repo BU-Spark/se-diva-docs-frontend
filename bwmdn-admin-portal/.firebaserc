@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "se-diva-docs"
+  },
+  "targets": {
+    "se-diva-docs": {
+      "hosting": {
+        "bwmdn-admin": [
+          "bwmdn-admin-2"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

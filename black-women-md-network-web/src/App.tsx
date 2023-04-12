@@ -25,6 +25,17 @@ import Headshot from "./pages/headshot";
 import Coaching from "./pages/coaching";
 import ForgotPassword from "./pages/ForgotPassword/forgotpassword";
 import { RequireAuth } from "react-auth-kit";
+import { useNavigate } from 'react-router-dom';
+
+const ExternalLink = () => {
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    window.location.href = 'https://bwmdn-admin-2.web.app/';
+  }, []);
+
+  return null;
+}
 
 function App() {
   useEffect(() => {
@@ -62,6 +73,8 @@ function App() {
         <Route path="/coaching" element={<Coaching />} />
         <Route path="/events" element={<Events />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path='/admin' element={<ExternalLink />}/>
+        
       </Routes>
       <Footer />
     </Router>
