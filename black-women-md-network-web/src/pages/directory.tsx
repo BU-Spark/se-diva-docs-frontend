@@ -38,7 +38,6 @@ interface MemberData {
         sponsor_question_answer: String,
         activities_interested: []
       };
-    
   }
 
   const MemberCard: React.FC<MemberData> = ({ id, first_name, last_name, primary_email, phone_number, current_position, specialty, resume_included_question }) => {
@@ -109,7 +108,7 @@ interface MemberData {
   
   
   const Directory: React.FC = () => {
-    const options = [
+    const specialties = [
         { label: 'Allergy & Immunology', value: 'Allergy & Immunology' },
         { label: 'Anesthesiology', value: 'Anesthesiology' },
         { label: 'Cardiology', value: "Cardiology" },
@@ -161,17 +160,52 @@ interface MemberData {
         { label: "Women's Health", value: "Women's Health" },
         { label: 'Radiology', value: 'Radiology' }
     ];
-      
+
+    const regions = [
+      { label: "region1`", value: "Region 1 - CT, ME, MA, NH, RI, and VT" },
+      { label: "region2", value: "Region 2 - NJ, NY" },
+      { label: "region3", value: "Region 3 - DC, DE, MD, PA, VA, and WV" },
+      { label: "region4", value: "Region 4 - FL, GA, NC, and SC" },
+      { label: "region5", value: "Region 5 - AL, LA, MS, TN, and PR" },
+      { label: "region6", value: "Region 6 - IL, IN, KY, MI, and OH" },
+      {
+        label: "region7`",
+        value: "Region 7 - AR, IA, KS, MN, NE, ND, OK, SD, and WI",
+      },
+      {
+        label: "region8",
+        value: "Region 8 - AZ, CO, ID, MT, NM, NV, TX, UT, and WY",
+      },
+      { label: "region9", value: "Region 9 - AK, CA, HI, OR, and WA" },
+      { label: "region10", value: "Region 10 - Other International Affiliation" },
+    ];
+
     const [members, setMembers] = useState<MemberData[]>([]);
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [isResumeChecked, setIsResumeChecked] = useState(false);
     const [isConnectionChecked, setIsConnectionChecked] = useState(false);
-    const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
-    const [collapsed, setCollapsed] = useState(true);
+    const [selectedSpecialties, setSelectedSpecialties] = useState<string[]>([]);
+    const [selectedRegions, setSelectedRegions] = useState<string[]>([]);
+    const [collapsedSpecialtes, setCollapsedSpecialties] = useState(true);
+    const [collapsedRegions, setCollapsedRegions] = useState(true);
 
-    const sortedOptions = [...options].sort((a, b) => {
-      const aIndex = selectedOptions.indexOf(a.value);
-      const bIndex = selectedOptions.indexOf(b.value);
+    const sortedSpecialties = [...specialties].sort((a, b) => {
+      const aIndex = selectedSpecialties.indexOf(a.value);
+      const bIndex = selectedSpecialties.indexOf(b.value);
+      if (aIndex === -1 && bIndex === -1) {
+        return 0;
+      } else if (aIndex === -1) {
+        return 1;
+      } else if (bIndex === -1) {
+        return -1;
+      } else {
+        return aIndex - bIndex;
+      }
+    });
+
+    const sortedRegions = [...regions].sort((a, b) => {
+      const aIndex = selectedRegions.indexOf(a.value);
+      const bIndex = selectedRegions.indexOf(b.value);
       if (aIndex === -1 && bIndex === -1) {
         return 0;
       } else if (aIndex === -1) {
@@ -206,10 +240,17 @@ interface MemberData {
         )
         .filter((member) =>
         {
-            if (selectedOptions.length === 0) {
+            if (selectedSpecialties.length === 0) {
                 return true; // No options selected, show all items
               }
-              return selectedOptions.includes(member.specialty);
+              return selectedSpecialties.includes(member.specialty);
+        })
+        .filter((member) =>
+        {
+            if (selectedRegions.length === 0) {
+                return true; // No options selected, show all items
+              }
+              return selectedRegions.includes(member.geographic_region);
         })
         .filter((member) => (!isResumeChecked || member.resume_included_question.toLowerCase() == "yes"))
         .filter((member) => (!isConnectionChecked || member.will_sponsor_question.sponsor_question_answer.toLowerCase() == "yes"))
@@ -240,30 +281,30 @@ interface MemberData {
           <div className="options-container">
             <div className="switch">
               <span className="filter-label">Specialty</span>
-              <button onClick={() => setCollapsed(!collapsed)} className = "plus-button">
-                {collapsed ? <><FaPlus /></> : <><FaMinus /></> }
+              <button onClick={() => setCollapsedSpecialties(!collapsedSpecialtes)} className = "plus-button">
+                {collapsedSpecialtes ? <><FaPlus /></> : <><FaMinus /></> }
               </button>
             </div>
             {/* Always show selected options */}
-            {collapsed && (
+            {collapsedSpecialtes && (
               <div className="options-wrapper">
                 <div className="options">
-                  {selectedOptions.map((option) => (
-                    <div key={option}>
+                  {selectedSpecialties.map((specialty) => (
+                    <div key={specialty}>
                       <label>
                         <input
                           type="checkbox"
-                          value={option}
-                          checked={selectedOptions.includes(option)}
+                          value={specialty}
+                          checked={selectedSpecialties.includes(specialty)}
                           onChange={() => {
-                            if (selectedOptions.includes(option)) {
-                              setSelectedOptions(selectedOptions.filter((s) => s !== option));
+                            if (selectedSpecialties.includes(specialty)) {
+                              setSelectedSpecialties(selectedSpecialties.filter((s) => s !== specialty));
                             } else {
-                              setSelectedOptions([...selectedOptions, option]);
+                              setSelectedSpecialties([...selectedSpecialties, specialty]);
                             }
                           }}
                         />
-                        {option}
+                        {specialty}
                       </label>
                     </div>
                   ))}
@@ -272,25 +313,86 @@ interface MemberData {
             )}
 
             {/* Only show options if not collapsed */}
-            {!collapsed && (
+            {!collapsedSpecialtes && (
               <div className="options-wrapper" style={{ height: '200px', overflow: 'auto' }}>
                 <div className="options">
-                  {sortedOptions.map((option) => (
-                    <div key={option.value}>
+                  {sortedSpecialties.map((specialty) => (
+                    <div key={specialty.value}>
                       <label>
                         <input
                           type="checkbox"
-                          value={option.value}
-                          checked={selectedOptions.includes(option.value)}
+                          value={specialty.value}
+                          checked={selectedSpecialties.includes(specialty.value)}
                           onChange={() => {
-                            if (selectedOptions.includes(option.value)) {
-                              setSelectedOptions(selectedOptions.filter((s) => s !== option.value));
+                            if (selectedSpecialties.includes(specialty.value)) {
+                              setSelectedSpecialties(selectedSpecialties.filter((s) => s !== specialty.value));
                             } else {
-                              setSelectedOptions([...selectedOptions, option.value]);
+                              setSelectedSpecialties([...selectedSpecialties, specialty.value]);
                             }
                           }}
                         />
-                        {option.label}
+                        {specialty.label}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="options-container">
+            <div className="switch">
+              <span className="filter-label">Region</span>
+              <button onClick={() => setCollapsedRegions(!collapsedRegions)} className = "plus-button">
+                {collapsedRegions ? <><FaPlus /></> : <><FaMinus /></> }
+              </button>
+            </div>
+            {/* Always show selected options */}
+            {collapsedRegions && (
+              <div className="options-wrapper">
+                <div className="options">
+                  {selectedRegions.map((region) => (
+                    <div key={region}>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value={region}
+                          checked={selectedRegions.includes(region)}
+                          onChange={() => {
+                            if (selectedRegions.includes(region)) {
+                              setSelectedRegions(selectedRegions.filter((s) => s !== region));
+                            } else {
+                              setSelectedRegions([...selectedRegions, region]);
+                            }
+                          }}
+                        />
+                        {region}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Only show options if not collapsed */}
+            {!collapsedRegions && (
+              <div className="options-wrapper" style={{ height: '200px', overflow: 'auto' }}>
+                <div className="options">
+                  {sortedRegions.map((region) => (
+                    <div key={region.value}>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value={region.value}
+                          checked={selectedRegions.includes(region.value)}
+                          onChange={() => {
+                            if (selectedRegions.includes(region.value)) {
+                              setSelectedRegions(selectedRegions.filter((s) => s !== region.value));
+                            } else {
+                              setSelectedRegions([...selectedRegions, region.value]);
+                            }
+                          }}
+                        />
+                        {region.value}
                       </label>
                     </div>
                   ))}
