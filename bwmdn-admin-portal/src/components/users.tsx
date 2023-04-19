@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import { Datagrid, DateField, List, TextField, EmailField, Edit, SimpleForm, TextInput, Toolbar, SaveButton, DeleteButton, Show, SimpleShowLayout, useNotify, useRedirect, useCreate, SelectInput, ReferenceInput } from 'react-admin';
+import React, { useState, useEffect } from 'react';
+import { Datagrid, DateField, List, TextField, EmailField, Edit, SimpleForm, TextInput, Toolbar, SaveButton, DeleteButton, Show, SimpleShowLayout, useNotify, useRedirect, useCreate, SelectInput, ReferenceInput, RecordContext } from 'react-admin';
 import { useRecordContext} from "react-admin";
 import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import { Button } from 'react-admin';
+
 
 export const UserList = () => (
     <List>
@@ -36,9 +38,8 @@ export const UserList = () => (
     );
 };*/
 
-
 const EditTitle = () => {
-    const record = useRecordContext();
+    const record = useRecordContext(); 
     return <span>{record ? `${record.first_name} ${record.last_name}` : ''}</span>;
 };
 
@@ -53,7 +54,10 @@ const MyToolbar = () => (
     </Toolbar>
 );
 
+
 export const UserEdit = () => {
+    const record = useRecordContext();
+
     const [button, setButton] = useState("");
 
     const handleApprove = () => {
@@ -93,6 +97,32 @@ export const UserEdit = () => {
             redirect('list');
         }
     };
+    
+    const PdfButton = () => {
+        const record = useRecordContext();
+  
+        const handleShowResume = async () => {
+          try {
+            const id = await record.id;
+            const response = await fetch(`https://se-diva-docs.herokuapp.com/applicants/downloadresume/${id}.pdf`);
+            const blob = await response.blob();
+            const url = URL.createObjectURL(blob);
+            window.open(url, '_blank');
+          } catch (error) {
+            console.error(error);
+          }
+        };
+      
+        useEffect(() => {
+          // your effect here
+        }, []);
+      
+        return (
+          <Button label="Download PDF" onClick={handleShowResume}/>
+        );
+      };
+      
+      
     return(
     <Edit title={<EditTitle />} >
         <SimpleForm  toolbar={<MyToolbar/>} onSubmit={approveORdecline} >
@@ -245,6 +275,7 @@ export const UserEdit = () => {
                     <TextInput source="will_sponsor_question.activities_interested" disabled fullWidth helperText={false}/>
                 </Box>
             </Box>
+            <PdfButton />
             <SelectInput 
             multiline
             fullWidth
