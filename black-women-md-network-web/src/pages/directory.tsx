@@ -42,7 +42,7 @@ interface MemberData {
     
   }
 
-  const MemberCard: React.FC<MemberData> = ({ id, first_name, last_name, primary_email, phone_number, current_position, specialty, resume_included_question }) => {
+  const MemberCard: React.FC<MemberData> = ({ id, first_name, last_name, primary_email, phone_number, current_position, specialty, resume_included_question, current_hospital_company, areas_of_work }) => {
     const [showContact, setShowContact] = useState(false);
     const handleShowContact = () => {
         setShowContact(true);
@@ -73,8 +73,8 @@ interface MemberData {
       <Card className = "mem-card m-2" >
         <Card.Body>
           <Card.Title style={{color: 'white'}}>{first_name} {last_name}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">{specialty}</Card.Subtitle>
-          <Card.Text>Bio</Card.Text>
+          <Card.Subtitle style={{color: 'white'}} className="mb-2">{specialty}</Card.Subtitle>
+          <Card.Text style={{color: 'rgb(240,255,255)'}}>Works as a {current_position} at {current_hospital_company}.</Card.Text>
           {resume_included_question.toLowerCase() == "yes" && (
             <Button variant="primary" onClick={()=>handleShowResume(id)} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
               Resume
