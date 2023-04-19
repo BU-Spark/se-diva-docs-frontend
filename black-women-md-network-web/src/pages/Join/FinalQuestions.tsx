@@ -81,7 +81,7 @@ const FinalQuestions = ({
         </label>
       ))}
       <span>
-        Would you like your resume to be inlcuded in the resume bank?*
+        Would you like your resume to be included in the resume bank?*
       </span>
       {yesOrNo.map((answerType) => (
         <label htmlFor={answerType}>
@@ -101,7 +101,7 @@ const FinalQuestions = ({
       ))}
       <label htmlFor="resume">
         Please upload your resume (PDFs only, not required to share in
-        Directoryma)*
+        Directory)*
       </label>
       <input
         type="file"

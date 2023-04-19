@@ -276,7 +276,8 @@ export const UserEdit = () => {
                 </Box>
             </Box>
             <PdfButton />
-            <SelectInput 
+            <SelectInput
+            required 
             multiline
             fullWidth
             source="applicant_status.subscription_tier"
