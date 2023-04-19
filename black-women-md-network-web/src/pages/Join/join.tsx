@@ -24,12 +24,19 @@ const Join = () => {
       return { ...prev, ...fields };
     });
   };
-  const { steps, stepIndex, step, isFirstStep, isLastStep, back, next } =
-    useMultiStepForm([
-      <ContactInfo {...data} updateFields={updateFields}></ContactInfo>,
-      <MembershipType {...data} updateFields={updateFields}></MembershipType>,
-      <FinalQuestions {...data} updateFields={updateFields}></FinalQuestions>,
-    ]);
+  const {
+    steps,
+    stepIndex,
+    step,
+    isFirstStep,
+    isLastStep,
+    back,
+    next,
+  } = useMultiStepForm([
+    <ContactInfo {...data} updateFields={updateFields}></ContactInfo>,
+    <MembershipType {...data} updateFields={updateFields}></MembershipType>,
+    <FinalQuestions {...data} updateFields={updateFields}></FinalQuestions>,
+  ]);
 
   // Submits data before moving to next step!
   const onSubmit = (e: FormEvent) => {
@@ -123,11 +130,7 @@ const Join = () => {
             Welcome to the Black Women M.D.Network! Please fill out this form to
             complete a membership profile!
           </p>
-          <progress
-            className="progress-bar"
-            max="1"
-            value={stepIndex / steps.length}
-          ></progress>
+          <progress max="1" value={stepIndex / steps.length}></progress>
           <div className="content">
             <form onSubmit={onSubmit}>
               {step}
