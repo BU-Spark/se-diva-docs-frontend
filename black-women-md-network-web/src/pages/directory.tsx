@@ -215,7 +215,7 @@ interface MemberData {
     const filteredMembers = members
         .filter((member) =>
             searchTerms.every((term) =>
-                [member.first_name, member.last_name, member.current_position]
+                [member.first_name, member.last_name, member.current_position, member.geographic_region, member.specialty]
                     .join(" ")
                     .toLowerCase()
                     .includes(term)
