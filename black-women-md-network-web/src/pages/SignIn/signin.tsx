@@ -85,11 +85,11 @@ const SignIn = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className={styles["link-btn"]} onClick={forgotPasswordRoute}>
-            Forgot password?
-          </button>
           <button className={styles["submit"]} type="submit">
             Log In
+          </button>
+          <button className={styles["link-btn"]} onClick={forgotPasswordRoute}>
+            Forgot password?
           </button>
         </form>
         <button className={styles["link-btn"]} onClick={routeChange}>
