@@ -5,6 +5,7 @@ body {
     position: relative;
     min-height: 100vh;
     background: rgb(240,255,255);
+    padding-bottom: 10vh;
 }
 
 .directory-body
