@@ -23,7 +23,7 @@ const formatSubmission = (data: ApplicationData) => {
       current_academic_affiliation: data.academicAffiliation,
       current_hospital_company: data.hospitalOrcompany,
       current_position: data.currentRole.value,
-      specialty: data.specialty,
+      specialty: data.specialty.value,
       areas_of_work: data.expertise,
       geographic_region: data.region.value,
       bwmdn_chapter_question: data.startChapter,

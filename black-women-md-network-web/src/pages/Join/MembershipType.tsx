@@ -6,7 +6,7 @@ import TextBox from "../../components/MembershipApp/TextBox/TextBox";
 import AreasOfExpertise from "../../data/MembershipApp/AreasOfExpertise";
 import MedicalSchools from "../../data/MembershipApp/MedicalSchools";
 import regions from "../../data/MembershipApp/regions";
-import Specialties from "../../data/MembershipApp/Specialties";
+import specialties from "../../data/MembershipApp/specialties";
 import remove from "../../utils/remove";
 import FormWrapper from "./FormWrapper";
 
@@ -14,7 +14,7 @@ type MembershipTypeData = {
   academicAffiliation: string;
   hospitalOrcompany: string;
   position: string;
-  specialty: string;
+  specialty: SelectOption;
   expertise: string[];
   region: SelectOption;
 };
@@ -24,7 +24,7 @@ type MembershipTypeProps = MembershipTypeData & {
 };
 
 const acadmicTypes = MedicalSchools;
-const specialtyTypes = Specialties;
+const specialtyTypes = specialties;
 const regionTypes = regions;
 const expertiseTypes = AreasOfExpertise;
 
@@ -66,13 +66,12 @@ const MembershipType = ({
           required={true}
         ></TextBox>
 
-        <TextBox
-          title={"Speciality"}
-          placeholder={"N/A if Not Applicable"}
+        <Select
+          options={specialtyTypes}
+          title={"Specialty"}
           value={specialty}
-          onChange={(specialty) => updateFields({ specialty })}
-          required={true}
-        ></TextBox>
+          onChange={(e) => updateFields({ specialty: e })}
+        ></Select>
 
         <span>Areas of Expertise</span>
         {expertiseTypes.map((expertiseType) => (

@@ -22,7 +22,7 @@ const DefaultData: ApplicationData = {
   academicAffiliation: "",
   hospitalOrcompany: "",
   position: "",
-  specialty: "",
+  specialty: { label: "default", value: "Specialty" },
   expertise: [],
   region: { label: "default", value: "Region" },
   startChapter: "",

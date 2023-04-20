@@ -6,6 +6,7 @@ import { FaPlus, FaMinus } from 'react-icons/fa';
 import ReactPaginate from 'react-paginate';
 import "./directory.css";
 import regions from "../data/MembershipApp/regions";
+import specialties from "../data/MembershipApp/specialties";
 
 const PAGE_SIZE = 12;
 
@@ -110,60 +111,6 @@ interface MemberData {
   
   
   const Directory: React.FC = () => {
-    const specialties = [
-        { label: 'Allergy & Immunology', value: 'Allergy & Immunology' },
-        { label: 'Anesthesiology', value: 'Anesthesiology' },
-        { label: 'Cardiology', value: "Cardiology" },
-        { label: 'Critical Care Medicine', value: 'Critical Care Medicine' },
-        { label: 'Dermatology', value: 'Dermatology' },
-        { label: 'Diagnostic', value: 'Diagnostic' },
-        { label: 'Emergency Medicine', value: 'Emergency Medicine' },
-        { label: 'Endocrinology', value: 'Endocrinology' },
-        { label: 'Family Medicine', value: 'Family Medicine' },
-        { label: 'Gastroenterology', value: 'Gastroenterology' },
-        { label: 'Geriatrics', value: 'Geriatrics' },
-        { label: 'Head & Neck', value: 'Head & Neck' },
-        { label: 'Hematology & Oncology', value: 'Hematology & Oncology' },
-        { label: 'Infectious Disease', value: 'Infectious Disease' },
-        { label: 'Internal Medicine', value: 'Internal Medicine' },
-        { label: 'Interventional', value: 'Interventional' },
-        { label: 'Medical Genetics & Genomics', value: 'Medical Genetics & Genomics' },
-        { label: 'Nephrology', value: 'Nephrology' },
-        { label: 'Neurology', value: 'Neurology' },
-        { label: 'Nuclear Medicine', value: 'Nuclear Medicine' },
-        { label: 'Nuclear Medicine', value: 'Nuclear Medicine' },
-        { label: 'Obstetrics & Gynecology', value: 'Obstetrics & Gynecology' },
-        { label: 'Oncology', value: 'Oncology' },
-        { label: 'Ophthalmology', value: 'Ophthalmology' },
-        { label: 'Otolaryngology', value: 'Otolaryngology' },
-        { label: 'Pain Medicine', value: 'Pain Medicine' },
-        { label: 'Palliative Care', value: 'Palliative Care' },
-        { label: 'Pathology', value: 'Pathology' },
-        { label: 'Pediatrics', value: 'Pediatrics' },
-        { label: 'Physical Medicine & Rehabilitation', value: 'Physical Medicine & Rehabilitation' },
-        { label: 'Preventive Medicine', value: 'Preventive Medicine' },
-        { label: 'Psychiatry', value: 'Psychiatry' },
-        { label: 'Radiation', value: 'Radiation' },
-        { label: 'Radiology', value: 'Radiology' },
-        { label: 'Rheumatology', value: 'Rheumatology' },
-        { label: 'Sleep Medicine', value: 'Sleep Medicine' },
-        { label: 'Sports Medicine', value: 'Sports Medicine' },
-        { label: 'Surgery, General', value: 'Surgery, General' },
-        { label: 'Surgery, Neurologic', value: 'Surgery, Neurologic' },
-        { label: 'Surgery, Ophthalmic', value: 'Surgery, Ophthalmic' },
-        { label: 'Surgery, Orthopedic', value: 'Surgery, Orthopedic' },
-        { label: 'Surgery, Otolaryngology', value: 'Surgery, Otolaryngology' },
-        { label: 'Surgery, Pediatric', value: 'Surgery, Pediatric' },
-        { label: 'Surgery, Plastic', value: 'Surgery, Plastic' },
-        { label: 'Surgery, Thoracic', value: 'Surgery, Thoracic' },
-        { label: 'Surgery, Vascular', value: 'Surgery, Vascular' },
-        { label: 'Toxicology', value: 'Toxicology' },
-        { label: 'Urology', value: 'Urology' },
-        { label: "Women's Health", value: "Women's Health" },
-        { label: 'Radiology', value: 'Radiology' }
-    ];
-      
-    
     const [members, setMembers] = useState<MemberData[]>([]);
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [isResumeChecked, setIsResumeChecked] = useState(false);
