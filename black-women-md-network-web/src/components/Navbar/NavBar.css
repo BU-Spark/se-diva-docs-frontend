@@ -56,3 +56,46 @@
 .navbar-custom .nav-link:hover{
     color: #456B68;
 }
+
+@media (max-width: 767px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 8vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #5a9a98;
+    z-index: 999;
+  }
+  .navbar-custom .navbar-text,
+  .navbar-custom .navbar-nav .nav-link 
+  {
+    display: flex;
+    color: #F0FFFF;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10vw;
+    line-height: 100%;
+      /*
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 29px;
+      */
+  }
+  .navbar-custom .navbar-brand
+  {
+    color: #F0FFFF;
+
+    font-family: 'Times';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 5vw;
+    line-height: 100%;
+  }
+}
