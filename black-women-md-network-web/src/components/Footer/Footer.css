@@ -8,7 +8,7 @@
     justify-content: center;
     justify-content: space-around;
     align-items: stretch;
-    background-color: #5A9A98;
+    background-color: #6750A4;
     width: 100%
 }
 
@@ -26,13 +26,13 @@
     font-size: 1.5vw;
     line-height: 15px;
 
-    color: #F0FFFF;
+    color: #FFF7FA;
     text-decoration: none;
     padding: 2vw;
 }
 
 .footer-links a:hover{
-    color: #456B68;
+    color: #22005D;
 }
 
 .footer-contact{
@@ -49,13 +49,13 @@
     font-size: 1.5vw;
     line-height: 15px;
 
-    color: #F0FFFF;
+    color: #FFF7FA;
     text-decoration: none;
     padding: 2vw;
 }
 
 .footer-contact a:hover{
-    color: #456B68;
+    color: #22005D;
 }
 
 @media only screen and (orientation: portrait) {
@@ -63,13 +63,13 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 5vh;
+        height: 5.5vh;
         display: flex;
         flex-direction: row;
         justify-content: center;
         justify-content: space-around;
         align-items: stretch;
-        background-color: #5A9A98;
+        background-color: #6750A4;
         width: 100%
     }
     
@@ -87,13 +87,13 @@
         font-size: 1.5vw;
         line-height: 15px;
     
-        color: #F0FFFF;
+        color: #FFF7FA;
         text-decoration: none;
         padding: 2vw;
     }
     
     .footer-links a:hover{
-        color: #456B68;
+        color: #22005D;
     }
     
     .footer-image img{
@@ -114,13 +114,13 @@
         font-size: 1.5vw;
         line-height: 15px;
     
-        color: #F0FFFF;
+        color: #FFF7FA;
         text-decoration: none;
         padding: 2vw;
     }
     
     .footer-contact a:hover{
-        color: #456B68;
+        color: #22005D;
     }
 
     .footer-contact img{
