@@ -1,5 +1,5 @@
 .background {
-  background-color: #f0ffff;
+  background-color: #FFF7FA;
   min-height: 100vh;
 }
 .container {
@@ -8,7 +8,7 @@
   /* border: 1px solid tomato; */
   margin: auto;
 
-  color: #456b68;
+  color: #22005D;
   font-weight: bold;
 }
 
@@ -33,24 +33,24 @@ progress {
   height: 8px;
   margin-bottom: 10px;
   border-radius: 20px;
-  background-color: #e4f2f2;
-  color: #0882ff;
+  background-color: #E7E0EB;
+  color: #6750A4;
 }
 
 /* WEBKIT BROWSERS - CHROME, OPERA AND SAFARI */
 progress::-webkit-progress-bar {
-  background-color: #e4f2f2;
+  background-color: #E7E0EB;
   border-radius: 20px;
 }
 
 progress::-webkit-progress-value {
-  background-color: #0882ff;
+  background-color: #6750A4;
   border-radius: 20px;
 }
 
 /* MOZILLA FIREFOX */
 progress::-moz-progress-bar {
-  background-color: #0882ff;
+  background-color: #6750A4;
 }
 .content {
   width: 60%;
@@ -70,9 +70,9 @@ input {
   margin: 0.5rem 0;
   padding: 1rem;
   border-radius: 10px;
-  color: #456b68;
+  color: #22005D;
   font-weight: bold;
-  border: 1px solid #456b68;
+  border: 1px solid #22005D;
 }
 
 input:where([type="checkbox"], [type="radio"]) {
