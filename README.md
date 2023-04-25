@@ -25,12 +25,13 @@ npm install
 ```
 
 ## How to Start Developer Server
+
 To start the Admin Portal:
 
 1. Navigate to the bwmdn-admin-portal
 
 
-2. Start the server5:
+2. Start the server:
 ```
 npm start
 ```
@@ -48,7 +49,7 @@ npm start
 
 ## How To Deploy to Firebase (For both Admin Portal and Black Women M.D. Network Website)
 
-1. Navigate to the cloned directory
+1. Navigate to black-women-md-network-web or bwmdn-admin-portal
 
 
 2. Update build:
