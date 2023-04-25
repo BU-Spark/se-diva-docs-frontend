@@ -41,7 +41,7 @@ To start the Black Women M.D. Network Website:
 1. Navigate to the black-women-md-network-web
 
 
-2. Start the server5:
+2. Start the server:
 ```
 npm start
 ```
