@@ -1,5 +1,4 @@
 body {
-    padding-top: 10vh;
     width: 100%;
     height: 100%;
     position: relative;
@@ -10,6 +9,7 @@ body {
 
 .directory-body
 {
+    padding-top: 12vh;
     display: flex;
     flex-direction: row;
     padding-left: 2vw;
