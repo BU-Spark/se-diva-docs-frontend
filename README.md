@@ -1,6 +1,6 @@
 # Black Women M.D. Network Frontend
 
-The Black Women M.D. Network (BWMDN) Frontend is based on a React Typescript Framework.  React is a modern web developmenet framework used to create the design and functionality of websites such as BWMDN.  Our project takes advantage of several react libraries.
+The Black Women M.D. Network (BWMDN) Frontend is based on a React Typescript Framework.  React is a modern web developmenet framework used to create the design and functionality of websites such as BWMDN.  Our project takes advantage of several libraries made for React which need to be installed for our website to function properly.
 
 
 ## Table of Contents
