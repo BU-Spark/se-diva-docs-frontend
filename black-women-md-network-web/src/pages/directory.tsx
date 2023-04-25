@@ -95,8 +95,8 @@ interface MemberData {
             <Modal.Title>Contact {first_name} {last_name}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-            <p>Phone number: {phone_number}</p>
-            <p>Email: {primary_email}</p>
+              <p>Phone number: <a href={`tel:${phone_number}`}>{phone_number}</a></p>
+              <p>Email: <a href={`mailto:${primary_email}`}>{primary_email}</a></p>
             </Modal.Body>
             <Modal.Footer>
             <Button variant="secondary" onClick={handleCloseContact}>
