@@ -6,8 +6,8 @@ The Black Women M.D. Network (BWMDN) Frontend is based on a React Typescript Fra
 ## Table of Contents
 
 - [Installation](#installation)
-- [How To Start Developer Server](#start-server)
-- [How To Deploy To Firebase](#deploy-to-firebase)
+- [How To Start Developer Server](#how-to-start-developer-server)
+- [How To Deploy To Firebase](#how-to-deploy-to-firebase)
 
 ## Installation
 
@@ -47,7 +47,8 @@ npm start
 ```
 
 
-## How To Deploy to Firebase (For both Admin Portal and Black Women M.D. Network Website)
+## How To Deploy to Firebase 
+For both Admin Portal and Black Women M.D. Network Website
 
 1. Navigate to black-women-md-network-web or bwmdn-admin-portal
 
