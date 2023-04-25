@@ -73,20 +73,20 @@ interface MemberData {
     return (
       <Card className = "mem-card m-2" >
         <Card.Body>
-          <Card.Title style={{color: 'white'}}>{first_name} {last_name}</Card.Title>
-          <Card.Subtitle style={{color: 'white'}} className="mb-2">{specialty}</Card.Subtitle>
-          <Card.Text style={{color: 'rgb(240,255,255)'}}>Works as a {current_position} at {current_hospital_company}.</Card.Text>
+          <Card.Title style={{color: '#1E1A1D'}}>{first_name} {last_name}</Card.Title>
+          <Card.Subtitle style={{color: '#1E1A1D'}} className="mb-2">{specialty}</Card.Subtitle>
+          <Card.Text style={{color: '#1E1A1D'}}>Works as a {current_position} at {current_hospital_company}.</Card.Text>
           {resume_included_question.toLowerCase() == "yes" && (
-            <Button variant="primary" onClick={()=>handleShowResume(id)} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
+            <Button variant="primary" onClick={()=>handleShowResume(id)} style={{backgroundColor: '#6750A4', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
               Resume
             </Button>
           )}
           {resume_included_question.toLowerCase() == "no" && (
-            <Button variant="primary" disabled style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
+            <Button variant="primary" disabled style={{backgroundColor: '#6750A4', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
               Resume
             </Button>
           )}
-          <Button variant="primary" onClick={handleShowContact} style={{backgroundColor: '#456B68', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
+          <Button variant="primary" onClick={handleShowContact} style={{backgroundColor: '#6750A4', border: 'none', borderRadius: '16px', textAlign: 'center' }}>
             Contact
           </Button>
         </Card.Body>
@@ -341,6 +341,7 @@ interface MemberData {
                   checked={isResumeChecked}
                   uncheckedIcon={false}
                   checkedIcon={false}
+                  onColor="#6750A4"
               />
             </label>
           </div>
@@ -354,6 +355,7 @@ interface MemberData {
                   checked={isConnectionChecked}
                   uncheckedIcon={false}
                   checkedIcon={false}
+                  onColor="#6750A4"
               />
             </label>
           </div>

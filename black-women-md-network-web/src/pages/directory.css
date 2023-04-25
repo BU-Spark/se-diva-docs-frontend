@@ -4,7 +4,7 @@ body {
     height: 100%;
     position: relative;
     min-height: 100vh;
-    background: rgb(240,255,255);
+    background: #FFF7FA;
     padding-bottom: 10vh;
 }
 
@@ -22,14 +22,20 @@ body {
     padding-right: 1vw;
 }
 
+.form-control
+{
+    color: #6750A4;
+    background-color: #E7E0EB;
+}
+
 .Card
 {
-    background-color: #5A9A98;
+    background-color: #E7E0EB;
 }
 
 .filter-label
 {
-    color: #456B68;
+    color: #6750A4;
     font-weight: bold;
 }
 
@@ -39,14 +45,14 @@ body {
     justify-content: space-between;
     padding-top: 1vw;
     padding-bottom: 1vw;
-    border-bottom: 1px solid #C0ECEE;
+    border-bottom: 1px solid #E7E0EB;
 }
 
 .plus-button
 {
     border-radius: 50%;
-    background-color: #C0ECEE;
-    color: #5A9A98;
+    background-color: none;
+    color: #6750A4;
     border: none;
     width: 30px;
     height: 30px;
@@ -62,34 +68,34 @@ body {
 .mem-card
 {
     width: 30%;
-    background-color: #5A9A98;
+    background-color: #E7E0EB;
     padding-top: 2px;
 
 }
 
 .pagination .page-link {
-    background-color: rgb(240,255,255);
-    border-color: #5A9A98;
-    color: #5A9A98;
+    background-color: #E7E0EB;
+    border-color: #E7E0EB;
+    color: #6750A4;
 }
 
 .pagination .page-link:hover {
-    background-color: #5A9A98;
-    border-color: #5A9A98;
-    color: white;
+    background-color: #E7E0EB;
+    border-color: #22005D;
+    color: #22005D;
   }
 
 .pagination .page-item.active .page-link {
-    background-color: #5A9A98;
-    border-color: #5A9A98;
-    color: white;
+    background-color: #6750A4;
+    border-color: #6750A4;
+    color: #E7E0EB;
   }
 
 @media only screen and (orientation: portrait) {
     .mem-card
 {
     width: 70%;
-    background-color: #5A9A98;
+    background-color: #E7E0EB;
     padding-top: 2px;
 
 }
