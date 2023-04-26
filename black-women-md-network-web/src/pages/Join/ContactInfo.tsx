@@ -44,6 +44,7 @@ const ContactInfo = ({
   updateFields,
 }: ContactInfoProps) => {
   const [selfDescribe, setSelfDescribe] = useState(false);
+  const [oneChecked, setOneChecked] = useState(false);
 
   return (
     <FormWrapper title="Contact / General Information">
@@ -179,6 +180,7 @@ const ContactInfo = ({
             name="race-type"
             value={racetype}
             checked={race.includes(racetype)}
+            required={race.length === 0}
             onChange={(e) => {
               if (e.target.checked && !race.includes(racetype)) {
                 race.push(racetype);
@@ -202,6 +204,7 @@ const ContactInfo = ({
             name="ethnicity-type"
             value={ethnicitytype}
             checked={ethnicity.includes(ethnicitytype)}
+            required={ethnicity.length === 0}
             onChange={(e) => {
               if (e.target.checked && !ethnicity.includes(ethnicitytype)) {
                 ethnicity.push(ethnicitytype);

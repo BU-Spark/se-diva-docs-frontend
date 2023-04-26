@@ -81,6 +81,7 @@ const MembershipType = ({
               id={expertiseType}
               name="expertise-type"
               checked={expertise.includes(expertiseType)}
+              required={expertise.length === 0}
               onChange={(e) => {
                 if (e.target.checked && !expertise.includes(expertiseType)) {
                   expertise.push(expertiseType);
