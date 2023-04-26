@@ -18,8 +18,8 @@ const Welcome = () => {
         </div>
       </div>
       <div className="intro-box">
-        <h1>We match Black women doctors with opportunity!</h1>
-        <p>Diva Docs Boston is an organization composed of over 250 Black women physicians and trainees (medical students, residents, and fellows) working, studying or living in Greater Boston. Our members are represented in every medical speciality and work in a variety of health and non-health care settings.</p>
+        <h1>We Match Black Women Doctors with Opportunity!</h1>
+        <p>The Black Women MD Network is a 501(c)(3) nonprofit that connects Black women doctors with opportunity to help advance their medical careers. We provide black woman physician to physician mentorships and connect members with professional development programming, leadership training, one-on-one coaching, and member/partner sponsorships.</p>
       </div>
       <div className="events-box">
         <div>
