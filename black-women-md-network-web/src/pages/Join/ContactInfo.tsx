@@ -44,7 +44,6 @@ const ContactInfo = ({
   updateFields,
 }: ContactInfoProps) => {
   const [selfDescribe, setSelfDescribe] = useState(false);
-  const [oneChecked, setOneChecked] = useState(false);
 
   return (
     <FormWrapper title="Contact / General Information">

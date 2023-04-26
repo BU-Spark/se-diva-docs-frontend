@@ -1,7 +1,7 @@
 .container {
   position: relative;
   width: 100%;
-  border: 1px solid #22005D;
+  border: 1px solid #22005d;
   border-radius: 10px;
   padding-top: 20px;
   padding-left: 15px;
@@ -9,7 +9,7 @@
   font-size: 18px;
   font-weight: 600;
   background-color: white;
-  color: #22005D;
+  color: #22005d;
   font-weight: bold;
 }
 
@@ -54,7 +54,7 @@
   left: 0;
   top: calc(100% + 0.25em);
   z-index: 100;
-  color: #22005D;
+  color: #22005d;
   font-weight: bold;
 }
 
@@ -69,22 +69,22 @@
   list-style-position: outside;
   font-weight: 300;
 
-  color: #22005D;
+  color: #22005d;
 }
 
 .option.selected {
-  color: #22005D;
+  color: #22005d;
   font-weight: bold;
-  background-color: #E7E0EB;
+  background-color: #e7e0eb;
   margin-bottom: 10px;
-  box-shadow: -2em 0 #E7E0EB;
+  box-shadow: -2em 0 #e7e0eb;
 }
 
 .option.highlighted {
-  background-color: #E7E0EB;
+  background-color: #e7e0eb;
   color: black;
   margin-bottom: 10px;
-  box-shadow: -2em 0 #E7E0EB;
+  box-shadow: -2em 0 #e7e0eb;
 }
 
 .title {
