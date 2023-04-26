@@ -6,7 +6,7 @@ import TextBox from "../../components/MembershipApp/TextBox/TextBox";
 import AreasOfExpertise from "../../data/MembershipApp/AreasOfExpertise";
 import MedicalSchools from "../../data/MembershipApp/MedicalSchools";
 import regions from "../../data/MembershipApp/regions";
-import specialties from "../../data/MembershipApp/specialties";
+import specialties from "../../data/MembershipApp/Specialties";
 import remove from "../../utils/remove";
 import FormWrapper from "./FormWrapper";
 
@@ -81,6 +81,7 @@ const MembershipType = ({
               id={expertiseType}
               name="expertise-type"
               checked={expertise.includes(expertiseType)}
+              required={expertise.length === 0}
               onChange={(e) => {
                 if (e.target.checked && !expertise.includes(expertiseType)) {
                   expertise.push(expertiseType);

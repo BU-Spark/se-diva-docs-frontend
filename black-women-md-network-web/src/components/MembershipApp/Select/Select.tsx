@@ -10,15 +10,14 @@ type SelectProps = {
   options: SelectOption[];
   value: SelectOption;
   onChange: (value: SelectOption) => void;
+  required?: boolean;
 };
 
-const Select = ({ value, onChange, options, title }: SelectProps) => {
+const Select = ({ value, onChange, options, title, required }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(0);
   // make select input required!!!
-  const clearOptions = () => {
-    onChange({ label: "default", value: "N/A if not applicable" });
-  };
+
   const selectOption = (option: SelectOption) => {
     if (option !== value) onChange(option);
   };
@@ -43,17 +42,7 @@ const Select = ({ value, onChange, options, title }: SelectProps) => {
       >
         {value.value}
       </span>
-      {/* <button
-        onClick={(e) => {
-          e.stopPropagation();
-          clearOptions();
-        }}
-        className={styles["clear-btn"]}
-      >
-        {" "}
-        &times;
-      </button> */}
-      {/* <div className={styles.divider}></div> */}
+
       <div className={isOpen ? styles["caret-close"] : styles["caret-open"]}>
         &#94;
       </div>

@@ -10,8 +10,9 @@
   padding-left: 15px;
   font-size: 18px;
   font-weight: 600;
-  color: #22005D;
-  line-height: none;
+  color: #22005d;
+  line-height: none !important;
+  margin: none !important;
 }
 
 .title {

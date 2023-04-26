@@ -1,14 +1,13 @@
 .background {
-  background-color: #FFF7FA;
+  background-color: #fff7fa;
   min-height: 100vh;
 }
 .container {
   display: flex;
   flex-direction: column;
-  /* border: 1px solid tomato; */
   margin: auto;
 
-  color: #22005D;
+  color: #22005d;
   font-weight: bold;
 }
 
@@ -28,29 +27,28 @@ progress {
   -moz-appearance: none;
   appearance: none;
   border: none;
-
   width: 100%;
   height: 8px;
   margin-bottom: 10px;
   border-radius: 20px;
-  background-color: #E7E0EB;
-  color: #6750A4;
+  background-color: #e7e0eb;
+  color: #6750a4;
 }
 
 /* WEBKIT BROWSERS - CHROME, OPERA AND SAFARI */
 progress::-webkit-progress-bar {
-  background-color: #E7E0EB;
+  background-color: #e7e0eb;
   border-radius: 20px;
 }
 
 progress::-webkit-progress-value {
-  background-color: #6750A4;
+  background-color: #6750a4;
   border-radius: 20px;
 }
 
 /* MOZILLA FIREFOX */
 progress::-moz-progress-bar {
-  background-color: #6750A4;
+  background-color: #6750a4;
 }
 .content {
   width: 60%;
@@ -66,13 +64,13 @@ progress::-moz-progress-bar {
   margin-bottom: 50px;
   flex-direction: row;
 }
+
 input {
-  margin: 0.5rem 0;
   padding: 1rem;
   border-radius: 10px;
-  color: #22005D;
+  color: #22005d;
   font-weight: bold;
-  border: 1px solid #22005D;
+  border: 1px solid #22005d;
 }
 
 input:where([type="checkbox"], [type="radio"]) {
@@ -91,8 +89,11 @@ input[type="radio"] {
   border-radius: 50%;
 }
 
-input:where([type="checkbox"], [type="radio"]):where(:active:not(:disabled), :focus) {
-  border-color: #696;
+input:where([type="checkbox"], [type="radio"]):where(
+    :active:not(:disabled),
+    :focus
+  ) {
+  border-color: #22005d;
   outline: none;
 }
 
