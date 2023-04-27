@@ -1,5 +1,5 @@
 import axios, { AxiosError } from "axios";
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useState, useEffect } from "react";
 import { useSignIn, useAuthHeader } from "react-auth-kit";
 import { useNavigate } from "react-router-dom";
 import styles from "./signin.module.css";
@@ -49,22 +49,33 @@ const SignIn = () => {
         authState: { username: username },
       });
       //console.log(response.data);
-      agh()
       navigate("/");
     } catch (err) {
       console.log("Error: ", err);
       setMessage("Incorrect username or password.");
     }
   };
-const agh = async () => {
   const authToken = useAuthHeader();
-  const response1 = await fetch( "https://se-diva-docs.herokuapp.com/protected_endpoint", {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json',
-                Authorization: authToken() }
-  });
-  console.log(response1)
-};
+
+    useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        "https://se-diva-docs.herokuapp.com/protected_endpoint",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: authToken(),
+          },
+        }
+      );
+      const data = await response.json();
+      console.log(data);
+    };
+
+    fetchData();
+  }, [authToken]);
+
   return (
     <div className={styles["outer-container"]}>
       <div className={styles["auth-form-container"]}>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, Button, Badge, Modal } from "react-bootstrap";
+import { useSignIn, useAuthHeader } from "react-auth-kit";
 import Switch from "react-switch";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaPlus, FaMinus } from "react-icons/fa";
@@ -69,10 +70,18 @@ const MemberCard: React.FC<MemberData> = ({
   const handleCloseResume = () => {
     setShowResume(false);
   };
+  const authToken = useAuthHeader();
   const fetchResume = async (id: string) => {
     try {
       const response = await fetch(
-        `https://se-diva-docs.herokuapp.com/applicants/downloadresume/${id}.pdf`
+        `https://se-diva-docs.herokuapp.com/applicants/downloadresume/${id}.pdf`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: authToken(),
+          },
+        }
       );
       const blob = await response.blob();
       const url = URL.createObjectURL(blob);
@@ -81,6 +90,7 @@ const MemberCard: React.FC<MemberData> = ({
       console.error(error);
     }
   };
+  
   return (
     <Card className="mem-card m-2">
       <Card.Body>
@@ -194,17 +204,24 @@ const Directory: React.FC = () => {
       return aIndex - bIndex;
     }
   });
-
+  const authToken = useAuthHeader();
   useEffect(() => {
     const fetchMembers = async () => {
       const response = await fetch(
-        "https://se-diva-docs.herokuapp.com/membershipapplicants/view"
+        "https://se-diva-docs.herokuapp.com/membershipapplicants/view",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: authToken(),
+          },
+        }
       );
       const data = await response.json();
       setMembers(data);
     };
     fetchMembers();
-  }, []);
+  }, [authToken]);
 
   const searchTerms = searchTerm.toLowerCase().split(" ");
 
