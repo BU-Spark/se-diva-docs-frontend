@@ -11,7 +11,7 @@ import remove from "../../utils/remove";
 import FormWrapper from "./FormWrapper";
 
 type MembershipTypeData = {
-  academicAffiliation: string;
+  academicAffiliation: SelectOption;
   hospitalOrcompany: string;
   position: string;
   specialty: SelectOption;
@@ -40,15 +40,12 @@ const MembershipType = ({
   return (
     <div>
       <FormWrapper title={"Credential Information"}>
-        <TextBox
+        <Select
+          options={acadmicTypes}
           title={"Current Academic Affiliation"}
-          placeholder={"N/A if Not Applicable"}
           value={academicAffiliation}
-          onChange={(academicAffiliation) =>
-            updateFields({ academicAffiliation })
-          }
-          required={true}
-        ></TextBox>
+          onChange={(e) => updateFields({ academicAffiliation: e })}
+        ></Select>
 
         <TextBox
           title={"Current Hospital / Company"}

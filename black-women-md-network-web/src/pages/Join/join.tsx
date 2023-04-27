@@ -45,11 +45,11 @@ const Join = () => {
         return;
       }
       if (data.specialty.label == "default" && stepIndex == 1) {
-        alert("Please complete the dropdown question!");
+        alert("Please complete all dropdown questions!");
         return;
       }
       if (data.region.label == "default" && stepIndex == 1) {
-        alert("Please complete the dropdown question!");
+        alert("Please complete the dropdown questions!");
         return;
       } else {
         return next();
