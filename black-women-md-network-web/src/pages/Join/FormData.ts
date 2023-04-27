@@ -19,10 +19,10 @@ export type FormData = {
   ethnicity: string[];
   gender: string;
   pronouns: string;
-  academicAffiliation: string;
+  academicAffiliation: SelectOption;
   hospitalOrcompany: string;
   position: string;
-  specialty: string;
+  specialty: SelectOption;
   expertise: string[];
   region: SelectOption;
   startChapter: string;
