@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./BlackWomenMDNetworkLogo1.jpg";
+import logo from "../../images/BlackWomenMDNetworkLogo1.png";
 import twitter from "./twitter.jpg";
 import "./Footer.css";
 import { useIsAuthenticated, useSignOut } from "react-auth-kit";

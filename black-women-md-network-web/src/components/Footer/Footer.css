@@ -58,6 +58,10 @@
     color: #22005D;
 }
 
+.footer-image img{
+    height: 10vh;
+}
+
 @media only screen and (orientation: portrait) {
     .footer{
         position: absolute;
@@ -97,7 +101,7 @@
     }
     
     .footer-image img{
-        width: 20vw;
+        height: 5.5vh;
     }
 
     .footer-contact{
