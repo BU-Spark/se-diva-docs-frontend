@@ -49,7 +49,7 @@
   padding: 0;
   display: none;
   max-height: 15em;
-  overflow-y: auto;
+  overflow-y: auto !important;
   width: 100%;
   left: 0;
   top: calc(100% + 0.25em);
