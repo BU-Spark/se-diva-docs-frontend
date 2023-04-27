@@ -19,7 +19,7 @@ const Welcome = () => {
       </div>
       <div className="intro-box">
         <h1>We Match Black Women Doctors with Opportunity!</h1>
-        <p>The Black Women MD Network is a 501(c)(3) nonprofit that connects Black women doctors with opportunity to help advance their medical careers. We provide black woman physician to physician mentorships and connect members with professional development programming, leadership training, one-on-one coaching, and member/partner sponsorships.</p>
+        <p>The Black Women M.D. Network (BWMDN) is a 501(c)(3) nonprofit organization that matches Black women doctors and medical trainees with opportunity. We help Black women doctors advance in their medical careers by connecting them to opportunities such as professional development programming, leadership training, one-on-one coaching, and member/partner sponsorships. Our community of Black women physicians also serve as resources for information, career advice and mentorship. The BWMDN is laser focused on retaining and promoting Black women after acceptance into medical school, during their professional training as residents and fellows, and beyond training. We strive to meet the needs of our members at every stage of their professional medical career!</p>
       </div>
       <div className="events-box">
         <div>
