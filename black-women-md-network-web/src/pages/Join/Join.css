@@ -1,6 +1,6 @@
 .background {
   background-color: #fff7fa;
-  min-height: 100vh;
+  top: 10vh;
 }
 .container {
   display: flex;
