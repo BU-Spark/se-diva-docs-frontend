@@ -2,9 +2,30 @@ import { Admin, Resource, ShowGuesser, EditGuesser } from "react-admin";
 import jsonServerProvider from "ra-data-json-server";
 import { UserList, UserEdit } from "./components/users";
 //import authProvider from "./authprovider";
-//import simpleRestProvider from 'ra-data-simple-rest';
+import { fetchUtils } from 'react-admin';
+import simpleRestProvider from 'ra-data-simple-rest';
 
-const dataProvider = jsonServerProvider('https://se-diva-docs.herokuapp.com');
+type FetchOptions = {
+  headers?: Headers;
+  // add other properties as needed
+}
+
+const fetchJson = (url: string, options: fetchUtils.Options = {}) => {
+  const auth = localStorage.getItem('auth');
+  if (auth) {
+    options.headers = new Headers({
+      Accept: 'application/json',
+      Authorization: `Bearer ${JSON.parse(auth).access_token}`,
+    });
+  }
+  return fetchUtils.fetchJson(url, options);
+}
+
+const dataProvider = jsonServerProvider('https://se-diva-docs.herokuapp.com', fetchJson);
+
+const headers = { Authorization: "" };
+
+//const dataProvider = jsonServerProvider('https://se-diva-docs.herokuapp.com');
 //const dataProvider = simpleRestProvider('https://se-diva-docs.herokuapp.com');
 const authProvider = {
   login: ({ username, password }: { username: string, password: string }) => {
@@ -26,6 +47,7 @@ const authProvider = {
       })
       .then(auth => {
         localStorage.setItem('auth', JSON.stringify(auth));
+        console.log(localStorage.getItem('auth'))
       });
   },
   logout: () => {

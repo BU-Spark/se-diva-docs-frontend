@@ -79,7 +79,8 @@ export const UserEdit = () => {
             console.log(data);
             //data.applicant_status.subscription_tier = 
             try {
-                await create('applicants/approveapplicant', { data });
+                await create('applicants/approveapplicant', { data } );
+
             } catch (error) {
                 console.log('error');
                 console.log(error);
@@ -104,7 +105,8 @@ export const UserEdit = () => {
         const handleShowResume = async () => {
           try {
             const id = await record.id;
-            const response = await fetch(`https://se-diva-docs.herokuapp.com/applicants/downloadresume/${id}.pdf`);
+            const response = await fetch(`https://se-diva-docs.herokuapp.com/applicants/downloadresume/${id}.pdf`,{
+                headers: {Authorization: `Bearer ${await localStorage.getItem('auth')}`, }});
             const blob = await response.blob();
             const url = URL.createObjectURL(blob);
             window.open(url, '_blank');
