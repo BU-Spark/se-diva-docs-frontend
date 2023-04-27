@@ -44,12 +44,16 @@ const Join = () => {
         alert("Please complete the dropdown question!");
         return;
       }
+      if (data.academicAffiliation.label == "default" && stepIndex == 1) {
+        alert("Please complete all dropdown questions!");
+        return;
+      }
       if (data.specialty.label == "default" && stepIndex == 1) {
         alert("Please complete all dropdown questions!");
         return;
       }
       if (data.region.label == "default" && stepIndex == 1) {
-        alert("Please complete the dropdown questions!");
+        alert("Please complete all dropdown questions!");
         return;
       } else {
         return next();

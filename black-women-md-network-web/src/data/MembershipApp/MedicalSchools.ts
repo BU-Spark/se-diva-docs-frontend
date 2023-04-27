@@ -1,4 +1,5 @@
 const MedicalSchools = [
+  { label: "0", value: "N/A If Not Applicable" },
   { label: "1", value: "AL-University of Alabama School of Medicine" },
   { label: "2", value: "AL-University of South Alabama College of Medicine" },
   { label: "3", value: "AR-University of Arkansas College of Medicine" },
