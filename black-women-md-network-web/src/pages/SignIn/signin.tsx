@@ -55,26 +55,6 @@ const SignIn = () => {
       setMessage("Incorrect username or password.");
     }
   };
-  const authToken = useAuthHeader();
-
-    useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(
-        "https://se-diva-docs.herokuapp.com/protected_endpoint",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: authToken(),
-          },
-        }
-      );
-      const data = await response.json();
-      console.log(data);
-    };
-
-    fetchData();
-  }, [authToken]);
 
   return (
     <div className={styles["outer-container"]}>
