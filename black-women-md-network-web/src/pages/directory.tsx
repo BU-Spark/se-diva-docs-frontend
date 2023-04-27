@@ -53,6 +53,7 @@ const MemberCard: React.FC<MemberData> = ({
   resume_included_question,
   current_hospital_company,
   areas_of_work,
+  current_academic_affiliation
 }) => {
   const [showContact, setShowContact] = useState(false);
   const handleShowContact = () => {
@@ -101,7 +102,10 @@ const MemberCard: React.FC<MemberData> = ({
           {specialty}
         </Card.Subtitle>
         <Card.Text style={{ color: "#1E1A1D" }}>
-          Works as a {current_position} at {current_hospital_company}.
+          {current_position}<br />
+          {current_academic_affiliation}<br />
+          {current_hospital_company}
+
         </Card.Text>
         {resume_included_question.toLowerCase() == "yes" && (
           <Button
@@ -476,7 +480,7 @@ const Directory: React.FC = () => {
         </div>
         <div className="form-group switch">
           <label>
-            <span className="filter-label">Will Sponsor</span>
+            <span className="filter-label">Available to Mentor/Sponsor</span>
           </label>
           <label>
             <Switch

@@ -67,7 +67,7 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 5.5vh;
+        height: 0vh;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -101,7 +101,7 @@
     }
     
     .footer-image img{
-        height: 5.5vh;
+        height: 0vh;
     }
 
     .footer-contact{
@@ -128,6 +128,6 @@
     }
 
     .footer-contact img{
-        width: 5vw;
+        width: 0vw;
     }
 }
