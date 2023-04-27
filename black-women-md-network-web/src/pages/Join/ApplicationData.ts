@@ -19,7 +19,7 @@ export type ApplicationData = {
   ethnicity: string[];
   gender: string;
   pronouns: string;
-  academicAffiliation: string;
+  academicAffiliation: SelectOption;
   hospitalOrcompany: string;
   position: string;
   specialty: SelectOption;

@@ -24,25 +24,41 @@ const Join = () => {
       return { ...prev, ...fields };
     });
   };
-  const {
-    steps,
-    stepIndex,
-    step,
-    isFirstStep,
-    isLastStep,
-    back,
-    next,
-  } = useMultiStepForm([
-    <ContactInfo {...data} updateFields={updateFields}></ContactInfo>,
-    <MembershipType {...data} updateFields={updateFields}></MembershipType>,
-    <FinalQuestions {...data} updateFields={updateFields}></FinalQuestions>,
-  ]);
+  const { steps, stepIndex, step, isFirstStep, isLastStep, back, next } =
+    useMultiStepForm([
+      <ContactInfo {...data} updateFields={updateFields}></ContactInfo>,
+      <MembershipType {...data} updateFields={updateFields}></MembershipType>,
+      <FinalQuestions {...data} updateFields={updateFields}></FinalQuestions>,
+    ]);
+
+  console.log(stepIndex);
 
   // Submits data before moving to next step!
   const onSubmit = (e: FormEvent) => {
     // Prevent page from refreshing
     e.preventDefault();
-    if (!isLastStep) return next();
+
+    if (!isLastStep) {
+      // Janky form validation for custom component
+      if (data.currentRole.label == "default" && stepIndex == 0) {
+        alert("Please complete the dropdown question!");
+        return;
+      }
+      if (data.academicAffiliation.label == "default" && stepIndex == 1) {
+        alert("Please complete all dropdown questions!");
+        return;
+      }
+      if (data.specialty.label == "default" && stepIndex == 1) {
+        alert("Please complete all dropdown questions!");
+        return;
+      }
+      if (data.region.label == "default" && stepIndex == 1) {
+        alert("Please complete all dropdown questions!");
+        return;
+      } else {
+        return next();
+      }
+    }
 
     // Fetch request to post to API would go here!
     const applicantForm = formatSubmission(data);

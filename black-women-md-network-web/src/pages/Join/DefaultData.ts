@@ -19,7 +19,10 @@ const DefaultData: ApplicationData = {
   ethnicity: [],
   gender: "",
   pronouns: "",
-  academicAffiliation: "",
+  academicAffiliation: {
+    label: "default",
+    value: "Current Academic Affiliation",
+  },
   hospitalOrcompany: "",
   position: "",
   specialty: { label: "default", value: "Specialty" },
