@@ -209,7 +209,7 @@
  /* identical to box height */
 
  color: #22005D;
- padding-bottom: 3vw;
+ padding-bottom: 2vw;
 }
 
 .membership-text p{
@@ -221,7 +221,7 @@
  /* or 24px */
 
  color: #22005D;
- padding-bottom: 3vw;
+ padding-bottom: 1vw;
 }
 
 .membership-box img {
@@ -261,6 +261,8 @@
  flex: none;
  order: 0;
  flex-grow: 0;
+
+ margin-bottom: 20px;
 }
 
 
@@ -419,7 +421,7 @@
         order: 0;
         flex-grow: 0;
 
-        margin-bottom: 20px;
+        margin-bottom: 5vh;
     }
   }
   
