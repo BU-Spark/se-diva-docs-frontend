@@ -1,6 +1,6 @@
 import axios, { AxiosError } from "axios";
 import React, { FormEvent, useState } from "react";
-import { useSignIn } from "react-auth-kit";
+import { useSignIn, useAuthHeader } from "react-auth-kit";
 import { useNavigate } from "react-router-dom";
 import styles from "./signin.module.css";
 
@@ -48,13 +48,23 @@ const SignIn = () => {
         expiresIn: 3600,
         authState: { username: username },
       });
+      //console.log(response.data);
+      agh()
       navigate("/");
     } catch (err) {
       console.log("Error: ", err);
       setMessage("Incorrect username or password.");
     }
   };
-
+const agh = async () => {
+  const authToken = useAuthHeader();
+  const response1 = await fetch( "https://se-diva-docs.herokuapp.com/protected_endpoint", {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json',
+                Authorization: authToken() }
+  });
+  console.log(response1)
+};
   return (
     <div className={styles["outer-container"]}>
       <div className={styles["auth-form-container"]}>
