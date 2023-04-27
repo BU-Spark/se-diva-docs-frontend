@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import "./directory.css";
 import regions from "../data/MembershipApp/regions";
-import specialties from "../data/MembershipApp/specialties";
+import specialties from "../data/MembershipApp/Specialties";
 
 const PAGE_SIZE = 12;
 
@@ -90,7 +90,7 @@ const MemberCard: React.FC<MemberData> = ({
       console.error(error);
     }
   };
-  
+
   return (
     <Card className="mem-card m-2">
       <Card.Body>
