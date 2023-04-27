@@ -217,11 +217,12 @@ const Directory: React.FC = () => {
           },
         }
       );
+      console.log("calling");
       const data = await response.json();
       setMembers(data);
     };
     fetchMembers();
-  }, [authToken]);
+  }, []);
 
   const searchTerms = searchTerm.toLowerCase().split(" ");
 
