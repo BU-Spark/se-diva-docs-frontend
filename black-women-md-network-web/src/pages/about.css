@@ -1,0 +1,427 @@
+.welcome-body
+{
+  padding-top: 10vh;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: stretch;
+
+
+ width: 100%;
+ height: 100%;
+
+
+ border-radius: 4px;
+ background: #FFF7FA;
+ /*background: linear-gradient(160deg, #FFF7FA 76%, #6750A4 77%);*/
+
+ padding-bottom: 10vh;
+}
+
+
+.bwmdn-box {
+ border-radius: 4px;
+ display: flex;
+}
+
+
+.bwmdn-box img {
+ width: 100%;
+ height: 100%;
+ object-fit: contain;
+ border-radius: 4px;
+ box-shadow: inset 0px -10px 8px #22005D;
+}
+
+
+.bwmdn-box p {
+ position: absolute;
+ width: 40vw;
+ height: 1vi;
+ left: 6vw;
+ top: 15vi;
+
+
+ font-family: 'Lora';
+ font-style: normal;
+ font-weight: 700;
+ font-size: 5vi;
+ line-height: 5vi;
+ /* or 86% */
+
+
+ color: #22005D;
+
+ text-align: center;
+}
+
+
+.bwmdn-box a{
+ /* padding: 14px 24px;
+ border: 0 none;
+ font-weight: 700;
+ letter-spacing: 1px;
+ text-transform: uppercase; */
+ border-radius: 0px;
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+ padding: 12px 16px;
+ gap: 8px;
+ border: none;
+
+
+ position: absolute;
+ width: 30vw;
+ height: 8vh;
+ left: 8vw;
+ top: 26vi;
+
+
+ background-color: #6750A4!important;
+
+
+ /* typography/body */
+
+
+ font-family: 'Inter'!important;
+ font-style: normal;
+ font-weight: 400;
+ font-size: 2vi;
+ line-height: 100%;
+ /* identical to box height, or 16px */
+
+
+ display: flex;
+ align-items: center;
+
+
+ color: #F0FFFF!important;
+
+
+
+
+ /* Inside auto layout */
+
+
+ flex: none;
+ order: 1;
+ flex-grow: 0;
+}
+
+
+.intro-box {
+ border-radius: 4px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+
+.intro-box h1 {
+ padding-top: 4vh;
+ font-family: 'Lora';
+ font-style: normal;
+ font-weight: 700;
+ font-size: 36px;
+ line-height: 46px;
+ text-align: center;
+
+ color: #22005D;
+}
+
+.intro-box p {
+ width: 40%;
+
+ font-family: 'Verdana';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 14px;
+ line-height: 17px;
+ text-align: center;
+
+ color: #22005D;
+}
+
+.events-box {
+ border-radius: 4px;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+ padding: 2vw;
+}
+
+.events-box div{
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1vw;
+}
+
+.events-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+    padding: 1vw;
+}
+
+.events-box h1 {
+    padding-top: 1vh;
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 46px;
+    text-align: center;
+   
+    color: #22005D;
+}
+
+.membership-box {
+ border-radius: 4px;
+ display: flex;
+ flex-direction: row;
+ align-items: flext-start;
+ justify-content: center;
+}
+
+
+.membership-text {
+ width: 45%;
+ padding: 3vw;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.membership-text h1{
+ font-family: 'Lora';
+ font-style: normal;
+ font-weight: 700;
+ font-size: 36px;
+ line-height: 46px;
+ text-align: center;
+ /* identical to box height */
+
+ color: #22005D;
+ padding-bottom: 2vw;
+}
+
+.membership-text p{
+ font-family: 'Inter'!important;
+ font-style: normal;
+ font-weight: 400;
+ font-size: 24px;
+ line-height: 100%;
+ /* or 24px */
+
+ color: #22005D;
+ padding-bottom: 1vw;
+}
+
+.membership-box img {
+ width: 45%;
+ height: 45%;
+ object-fit: contain;
+ border-radius: 4px;
+ padding: 3vw;
+}
+
+.btn.btn-search
+{
+ border-radius: 0px;
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+ padding: 10px 45px;
+ gap: 10px;
+
+
+ width:90%;
+
+
+ background: #6750A4!important;
+ border: none;
+
+
+ font-family: 'Inter'!important;
+ font-style: normal;
+ font-weight: 700;
+ font-size: 24px;
+ line-height: 29px;
+ /* identical to box height */
+ color: #F0FFFF!important;
+ /* Inside auto layout */
+ flex: none;
+ order: 0;
+ flex-grow: 0;
+
+ margin-bottom: 20px;
+}
+
+
+
+
+/* For screens smaller than 600px */
+@media only screen and (orientation: portrait) {
+    .welcome-body
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+
+
+        width: 100%;
+        height: 100%;
+
+
+        border-radius: 4px;
+        background: #FFF7FA;
+    }
+    /* Adjust font sizes and padding for smaller screens */
+    .bwmdn-box p {
+      width: 35vw;
+      font-size: 5vw;
+      line-height: 5vw;
+      left: 9vw;
+      top: 30vw;
+    }
+    
+    .bwmdn-box a {
+      width: 35vw;
+      height: 2vh;
+      left: 7vw;
+      top: 40vw;
+      font-size: 3vw;
+    }
+
+    .intro-box h1 {
+      font-size: 8vw;
+      line-height: 10vw;
+      padding-top: 8vh;
+    }
+    
+    .intro-box p {
+      width: 80%;
+      font-size: 4vw;
+      line-height: 5vw;
+    }
+    
+    .events-box h1 {
+      font-size: 8vw;
+      line-height: 10vw;
+      padding-top: 8vh;
+    }
+    
+    .membership-text h1 {
+      font-size: 8vw;
+      line-height: 10vw;
+      padding-bottom: 6vw;
+    }
+    
+    .membership-text p {
+      font-size: 5vw;
+      line-height: 6vw;
+      padding-bottom: 6vw;
+    }
+    
+    .btn.btn-search {
+      padding: 5vw 20vw;
+      font-size: 6vw;
+      line-height: 7vw;
+      margin-bottom: 20px;
+    }
+  
+    /* Stack events in a column */
+    .events-box {
+      flex-direction: column;
+    }
+    
+    .events-box div {
+      padding: 5vw;
+      margin-bottom: 1vw;
+    }
+    
+    .events-box img {
+      width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  
+    .membership-box {
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: flext-start;
+        justify-content: center;
+    }
+       
+    .membership-text {
+        width:100%;
+        padding: 3vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .membership-text h1{
+        font-family: 'Lora';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+        text-align: center;
+        /* identical to box height */
+        
+        color: #22005D;
+        padding-bottom: 3vw;
+        text-align: center;
+    }
+    /* Adjust image sizes in membership box */
+    .membership-box img {
+      width: 80%;
+      height: auto;
+      padding: 5vw;
+      align-self: center;
+    }
+
+    .btn.btn-search
+    {
+        border-radius: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 45px;
+        gap: 10px;
+
+        width:90%;
+        height:5vh;
+
+        background: #6750A4!important;
+        border: none;
+
+        font-family: 'Inter'!important;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        /* identical to box height */
+        color: #F0FFFF!important;
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+        margin-bottom: 5vh;
+    }
+  }
+  
