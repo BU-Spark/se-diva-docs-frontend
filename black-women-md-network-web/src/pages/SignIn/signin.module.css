@@ -18,7 +18,7 @@
   margin-left: 30px;
 }
 
-@media screen and (min-width: 750px) and (min-height: 900px) {
+@media screen and (min-width: 800px) and (min-height: 900px) {
   .auth-form-container {
     padding: 5rem;
     border: 1px solid #22005d;
