@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   margin: auto;
-
   color: #22005d;
   font-weight: bold;
 }
@@ -51,7 +50,6 @@ progress::-moz-progress-bar {
   background-color: #6750a4;
 }
 .content {
-  width: 60%;
   flex-direction: column;
   /* to override container layout*/
   align-self: center;
