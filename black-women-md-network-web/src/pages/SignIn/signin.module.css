@@ -5,8 +5,8 @@
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  background: #FFF7FA;
-  color: #22005D;
+  background: #fff7fa;
+  color: #22005d;
   font-weight: bold;
 }
 
@@ -14,12 +14,14 @@
 .login-form {
   display: flex;
   flex-direction: column;
+  margin-right: 30px;
+  margin-left: 30px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 750px) and (min-height: 900px) {
   .auth-form-container {
     padding: 5rem;
-    border: 1px solid #22005D;
+    border: 1px solid #22005d;
     border-radius: 10px;
     margin: 0.5rem;
   }
@@ -30,16 +32,16 @@
   padding: 0.25rem 0;
 }
 
-/* .email,
-  .password {
-    margin: 0.5rem 0;
-    padding: 1rem;
-    border: none;
-    border-radius: 10px;
-    color: #22005D;
-    font-weight: bold;
-    border: 1px solid #22005D;
-  } */
+.email,
+.password {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  color: #22005d;
+  font-weight: bold;
+  border: 1px solid #22005d;
+}
 
 .submit,
 .link-btn {
@@ -48,11 +50,12 @@
   padding: 20px;
   border-radius: 10px;
   cursor: pointer;
-  color: #22005D;
+  color: #22005d;
   font-weight: bold;
 }
 .submit {
-  border: 1px solid #22005D;
+  border: 1px solid #22005d;
+  flex-shrink: 2;
 }
 .link-btn {
   background: none;
@@ -61,9 +64,9 @@
 }
 
 .submit:hover {
-  background-color: #22005D;
+  background-color: #22005d;
   color: white;
 }
 .link-btn:hover {
-  color: #6750A4;
+  color: #6750a4;
 }
