@@ -52,7 +52,7 @@ const SignIn = () => {
       navigate("/");
     } catch (err) {
       console.log("Error: ", err);
-      setMessage("Incorrect username or password.");
+      setMessage("Incorrect email or password.");
     }
   };
 
