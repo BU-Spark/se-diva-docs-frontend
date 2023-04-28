@@ -5,9 +5,9 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin: auto;
   color: #22005d;
   font-weight: bold;
+  margin: auto;
 }
 
 .title {
@@ -49,8 +49,18 @@ progress::-webkit-progress-value {
 progress::-moz-progress-bar {
   background-color: #6750a4;
 }
+@media screen and (min-width: 1000px) {
+  .content {
+    flex-direction: column;
+    width: 60%;
+    /* to override container layout*/
+    align-self: center;
+    /* border: 1px solid tomato; */
+  }
+}
 .content {
   flex-direction: column;
+
   /* to override container layout*/
   align-self: center;
   /* border: 1px solid tomato; */
