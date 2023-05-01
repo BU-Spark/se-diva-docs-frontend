@@ -248,6 +248,7 @@ const ContactInfo = ({
           type="text"
           id="self-describe"
           placeholder="Self-descibe as..."
+          required
           onChange={(e) => updateFields({ gender: e.target.value })}
         />
       )}

@@ -52,7 +52,7 @@ const SignIn = () => {
       navigate("/");
     } catch (err) {
       console.log("Error: ", err);
-      setMessage("Incorrect username or password.");
+      setMessage("Incorrect email or password.");
     }
   };
 
@@ -71,6 +71,7 @@ const SignIn = () => {
             placeholder="Email"
             name="email"
             value={username}
+            required
             onChange={(e) => setUsername(e.target.value)}
           />
           <br></br>
@@ -84,6 +85,7 @@ const SignIn = () => {
             placeholder="Password"
             name="password"
             value={password}
+            required
             onChange={(e) => setPassword(e.target.value)}
           />
           <button className={styles["submit"]} type="submit">

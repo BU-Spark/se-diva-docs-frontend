@@ -32,7 +32,7 @@ const ForgotPassword = () => {
       setMessage("A email with your new password has been sent.");
     } catch (err) {
       console.log("Error: ", err);
-      setMessage("Incorrect username.  Please try again later!");
+      setMessage("Incorrect email.  Please try again later!");
     }
   };
 
@@ -50,6 +50,7 @@ const ForgotPassword = () => {
             placeholder="Email"
             name="email"
             value={email}
+            required
             onChange={(e) => setEmail(e.target.value)}
           />
 

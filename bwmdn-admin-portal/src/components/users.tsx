@@ -79,8 +79,7 @@ export const UserEdit = () => {
             console.log(data);
             //data.applicant_status.subscription_tier = 
             try {
-                await create('applicants/approveapplicant', { data } );
-
+                await create('applicants/approveapplicant', { data });
             } catch (error) {
                 console.log('error');
                 console.log(error);
