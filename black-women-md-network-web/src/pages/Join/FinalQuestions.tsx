@@ -134,8 +134,8 @@ const FinalQuestions = ({
         </label>
       ))}
       <span>
-        Are you interested in providing mentorship to a Black woman physician or
-        student / trainee?
+        Are you currently available to mentor or sponsor a member of the Black
+        Women M.D. Network?
       </span>
       {answerTypes3.map((answerType) => (
         <label htmlFor={answerType}>

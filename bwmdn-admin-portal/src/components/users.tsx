@@ -101,15 +101,27 @@ export const UserEdit = () => {
     
     const PdfButton = () => {
         const record = useRecordContext();
-  
+        interface Auth {
+            access_token: string;
+            token_type: string;
+          }
         const handleShowResume = async () => {
           try {
             const id = await record.id;
-            const response = await fetch(`https://se-diva-docs.herokuapp.com/applicants/downloadresume/${id}.pdf`,{
-                headers: {Authorization: `Bearer ${await localStorage.getItem('auth')}`, }});
-            const blob = await response.blob();
-            const url = URL.createObjectURL(blob);
-            window.open(url, '_blank');
+            const authJson: string | null = await localStorage.getItem('auth');
+            const auth: Auth | null = authJson !== null ? JSON.parse(authJson) : null;
+            console.log(auth)
+            if (auth !== null) {
+                const response = await fetch(`https://se-diva-docs.herokuapp.com/applicants/downloadresume/${id}.pdf`,{
+                    headers: {Authorization: `Bearer ${auth?.access_token}`, }
+                });
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+                window.open(url, '_blank');
+              } else {
+                // handle the case where auth is null
+              }
+              
           } catch (error) {
             console.error(error);
           }
