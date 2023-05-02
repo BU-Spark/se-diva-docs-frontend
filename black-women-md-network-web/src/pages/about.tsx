@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from 'react';
 import styles from "./Background.module.css";
 import patient from "../images/blackdoctorpatient2.jpg";
-import workshop from "../images/blackwomenworkshop.jpg";
+import workshop from "../images/notes.jpg";
 import "./about.css";
 
 const About = () => {
