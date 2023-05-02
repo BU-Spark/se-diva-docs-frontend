@@ -4,6 +4,7 @@ import twitter from "./twitter.jpg";
 import "./Footer.css";
 import { useIsAuthenticated, useSignOut } from "react-auth-kit";
 import { useNavigate } from "react-router-dom";
+import { TwitterShareButton, TwitterIcon } from 'react-share';
 
 function Footer() {
   const signOut = useSignOut();
@@ -30,8 +31,12 @@ function Footer() {
         </div>
         <div className="footer-contact">
           <a href={"mailto:info@blackwomenmdnetwork.com"}>Contact Us</a>
-          <a href="/">Follow Us:</a>
-          <img className="twitter-img" src={twitter} alt="" />
+          <a className="follow">Follow Us:</a>
+          <TwitterShareButton
+            url={'https://twitter.com/blackwomendocs?lang=en'}
+          >
+            <TwitterIcon size={32} round />
+          </TwitterShareButton>
         </div>
       </div>
     );
@@ -46,8 +51,12 @@ function Footer() {
         </div>
         <div className="footer-contact">
           <a href={"mailto:info@blackwomenmdnetwork.com"}>Contact Us</a>
-          <a href="/">Follow Us:</a>
-          <img className="twitter-img" src={twitter} alt="" />
+          <p>Follow Us:</p>
+          <TwitterShareButton
+            url={'https://twitter.com/blackwomendocs?lang=en'}
+          >
+            <TwitterIcon size={32} round />
+          </TwitterShareButton>
         </div>
       </div>
     );

@@ -58,6 +58,22 @@
     color: #22005D;
 }
 
+.follow{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5vw;
+    line-height: 15px;
+
+    color: #FFF7FA;
+    text-decoration: none;
+    padding: 2vw;
+}
+
+.follow:hover{
+    color: #FFF7FA !important;
+}
+
 .footer-image img{
     height: 10vh;
 }
@@ -122,9 +138,21 @@
         text-decoration: none;
         padding: 1.5vw;
     }
-    
+
     .footer-contact a:hover{
         color: #22005D;
+    }
+
+    .footer-contact p{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2.5vw;
+        line-height: 15px;
+    
+        color: #FFF7FA;
+        text-decoration: none;
+        padding: 1.5vw;
     }
 
     .footer-contact img{
