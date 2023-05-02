@@ -43,13 +43,14 @@ function Footer() {
       <div className="footer">
         <div className="footer-links">
           <a href="/">BWMDN</a>
+          <a href="/about">About</a>
         </div>
         <div className="footer-image">
           <img className="logo-img" src={logo} alt="" />
         </div>
         <div className="footer-contact">
           <a href={"mailto:info@blackwomenmdnetwork.com"}>Contact Us</a>
-          <a>Follow Us:</a>
+          <a className="follow">Follow Us:</a>
           <a href="https://twitter.com/blackwomendocs" target="_blank">
             <TwitterIcon size={32} round />
           </a>

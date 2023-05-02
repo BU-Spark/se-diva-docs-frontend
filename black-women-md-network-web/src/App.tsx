@@ -49,14 +49,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Welcome />} />
-        <Route path="/about" 
-          element={<div>
-            {isAuthenticated() ? (
-              <About />
-            ) : (
-              <Navigate to="/signin" replace />
-            )}
-          </div>} />
+        <Route path="/about" element={<About />}/>
         <Route path="/news" 
           element={<div>
             {isAuthenticated() ? (

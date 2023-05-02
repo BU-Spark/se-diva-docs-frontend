@@ -55,12 +55,9 @@ function NavBar() {
           <Navbar.Brand href="/">BWMDN</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            {/* <Nav className="me-auto">
-            <Nav.Link href="/about">About</Nav.Link>
-            <Nav.Link href="/members">Members</Nav.Link>
-            <Nav.Link href="/resources">Resources</Nav.Link>
-            <Nav.Link href="/news">News</Nav.Link>
-          </Nav> */}
+            <Nav className="me-auto">
+              <Nav.Link href="/about">About</Nav.Link>
+            </Nav>
             <Nav>
               <Nav.Link href="/signin">Sign In</Nav.Link>
               <Nav.Link href="/join">Join</Nav.Link>
