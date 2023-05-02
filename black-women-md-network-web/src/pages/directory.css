@@ -92,11 +92,19 @@ body {
   }
 
 @media only screen and (orientation: portrait) {
-    .mem-card
-{
-    width: 70%;
-    background-color: #E7E0EB;
-    padding-top: 2px;
+    .mem-card{
+        width: 70%;
+        background-color: #E7E0EB;
+        padding-top: 2px;
+    }
+    .form-group.switch {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+    .form-group.switch label {
+    margin-bottom: 10px;
+    }
 
-}
 }
