@@ -32,11 +32,9 @@ function Footer() {
         <div className="footer-contact">
           <a href={"mailto:info@blackwomenmdnetwork.com"}>Contact Us</a>
           <a className="follow">Follow Us:</a>
-          <TwitterShareButton
-            url={'https://twitter.com/blackwomendocs?lang=en'}
-          >
+          <a href="https://twitter.com/blackwomendocs" target="_blank">
             <TwitterIcon size={32} round />
-          </TwitterShareButton>
+          </a>
         </div>
       </div>
     );
@@ -51,12 +49,10 @@ function Footer() {
         </div>
         <div className="footer-contact">
           <a href={"mailto:info@blackwomenmdnetwork.com"}>Contact Us</a>
-          <p>Follow Us:</p>
-          <TwitterShareButton
-            url={'https://twitter.com/blackwomendocs?lang=en'}
-          >
+          <a>Follow Us:</a>
+          <a href="https://twitter.com/blackwomendocs" target="_blank">
             <TwitterIcon size={32} round />
-          </TwitterShareButton>
+          </a>
         </div>
       </div>
     );
