@@ -37,7 +37,7 @@
  position: absolute;
  width: 40vw;
  height: 1vi;
- left: 8vw;
+ left: 3vw !important;
  top: 15vi;
 
 
@@ -286,7 +286,7 @@
       width: 35vw;
       font-size: 5vw;
       line-height: 5vw;
-      left: 9vw;
+      left: 7vw !important;
       top: 30vw;
     }
     
