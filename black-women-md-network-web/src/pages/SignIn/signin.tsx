@@ -96,7 +96,7 @@ const SignIn = () => {
           </button>
         </form>
         <button className={styles["link-btn"]} onClick={routeChange}>
-          Not apart of the Black Women M.D. Network? Become a member here.
+          Not part of the Black Women M.D. Network? Become a member here.
         </button>
 
         {message && <p>{message}</p>}
