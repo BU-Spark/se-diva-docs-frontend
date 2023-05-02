@@ -1,6 +1,5 @@
 .welcome-body
 {
-  padding-top: 10vh;
  display: flex;
  flex-direction: column;
  justify-content: center;
@@ -38,7 +37,6 @@
  position: absolute;
  width: 40vw;
  height: 1vi;
- left: 8vw;
  top: 15vi;
 
 
@@ -280,6 +278,7 @@
 
         border-radius: 4px;
         background: #FFF7FA;
+        background: linear-gradient(160deg, #FFF7FA 90%, #6750A4 77%);
     }
     /* Adjust font sizes and padding for smaller screens */
     .bwmdn-box p {
