@@ -29,7 +29,7 @@ function Footer() {
           <img className="logo-img" src={logo} alt="" />
         </div>
         <div className="footer-contact">
-          <a href="/">Contact Us</a>
+          <a href={"mailto:info@blackwomenmdnetwork.com"}>Contact Us</a>
           <a href="/">Follow Us:</a>
           <img className="twitter-img" src={twitter} alt="" />
         </div>
