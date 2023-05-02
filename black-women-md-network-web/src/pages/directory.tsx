@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import "./directory.css";
 import regions from "../data/MembershipApp/regions";
-import specialties from "../data/MembershipApp/Specialties";
+import specialties from "../data/MembershipApp/specialties";
 
 const PAGE_SIZE = 12;
 
