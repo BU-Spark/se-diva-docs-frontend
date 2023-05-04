@@ -29,7 +29,7 @@ const About = () => {
     setShowDetails5(!showDetails5);
   }
   function handleClick6() {
-    setShowDetails6(!showDetails5);
+    setShowDetails6(!showDetails6);
   }
   return (
     <div className="welcome-body">
